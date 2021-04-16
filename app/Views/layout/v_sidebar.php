@@ -7,21 +7,32 @@
       <a href="index.html">APT</a>
     </div>
     <ul class="sidebar-menu">
-    <li class="active"><a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+        <li><a class="nav-link" href="<?= base_url('admin'); ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
         <li class="menu-header">Menu</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Table Master</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
+            <li><a class="nav-link" href="#">Obat</a></li>
+            <li><a class="nav-link" href="#">Supplier</a></li>
+            <li><a class="nav-link" href="#">Satuan</a></li>
+            <li><a class="nav-link" href="#">Kategori</a></li>
           </ul>
         </li>
-        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Transaksi</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
+            <li><a class="nav-link" href="#">Pejualan</a></li>
+            <li><a class="nav-link" href="#">Pembelian</a></li>
           </ul>
         </li>
-      </ul>
+
+       <li class="menu-header">Akun</li>
+        <li><a href="#" class="nav-link"><i class="fas fa-users"></i> <span>Pengguna</span></a></li>
+
+        <li class="menu-header">pengaturan</li>
+        <li><a href="#" class="nav-link"><i class="fas fa-cog fa-spin"></i> <span>Pengaturan</span></a></li>
+
+        <li><a href="<?= base_url('admin/blankpage'); ?>" class="nav-link"><i class=""></i> <span>Blank Page</span></a></li>
+    </ul>
   </aside>
 </div>

@@ -38,7 +38,7 @@
                 <i class="far fa-user"></i> Profile
               </a>
               <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Settings
+                <i class="fas fa-cog fa-spin"></i> Pengaturan
               </a>
               <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item has-icon text-danger">
