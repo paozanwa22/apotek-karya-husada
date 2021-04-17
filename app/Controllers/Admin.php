@@ -17,4 +17,27 @@ class Admin extends BaseController
 		];
 		return view('admin/v_blankpage', $data);
 	}
+//=========================== OBAT ======================
+	public function dobat()
+	{
+		$data = [
+			'title'		=> 'Data Obat'
+		];
+		return view('admin/master/v_dobat', $data);
+	}
+	public function tobat()
+	{
+		$data = [
+			'title'		=> 'Tambah Data Obat'
+		];
+		return view('admin/master/v_tobat', $data);
+	}
+	public function uobat()
+	{
+		$data = [
+			'title'		=> 'Ubah Data Obat'
+		];
+		return view('admin/master/v_uobat', $data);
+	}
+//=========================== END OBAT ======================
 }
