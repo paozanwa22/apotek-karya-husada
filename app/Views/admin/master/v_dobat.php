@@ -17,8 +17,14 @@
                 <div class="row">
                     <div class="col col-md-12">
                         <div class="card">
+                            <div class="card-header">
+                                <div class="buttons">
+                                    <a href="#" class="btn btn-icon btn-success"><i class="fas fa-plus"></i> Data Obat</a>
+                                </div>
+                            </div>
+
                             <div class="card-body">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered display responsive nowrap" width="100%" id="myTable">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -33,6 +39,138 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
                                         <tr>
                                             <td>1</td>
                                             <td>a</td>

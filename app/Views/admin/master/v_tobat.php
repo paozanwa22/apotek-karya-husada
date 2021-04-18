@@ -82,6 +82,10 @@
 
                             <button class="btn btn-primary" type="submit">Simpan</button>
                             <a href="<?= base_url('admin/dobat'); ?>" class="btn btn-danger">Batal</a>
+                            <div class="buttons">
+                                    <a href="#" class="btn btn-icon btn-success"><i class="fas fa-plus"></i> Data Obat</a>
+                                    <button class="btn btn-primary" type="submit">Simpan</button>
+                                </div>
                         </div>
                     </div>
                 </div>
