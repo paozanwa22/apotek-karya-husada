@@ -36,6 +36,7 @@
                                             <th>Harga Jual</th>
                                             <th>Stok</th>
                                             <th>Tanggal Kadaluarsa</th>
+                                            <th>Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,6 +50,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -60,6 +67,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -71,6 +84,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -82,6 +101,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -93,6 +118,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -104,6 +135,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -115,6 +152,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -126,6 +169,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -137,6 +186,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -148,6 +203,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -159,6 +220,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -170,6 +237,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -181,6 +254,12 @@
                                             <td>a</td>
                                             <td>a</td>
                                             <td>a</td>
+                                            <td>
+                                                <div class="buttons">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
