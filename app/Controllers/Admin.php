@@ -55,5 +55,12 @@ public function tsupplier()
 	];
 	return view('admin/master/v_tsupplier', $data);
 }
+public function summernote()
+{
+	$data = [
+		'title'			=> 'Tambah Data Supplier'
+	];
+	return view('admin/master/v_summernote', $data);
+}
 //=========================== END SUPPLIER ======================
 }

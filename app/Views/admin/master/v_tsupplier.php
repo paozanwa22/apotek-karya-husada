@@ -18,7 +18,7 @@
         <div class="section-body">
             <div class="row">
                 <div class="col col-md-12">
-                    <div class="card">
+                    <div class="card mx-auto" style = "width:65%;">
                         <div class="card-body">
                             <form action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <div class="col-sm-12 col-md-7">
+                                    <div class="col-sm-12 col-md-12">
                                         <textarea name="alamat" class="summernote-simple"></textarea>
                                     </div>
                                 </div>
