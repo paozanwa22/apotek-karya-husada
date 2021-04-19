@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Apr 2021 pada 07.27
+-- Waktu pembuatan: 19 Apr 2021 pada 06.42
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.2.32
 
@@ -144,8 +144,8 @@ CREATE TABLE `tb_satuan_obat` (
 CREATE TABLE `tb_supplier` (
   `id_sup` int(11) NOT NULL,
   `nama` varchar(150) NOT NULL,
-  `alamat` text NOT NULL,
-  `no_tlp` varchar(15) NOT NULL
+  `no_tlp` varchar(15) NOT NULL,
+  `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
