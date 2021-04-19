@@ -20,6 +20,7 @@
                 <div class="col col-md-12">
                     <div class="card">
                         <div class="card-body">
+                        <form action="" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="Kode Obat">Kode Obat</label>
                                 <input type="text" name="kd_obat" class="form-control">
@@ -82,10 +83,7 @@
 
                             <button class="btn btn-primary" type="submit">Simpan</button>
                             <a href="<?= base_url('admin/dobat'); ?>" class="btn btn-danger">Batal</a>
-                            <div class="buttons">
-                                    <a href="#" class="btn btn-icon btn-success"><i class="fas fa-plus"></i> Data Obat</a>
-                                    <button class="btn btn-primary" type="submit">Simpan</button>
-                                </div>
+                        </form>
                         </div>
                     </div>
                 </div>

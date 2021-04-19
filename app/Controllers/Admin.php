@@ -48,5 +48,12 @@ public function dsupplier()
 	];
 	return view('admin/master/v_dsupplier', $data);
 }
+public function tsupplier()
+{
+	$data = [
+		'title'			=> 'Tambah Data Supplier'
+	];
+	return view('admin/master/v_tsupplier', $data);
+}
 //=========================== END SUPPLIER ======================
 }
