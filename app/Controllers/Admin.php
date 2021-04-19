@@ -55,12 +55,12 @@ public function tsupplier()
 	];
 	return view('admin/master/v_tsupplier', $data);
 }
-public function summernote()
+public function usupplier()
 {
 	$data = [
-		'title'			=> 'Tambah Data Supplier'
+		'title'			=> 'Ubah Data Supplier'
 	];
-	return view('admin/master/v_summernote', $data);
+	return view('admin/master/v_usupplier', $data);
 }
 //=========================== END SUPPLIER ======================
 }
