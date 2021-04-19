@@ -86,4 +86,27 @@ public function usatuan()
 	return view('admin/master/v_usatuan', $data);
 }
 //=========================== END SATUAN ======================
+//=========================== KATEGORI ======================
+public function dkategori()
+{
+	$data = [
+		'title'			=> 'Data Kategori Obat'
+	];
+	return view('admin/master/v_dkategori', $data);
+}
+public function tkategori()
+{
+	$data = [
+		'title'			=> 'Tambah Data Kategori Obat'
+	];
+	return view('admin/master/v_tkategori', $data);
+}
+public function ukategori()
+{
+	$data = [
+		'title'			=> 'Ubah Data Kategori Obat'
+	];
+	return view('admin/master/v_ukategori', $data);
+}
+//=========================== END KATEGORI ======================
 }
