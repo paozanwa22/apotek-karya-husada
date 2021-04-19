@@ -47,6 +47,7 @@
 
         <!-- General JS Scripts -->
   <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.js"></script>
+  <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.mask.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
@@ -71,6 +72,8 @@
       responsive: true,
       select: true
     });
+
+    $('.currency').mask('0.000.000.000', {reverse:true});
   });
   </script>
 
