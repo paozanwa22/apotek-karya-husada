@@ -63,4 +63,27 @@ public function usupplier()
 	return view('admin/master/v_usupplier', $data);
 }
 //=========================== END SUPPLIER ======================
+//=========================== SATUAN ======================
+public function dsatuan()
+{
+	$data = [
+		'title'			=> 'Data Satuan'
+	];
+	return view('admin/master/v_dsatuan', $data);
+}
+public function tsatuan()
+{
+	$data = [
+		'title'			=> 'Tambah Data Satua'
+	];
+	return view('admin/master/v_tsatuan', $data);
+}
+public function usatuan()
+{
+	$data = [
+		'title'			=> 'Ubah Data Satua'
+	];
+	return view('admin/master/v_usatuan', $data);
+}
+//=========================== END SATUAN ======================
 }

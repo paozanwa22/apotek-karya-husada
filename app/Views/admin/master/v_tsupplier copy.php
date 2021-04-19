@@ -7,11 +7,11 @@
             <div class="section-header-back">
             <a href="<?= base_url('admin/dsupplier'); ?>"><div class="btn btn-icon"><i class="fas fa-arrow-left"></i> </div></a>
             </div>
-            <h1>Ubah Data Supplier</h1>
+            <h1>Tambah Data Supplier</h1>
             <div class="section-header-breadcrumb">
 				<div class="breadcrumb-item active"><a href="<?= base_url('admin') ?>">Beranda</a></div>
                 <div class="breadcrumb-item active"><a href="<?= base_url('admin/dsupplier') ?>">Data Supplier</a></div>
-                <div class="breadcrumb-item">Ubah Data Supplier</div>
+                <div class="breadcrumb-item">Tambah Data Supplier</div>
 			</div>
         </div>
 
@@ -35,8 +35,8 @@
                                         <textarea name="alamat" class="summernote-simple"></textarea>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Ubah</button>
-                                <a href="<?= base_url('admin/dsupplier'); ?>" class="btn btn-danger">Batal</a>
+                                <button class="btn btn-primary" type="submit">Simpan</button>
+                                <a href="<?= base_url('admin/dobat'); ?>" class="btn btn-danger">Batal</a>
                             </form>
                         </div>
                     </div>
