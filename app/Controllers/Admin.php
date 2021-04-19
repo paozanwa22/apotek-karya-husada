@@ -40,4 +40,13 @@ class Admin extends BaseController
 		return view('admin/master/v_uobat', $data);
 	}
 //=========================== END OBAT ======================
+//=========================== SUPPLIER ======================
+public function dsupplier()
+{
+	$data = [
+		'title'			=> 'Data Supplier'
+	];
+	return view('admin/master/v_dsupplier', $data);
+}
+//=========================== END SUPPLIER ======================
 }
