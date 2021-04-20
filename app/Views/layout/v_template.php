@@ -54,7 +54,7 @@
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.js"></script>
 
-  <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+  <!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script> -->
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-select/js/dataTables.select.min.js"></script>
   
