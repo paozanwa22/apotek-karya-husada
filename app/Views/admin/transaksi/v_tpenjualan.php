@@ -14,7 +14,32 @@
             </div>
 
             <div class="section-body">
-            
+                <div class="card">
+                    <div class="card-body">
+                        <form action="" method="post">
+                            <div class="form-group row mb-1">
+                                <label class="text-md-righ col-12 col-md-1 text-bold"><strong>Kode Transaksi</strong></label>
+                                <div class="col-md-3">
+                                    <input type="text" name="" class="form-control form-control-sm" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-1">
+                                <label class="text-md-righ col-12 col-md-1"><strong>Tanggal Pembelian</strong></label>
+                                <div class="col-md-3">
+                                    <input type="text" name="" value="<?= date("d/m/y"); ?>" class="form-control form-control-sm" readonly >
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="text-md-righ col-12 col-md-1"><strong>Kasir</strong></label>
+                                <div class="col-md-3">
+                                    <input type="text" name="" value="" class="form-control form-control-sm" readonly >
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
