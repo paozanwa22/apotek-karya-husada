@@ -9,7 +9,6 @@
                 <h1>Transaksi Penjualan</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="<?= base_url(); ?>/admin">Beranda</a></div>
-                    <div class="breadcrumb-item active"><a href="<? base_url(); ?>/admin/dpenjualan">Data Penjaualan</a></div>
                     <div class="breadcrumb-item">Teransaksi Penjaulan</div>
                 </div>
             </div>

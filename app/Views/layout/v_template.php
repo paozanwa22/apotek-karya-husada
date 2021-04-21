@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css">
 </head>
 
-<body>
+<body class="<?php if(($uri->uri->getSegment(2) == 'tpenjualan') or ($uri->uri->getSegment(2) == 'tpembelian')){echo "sidebar-mini";} ?>">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>

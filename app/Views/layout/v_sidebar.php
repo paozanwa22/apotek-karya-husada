@@ -21,8 +21,8 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-money-bill"></i> <span>Transaksi</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="#">Pejualan</a></li>
-            <li><a class="nav-link" href="#">Pembelian</a></li>
+            <li><a class="nav-link" href="<?= base_url(); ?>/admin/tpenjualan">Pejualan</a></li>
+            <li><a class="nav-link" href="<?= base_url(); ?>/admin/tpembelian">Pembelian</a></li>
             <li><a class="nav-link" href="<?= base_url(); ?>/admin/dpenjualan">History Penjualan</a></li>
             <li><a class="nav-link" href="<?= base_url(); ?>/admin/dpembelian">History Pembelian</a></li>
           </ul>
