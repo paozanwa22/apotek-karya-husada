@@ -28,3 +28,13 @@ CRITICAL - 2021-04-20 05:58:54 --> Invalid file: {0}
 #6 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #7 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #8 {main}
+CRITICAL - 2021-04-20 22:57:48 --> Invalid file: {0}
+#0 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/transaksi...')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#2 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(125): view('admin/transaksi...', Array)
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualan()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}

@@ -4,10 +4,10 @@
 <div class="main-content">
 	<section class="section">
 		<div class="section-header">
-			<h1>Penjualan</h1>
+			<h1>Histori Penjualan</h1>
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item active"><a href="<?= base_url(); ?>/admin">Beranda</a></div>
-				<div class="breadcrumb-item">Data Transaksi</div>
+				<div class="breadcrumb-item">Histori Transaksi</div>
 			</div>
 		</div>
 
@@ -39,7 +39,8 @@
 										<td>Haikal</td>
 										<td>20-01-2021</td>
 										<td>
-											<a href="" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
+											<a href="" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Detail</a>
+											<a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
 										</td>
 									</tr>
 									<tr>
@@ -57,7 +58,8 @@
 										<td>Haikal</td>
 										<td>20-01-2021</td>
 										<td>
-											<a href="" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
+											<a href="" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Detail</a>
+											<a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
 										</td>
 									</tr>
 								</tbody>
