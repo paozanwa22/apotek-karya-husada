@@ -109,4 +109,20 @@ public function ukategori()
 	return view('admin/master/v_ukategori', $data);
 }
 //=========================== END KATEGORI ======================
+//=========================== PENJUALAN ======================
+public function dpenjualan()
+{
+	$data = [
+		'title'			=> 'Data Penjualan Barang'
+	];
+	return view('admin/transaksi/v_dpenjualan', $data);
+}
+public function tpenjualan()
+{
+	$data = [
+		'title'			=> 'Penjualan'
+	];
+	return view('admin/transaksi/v_tpenjualan', $data);
+}
+//=========================== END PENJUALAN ======================
 }
