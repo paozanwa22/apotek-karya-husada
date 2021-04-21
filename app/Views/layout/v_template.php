@@ -73,6 +73,14 @@
       select: true
     });
 
+    $('#transaksi').dataTable({
+      paging: false,
+      searching: false,
+      responsive: true,
+      select: false,
+      "bInfo": false,
+    });
+
     $('.currency').mask('0.000.000.000', {reverse:true});
   });
   </script>

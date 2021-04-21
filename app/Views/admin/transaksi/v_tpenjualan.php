@@ -17,26 +17,78 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="" method="post">
-                            <div class="form-group row mb-1">
-                                <label class="text-md-righ col-12 col-md-1 text-bold"><strong>Kode Transaksi</strong></label>
-                                <div class="col-md-3">
-                                    <input type="text" name="" class="form-control form-control-sm" readonly>
+                            <div class="row">
+                                <div class="col-12 col-md-4 col-lg-3">
+                                    <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h4 class="mx-auto">Info</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label>Kode Transaksi</label>
+                                            <input type="text" name="" class="form-control form-control-sm" readonly>
+                                        
+                                            <label>Tanggal</label>
+                                            <input type="text" name="" value="<?= date('d/m/y'); ?>" class="form-control form-control-sm" readonly>
+                                       
+                                            <label>Kasir</label>
+                                            <input type="text" name="" class="form-control form-control-sm" readonly>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-12 col-lg-9">
+                                    <table class="table table-striped responsive nowrap" width="100%" id="transaksi">
+                                        <thead>
+                                            <tr>
+                                                <th>Nama Obat Yang Dijual</th>
+                                                <th>Harga Satuan</th>
+                                                <th>Qty</th>
+                                                <th>Subtotal</th>
+                                                <th>Opsi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <select class="form-control-sm form-control" name="">
+                                                        <option value="Bodrex">Bodrex</option>
+                                                        <option value="Promaag">Promaag</option>
+                                                    </select>
+                                                </td>
+                                                <td><input type="text" name="" class="form-control form-control-sm" readonly></td>
+                                                <td><input type="text" name="" class="form-control form-control-sm"></td>
+                                                <td><input type="text" name="" class="form-control form-control-sm" readonly></td>
+                                                <td><a href="" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                        <div class="row">
+                                        <div class="col-md-6">
+                                            <Button class="btn btn-primary"><i class="fa fa-plus"> Baru</i></Button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="alert alert-dark">
+                                                <h2 class="text-right p-1 mt-2">Rp10.000</h2>
+                                            </div>
+                                            <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Bayar</strong></label>
+                                                <div class="col-sm-12 col-md-7 col-lg-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Kembalian</strong></label>
+                                                <div class="col-sm-12 col-md-7 col-lg-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-1">
-                                <label class="text-md-righ col-12 col-md-1"><strong>Tanggal Pembelian</strong></label>
-                                <div class="col-md-3">
-                                    <input type="text" name="" value="<?= date("d/m/y"); ?>" class="form-control form-control-sm" readonly >
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="text-md-righ col-12 col-md-1"><strong>Kasir</strong></label>
-                                <div class="col-md-3">
-                                    <input type="text" name="" value="" class="form-control form-control-sm" readonly >
-                                </div>
-                            </div>
                         </form>
                     </div>
                 </div>
