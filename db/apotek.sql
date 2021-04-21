@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Apr 2021 pada 06.42
+-- Waktu pembuatan: 21 Apr 2021 pada 19.21
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.2.32
 
@@ -86,7 +86,7 @@ CREATE TABLE `tb_pembelian` (
 --
 
 CREATE TABLE `tb_pengguna` (
-  `id` int(11) NOT NULL,
+  `id_pengguna` int(11) NOT NULL,
   `nama` varchar(150) NOT NULL,
   `email` varchar(100) NOT NULL,
   `jk` char(25) NOT NULL,
@@ -106,7 +106,8 @@ CREATE TABLE `tb_pengguna` (
 CREATE TABLE `tb_penjualan` (
   `id_pen` int(11) NOT NULL,
   `id_ob` int(11) NOT NULL,
-  `tgl_beli` date NOT NULL,
+  `id_pengguna` int(11) NOT NULL,
+  `tgl_jual` date NOT NULL,
   `jumlah` int(11) NOT NULL,
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -180,7 +181,7 @@ ALTER TABLE `tb_pembelian`
 -- Indeks untuk tabel `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_pengguna`);
 
 --
 -- Indeks untuk tabel `tb_penjualan`
@@ -238,7 +239,7 @@ ALTER TABLE `tb_pembelian`
 -- AUTO_INCREMENT untuk tabel `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_penjualan`
