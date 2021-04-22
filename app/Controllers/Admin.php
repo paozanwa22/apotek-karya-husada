@@ -142,4 +142,22 @@ public function tpenjualan()
 	return view('admin/transaksi/v_tpenjualan', $data);
 }
 //=========================== END PENJUALAN ======================
+//=========================== PEMBELIAN ======================
+public function dpembelian()
+{
+	$data = [
+		'title'			=> 'Data Pembelian Barang',
+		'uri'			=> \Config\Services::request()
+	];
+	return view('admin/transaksi/v_dpembelian', $data);
+}
+public function tpembelian()
+{
+	$data = [
+		'title'			=> 'Pembelian',
+		'uri'			=> \Config\Services::request()
+	];
+	return view('admin/transaksi/v_tpembelian', $data);
+}
+//=========================== END PEMBELIAN ======================
 }
