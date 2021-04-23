@@ -22,7 +22,7 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                  <a href="<?= base_url() ?>/admin/tsupplier" class="btn btn-success"><i class="fa fa-plus"></i> Pengguna</a>
+                  <a href="<?= base_url() ?>/admin/tpengguna" class="btn btn-success"><i class="fa fa-plus"></i> Pengguna</a>
                   </div>
                   <div class="card-body">
                       <table class="table table-striped responsive nowrap table-hover" width="100%" id="myTable">
