@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="" method="post">
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-12 col-md-4 col-lg-3">
                                     <div class="card card-primary">
                                     <div class="card-header">
@@ -36,9 +36,45 @@
                                         </div>
                                     </div>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="col-12 col-md-12 col-lg-9">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-md-2 text-right"><strong>Kode Transaksi</strong></label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control form-control-sm" readonly>
+                                        </div>
+
+                                        <label class="col-form-label col-md-2 text-right"><strong>Tanggal</strong></label>
+                                        <div class="col-md-4">
+                                            <input type="text" value="<?= date('d F Y'); ?>" class="form-control form-control-sm" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-md-2 text-right"><strong>Nama Pemasok</strong></label>
+                                        <div class="col-md-4">
+                                            <select class="form-control custom-select form-control-sm">
+                                                <option>Tech</option>
+                                                <option>News</option>
+                                                <option>Political</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-form-label col-md-2 text-right"><strong>Nama Obat</strong></label>
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                <select class="custom-select" id="inputGroupSelect04">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button">Tambah</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <table class="table table-striped responsive nowrap" width="100%" id="transaksi">
                                         <thead>
                                             <tr>
@@ -52,10 +88,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <select class=" form-control form-control-sm" name="">
-                                                        <option value="Bodrex">Bodrex</option>
-                                                        <option value="Promaag">Promaag</option>
-                                                    </select>
+                                                <input type="text" name="" class="form-control form-control-sm" readonly>
                                                 </td>
                                                 <td><input type="text" name="" class="form-control form-control-sm" readonly></td>
                                                 <td><input type="number" min="1" name="" class="form-control form-control-sm"></td>
@@ -67,6 +100,10 @@
                                         <div class="row">
                                         <div class="col-md-6">
                                             <!-- <Button class="btn btn-primary"><i class="fa fa-plus"> Baru</i></Button> -->
+                                            <div class="form-group">
+                                            <label><strong>Keterangan</strong></label>
+                                                <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Keterangan Jika Ada..."></textarea>
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="alert alert-dark">
@@ -89,8 +126,8 @@
                                                 <a href="#" class="btn btn-warning"><i class="fa fa-save"></i> Simpan</a>
                                                 <a href="#" class="btn btn-danger"><i class="fa fa-close"></i> Batal</a>
                                             </div>
-
                                         </div>
+                                    
                                     </div>
                                 </div>
                             </div>
