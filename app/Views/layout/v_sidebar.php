@@ -29,7 +29,7 @@
         </li>
 
        <li class="menu-header">Akun</li>
-        <li><a href="#" class="nav-link"><i class="fas fa-users"></i> <span>Pengguna</span></a></li>
+        <li><a href="<?= base_url(); ?>/admin/dpengguna" class="nav-link"><i class="fas fa-users"></i> <span>Pengguna</span></a></li>
 
         <li class="menu-header">pengaturan</li>
         <li><a href="#" class="nav-link"><i class="fas fa-cog fa-spin"></i> <span>Pengaturan</span></a></li>

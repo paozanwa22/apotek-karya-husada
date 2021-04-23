@@ -19,7 +19,7 @@
                             <a href="<?= base_url(); ?>/admin/tkategori" class="btn btn-success"><i class="fa fa-plus"></i> Kategori</a>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped responsive nowrap" width="100%" id="myTable">
+                            <table class="table table-striped responsive nowrap table-hover" width="100%" id="myTable">
                                 <thead>
                                     <tr>
                                         <th width="30px">No</th>

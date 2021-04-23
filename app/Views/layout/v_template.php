@@ -15,7 +15,7 @@
   <!-- Data Table -->
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+  <!-- <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css"> -->
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css">
@@ -46,19 +46,19 @@
       
         <!-- General JS Scripts -->
   <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.mask.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/jquery/dist/popper.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+  <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
+  <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.mask.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.js"></script>
 
   <!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script> -->
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/datatables.net-select/js/dataTables.select.min.js"></script>
+  <!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-select/js/dataTables.select.min.js"></script> -->
   
-  <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
 
   <!-- Template JS File -->
   <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>

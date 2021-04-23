@@ -160,4 +160,30 @@ public function tpembelian()
 	return view('admin/transaksi/v_tpembelian', $data);
 }
 //=========================== END PEMBELIAN ======================
+//=========================== PENGGUNA ======================
+public function dpengguna()
+{
+	$data = [
+		'title'			=> 'Data Pengguna',
+		'uri'			=> \Config\Services::request()
+	];
+	return view('admin/v_dpengguna', $data);
+}
+public function tpengguna()
+{
+	$data = [
+		'title'			=> 'Pengguna',
+		'uri'			=> \Config\Services::request()
+	];
+	return view('admin/v_tpengguna', $data);
+}
+public function upengguna()
+{
+	$data = [
+		'title'			=> 'Pengguna',
+		'uri'			=> \Config\Services::request()
+	];
+	return view('admin/v_upengguna', $data);
+}
+//=========================== END PENGGUNA ======================
 }

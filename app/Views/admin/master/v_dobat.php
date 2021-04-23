@@ -24,7 +24,7 @@
                             </div>
 
                             <div class="card-body">
-                                <table class="table table-striped responsive nowrap" width="100%" id="myTable">
+                                <table class="table table-striped responsive nowrap table-hover" width="100%" id="myTable">
                                     <thead>
                                         <tr>
                                             <th>No</th>
