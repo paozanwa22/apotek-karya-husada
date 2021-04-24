@@ -195,5 +195,13 @@ public function profile()
 	];
 	return view('admin/v_profile', $data);
 }
+public function profile_aptk()
+{
+	$data = [
+		'title'			=> 'Profile Apotek',
+		'uri'			=> \Config\Services::request()
+	];
+	return view('admin/v_pengaturan', $data);
+}
 //=========================== END PROFILE ======================
 }

@@ -37,7 +37,7 @@
               <a href="<?= base_url('admin/profile'); ?>" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
-              <a href="features-settings.html" class="dropdown-item has-icon">
+              <a href="<?= base_url('admin/profile_aptk'); ?>" class="dropdown-item has-icon">
                 <i class="fas fa-cog fa-spin"></i> Pengaturan
               </a>
               <div class="dropdown-divider"></div>

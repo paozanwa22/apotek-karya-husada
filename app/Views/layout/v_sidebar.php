@@ -32,7 +32,7 @@
         <li><a href="<?= base_url(); ?>/admin/dpengguna" class="nav-link"><i class="fas fa-users"></i> <span>Pengguna</span></a></li>
 
         <li class="menu-header">pengaturan</li>
-        <li><a href="#" class="nav-link"><i class="fas fa-cog fa-spin"></i> <span>Pengaturan</span></a></li>
+        <li><a href="<?= base_url(); ?>/admin/profile_aptk" class="nav-link"><i class="fas fa-cog fa-spin"></i> <span>Pengaturan</span></a></li>
 
         <li><a href="<?= base_url('admin/blankpage'); ?>" class="nav-link"><i class=""></i> <span>Blank Page</span></a></li>
     </ul>
