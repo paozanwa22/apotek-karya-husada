@@ -186,4 +186,14 @@ public function upengguna()
 	return view('admin/v_upengguna', $data);
 }
 //=========================== END PENGGUNA ======================
+//=========================== PROFILE ======================
+public function profile()
+{
+	$data = [
+		'title'			=> 'Profile Pengguna',
+		'uri'			=> \Config\Services::request()
+	];
+	return view('admin/v_profile', $data);
+}
+//=========================== END PROFILE ======================
 }
