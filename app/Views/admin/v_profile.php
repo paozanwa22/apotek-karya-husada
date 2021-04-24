@@ -10,7 +10,7 @@
 		<div class="section-body">
             <div class="row">
                 <div class="col-md-7">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h4>Lengkapi Profile</h4>
                         </div>
@@ -61,12 +61,12 @@
                 </div>
                 
                 <div class="col-md-5">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-body">
                             <div class="avatar-item">
-                                <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
-                                    <img alt="image" src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" class="img-fluid" data-toggle="tooltip" title="Syahdan Ubaidillah">
-                                    <div class="avatar-badge" title="Editor" data-toggle="tooltip"><i class="fas fa-wrench"></i></div>
+                                <div class="col-6 col-sm-5 col-lg-5 mb-4 mb-md-0 mx-auto">
+                                    <img alt="image" src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="150px" data-toggle="tooltip" title="Syahdan Ubaidillah">
+                                    <a href="#" class="avatar-badge" data-toggle="tooltip"><i class="fas fa-camera"></i></a>
                                 </div>
                             </div>
                         </div>
