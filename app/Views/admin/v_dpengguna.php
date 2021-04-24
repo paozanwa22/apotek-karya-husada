@@ -52,8 +52,8 @@
                             <td><img src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="50px" class="rounded-circle" alt="Foto"></td>
                             <td>0987654321123</td>
                             <td>
-                              <a href="<?= base_url() ?>/admin/usupplier" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hsupplier" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
+                              <a href="<?= base_url() ?>/admin/upengguna" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
+                              <a href="<?= base_url() ?>/admin/hpengguna" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
                             </td>
                           </tr>
                           <tr>
@@ -67,8 +67,8 @@
                             <td><img src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="50px" class="rounded-circle" alt="Foto"></td>
                             <td>0987654321123</td>
                             <td>
-                              <a href="<?= base_url() ?>/admin/usupplier" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hsupplier" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
+                              <a href="<?= base_url() ?>/admin/upengguna" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
+                              <a href="<?= base_url() ?>/admin/hpengguna" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
                             </td>
                           </tr>
                           <tr>
@@ -82,8 +82,8 @@
                             <td><img src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="50px" class="rounded-circle" alt="Foto"></td>
                             <td>0987654321123</td>
                             <td>
-                              <a href="<?= base_url() ?>/admin/usupplier" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hsupplier" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
+                              <a href="<?= base_url() ?>/admin/upengguna" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
+                              <a href="<?= base_url() ?>/admin/hpengguna" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
                             </td>
                           </tr>
                         </tbody>
