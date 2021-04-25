@@ -13,12 +13,10 @@
 
 		<div class="section-body">
             <div class="row">
-                <div class="col-12">
+                <div class="col-7">
                     <div class="card">
-                        <div class="card-header">
-                            <a href="<?= base_url(); ?>/admin/tsatuan" class="btn btn-success"><i class="fa fa-plus"></i> Satuan</a>
-                        </div>
                         <div class="card-body">
+                            
                             <table class="table table-striped responsive nowrap table-hover" width="100%" id="myTable">
                                 <thead>
                                     <tr>
@@ -54,11 +52,26 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                        </div><!--Card-Body-->
+                    </div><!--card-->
+                </div><!--col-->
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="satuan">Satuan</label>
+                                    <input type="text" name="satuan" class="form-control">
+                                </div>
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-plus"></i> Tambah</button>
+                                <a href="<?= base_url('admin/dsatuan'); ?>" class="btn btn-danger">Batal</a>
+                            </form>
                         </div>
                     </div>
-                </div>
-            </div>
-		</div>
+                </div><!--col-->
+            </div><!--row-->
+		</div><!--Section-body-->
 	</section>
 </div>
 <?= $this->endSection(); ?>

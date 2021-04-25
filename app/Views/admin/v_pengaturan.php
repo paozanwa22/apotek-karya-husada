@@ -34,7 +34,7 @@
 
                         <div class="form-group">
                             <label><strong>Alamat Apotek</strong></label>
-                            <textarea name="alamat" cols="30" rows="10" class="form-control"></textarea>
+                            <textarea name="alamat" class="form-control"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simapn</button>
