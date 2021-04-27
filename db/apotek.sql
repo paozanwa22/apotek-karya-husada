@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Apr 2021 pada 19.21
+-- Waktu pembuatan: 27 Apr 2021 pada 05.56
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.2.32
 
@@ -55,6 +55,7 @@ CREATE TABLE `tb_obat` (
   `id_ob` int(11) NOT NULL,
   `kd_obat` varchar(255) NOT NULL,
   `nm_obat` varchar(150) NOT NULL,
+  `id_sup` int(11) NOT NULL,
   `id_s` int(11) NOT NULL,
   `id_k` int(11) NOT NULL,
   `harga_beli` varchar(30) NOT NULL,
@@ -62,6 +63,13 @@ CREATE TABLE `tb_obat` (
   `stok` int(11) NOT NULL,
   `tgl_kadaluarsa` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_obat`
+--
+
+INSERT INTO `tb_obat` (`id_ob`, `kd_obat`, `nm_obat`, `id_sup`, `id_s`, `id_k`, `harga_beli`, `harga_jual`, `stok`, `tgl_kadaluarsa`) VALUES
+(1, 'KDOB0001', 'Insto', 1, 1, 1, '20000', '22000', 20, '2021-08-25');
 
 -- --------------------------------------------------------
 
@@ -93,6 +101,7 @@ CREATE TABLE `tb_pengguna` (
   `password` varchar(255) NOT NULL,
   `no_tlp` varchar(15) NOT NULL,
   `alamat` text NOT NULL,
+  `level` varchar(100) NOT NULL,
   `poto` varchar(255) NOT NULL,
   `tgl_buat` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -122,7 +131,8 @@ CREATE TABLE `tb_profil` (
   `id` int(11) NOT NULL,
   `nm_apotek` varchar(50) NOT NULL,
   `pimpinan` varchar(150) NOT NULL,
-  `alamat` text NOT NULL
+  `alamat` text NOT NULL,
+  `poto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -227,7 +237,7 @@ ALTER TABLE `tb_kategori_obat`
 -- AUTO_INCREMENT untuk tabel `tb_obat`
 --
 ALTER TABLE `tb_obat`
-  MODIFY `id_ob` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ob` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pembelian`
