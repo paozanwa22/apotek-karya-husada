@@ -40,16 +40,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    
+                                    <!-- PHP -->
+                                    <?php
+                                        $no=1;
+                                        foreach($data as $d){
+                                    ?>
+
                                         <tr>
-                                            <td>1</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>aku</td>
-                                            <td>a</td>
-                                            <td>a</td>
+                                            <td><?=  $no++ ?></td>
+                                            <td><?= $d['kd_obat']; ?></td>
+                                            <td><?= $d['nm_obat']; ?></td>
+                                            <td><?= $d['id_sup']; ?></td>
+                                            <td><?= $d['id_k']; ?></td>
+                                            <td><?= $d['harga_beli']; ?></td>
+                                            <td><?= $d['harga_jual']; ?></td>
+                                            <td><?= $d['stok']; ?></td>
+                                            <td><?= $d['tgl_kadaluarsa']; ?></td>
                                             <td>
                                                 <div class="buttons">
                                                     <a href="<?= base_url() ?>/admin/uobat" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
@@ -57,6 +64,10 @@
                                                 </div>
                                             </td>
                                         </tr>
+
+                                        <!-- PHP -->
+                                        <?php } ?>
+
                                     </tbody>
                                 </table>
                             </div>

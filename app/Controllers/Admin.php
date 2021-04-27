@@ -1,8 +1,19 @@
 <?php namespace App\Controllers;
-use CodeIgniter\controller;
+// use CodeIgniter\controller;
+
+use App\Models\M_obat;
 
 class Admin extends BaseController
 {
+	//Protected
+	protected $M_obat;
+
+	public function __construct()
+	{
+		$this->M_obat = new M_obat();
+	}
+
+
 	public function index()
 	{
 		$data = [
@@ -16,7 +27,7 @@ class Admin extends BaseController
 	{
 		$data = [
 			'title'		=> "Blank Page",
-			'uri'			=> \Config\Services::request()
+			'uri'		=> \Config\Services::request()
 		];
 		return view('admin/v_blankpage', $data);
 	}
@@ -25,7 +36,8 @@ class Admin extends BaseController
 	{
 		$data = [
 			'title'		=> 'Data Obat',
-			'uri'			=> \Config\Services::request()
+			'uri'			=> \Config\Services::request(),
+			'data'		=> $this->M_obat->ambilData()
 		];
 		return view('admin/master/v_dobat', $data);
 	}
