@@ -30,7 +30,7 @@
                                             <th>No</th>
                                             <th>Kode Obat</th>
                                             <th>Nama Obat</th>
-                                            <th>Satuan</th>
+                                            <th>Suplier</th>
                                             <th>Kategori</th>
                                             <th>Harga Beli</th>
                                             <th>Harga Jual</th>

@@ -30,10 +30,10 @@
                                 <input type="text" name="nm_obat" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="satuan">Satuan</label>
+                                <label for="satuan">Suplier</label>
                                 <select name="id_s" class="form-control">
-                                    <option value="">- Pilih Satuan -</option>
-                                    <option value="Box">Box</option>
+                                    <option value="">- Pilih Suplier -</option>
+                                    <option value="Box">PT. Kimia Farma</option>
                                 </select>
                             </div>
                             <div class="form-group">
