@@ -10,7 +10,7 @@
 		<div class="section-body">
             <div class="row">
                 <div class="col-md-7">
-                    <div class="card card-primary">
+                    <div class="card card-success">
                         <div class="card-header">
                             <h4>Lengkapi Profile</h4>
                         </div>
@@ -64,7 +64,7 @@
                 </div>
                 
                 <div class="col-md-5">
-                    <div class="card card-primary">
+                    <div class="card card-success">
                         <div class="card-body">
                             <div class="avatar-item">
                                 <div class="col-6 col-sm-5 col-lg-5 mb-4 mb-md-0 mx-auto">

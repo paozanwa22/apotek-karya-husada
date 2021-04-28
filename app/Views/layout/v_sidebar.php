@@ -7,7 +7,7 @@
       <a href="index.html">APT</a>
     </div>
     <ul class="sidebar-menu">
-        <li><a class="nav-link" href="<?= base_url('admin'); ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+        <li><a class="nav-link" href="<?= base_url('admin'); ?>"><i class="fas fa-tachometer-alt"></i> <span>Beranda</span></a></li>
         <li class="menu-header">Menu</li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Table Master</span></a>
@@ -33,8 +33,6 @@
 
         <li class="menu-header">pengaturan</li>
         <li><a href="<?= base_url(); ?>/admin/profile_aptk" class="nav-link"><i class="fas fa-cog fa-spin"></i> <span>Pengaturan</span></a></li>
-
-        <li><a href="<?= base_url('admin/blankpage'); ?>" class="nav-link"><i class=""></i> <span>Blank Page</span></a></li>
     </ul>
   </aside>
 </div>

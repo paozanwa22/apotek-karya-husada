@@ -37,12 +37,15 @@
               <a href="<?= base_url('admin/profile'); ?>" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
+              <a href="<?= base_url('admin/gantiPass'); ?>" class="dropdown-item has-icon">
+                <i class="far fa-user"></i> Ganti Kata Sandi
+              </a>
               <a href="<?= base_url('admin/profile_aptk'); ?>" class="dropdown-item has-icon">
                 <i class="fas fa-cog fa-spin"></i> Pengaturan
               </a>
               <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-out-alt"></i> Logout
+                <i class="fas fa-sign-out-alt"></i> Keluar
               </a>
             </div>
           </li>

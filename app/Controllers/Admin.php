@@ -1,5 +1,5 @@
 <?php namespace App\Controllers;
-// use CodeIgniter\controller;
+use CodeIgniter\controller;
 
 use App\Models\M_obat;
 
