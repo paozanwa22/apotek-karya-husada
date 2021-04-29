@@ -67,7 +67,7 @@
                                     <label for="satuan">Satuan</label>
                                     <input type="text" name="satuan" class="form-control">
                                 </div>
-                                <button class="btn btn-primary" type="submit"><i class="fa fa-plus"></i> Tambah</button>
+                                <button class="btn btn-success" type="submit"><i class="fa fa-plus"></i> Tambah</button>
                                 <a href="<?= base_url('admin/dsatuan'); ?>" class="btn btn-danger">Batal</a>
                             </form>
                         </div>

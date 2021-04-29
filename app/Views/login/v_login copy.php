@@ -21,49 +21,49 @@
 <body>
   <div id="app">
     <section class="section">
-    <div class="d-flex flex-wrap" style="background-color: #D7FFE3">
-      <div class="col-lg-4 col-md-6 col-12 col-sm-8 order-lg-1 min-vh-100 order-1 bg-white">
+      <!-- <div class="d-flex flex-wrap align-items-stretch"> -->
+      
+      <div class="row" id="lgambar" style="background-color: #D7FFE3">
+      
+      <div class="col-12 col-sm-7 order-lg-1 min-vh-100 order-1 bg-white">
           <div class="p-4 m-3">
-            
-          <img src="<?= base_url(); ?>/template/assets/img/logo.png" alt="logo" width="80px" class="rounded-circle mb-5 mt-2">
+            <img src="<?= base_url(); ?>/template/assets/img/logo.png" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
             <h4 class="text-dark font-weight-normal">Apotek Karya Husada</h4>
             <p class="text-muted">Silahkan <span class="font-weight-bold">Login</span></p>
-
-            <form method="POST" action="#" novalidate="">
+            <form method="POST" action="#" class="needs-validation" novalidate="">
               <div class="form-group">
                 <label for="email">Username</label>
-                <input id="email" type="email" class="form-control" name="email" autofocus>
+                <input type="text" class="form-control" name="username" tabindex="1" autofocus>
               </div>
 
               <div class="form-group">
                 <div class="d-block">
                   <label for="password" class="control-label">Password</label>
                 </div>
-                <input id="password" type="password" class="form-control" name="password">
+                <input id="password" type="password" class="form-control" name="password" tabindex="2">
               </div>
 
               <div class="form-group text-right">
                 <a href="auth-forgot-password.html" class="float-left mt-3">
-                  Forgot Password?
+                  Lupa Password?
                 </a>
                 <button type="submit" class="btn btn-success btn-lg btn-icon icon-right" tabindex="4">
                   Masuk
                 </button>
               </div>
 
-              <div>&nbsp;</div>
-              <div>&nbsp;</div>
-              <div>&nbsp;</div>
-              <div>&nbsp;</div>
-
             </form>
+
           </div>
         </div>
-        <div class="col-lg-8 col-md-6 col-sm-4 order-1 text-center" style="margin-top: 120px;">
+        <div class="col-sm-5 order-1 text-center" style="margin-top: 120px;">
             <h4>Apotek</h4>
             <img src="<?= base_url(); ?>/template/assets/img/login.png" width="500px" alt="Apotek">
-        </div> 
+        </div>  
+      
       </div>
+      
+      <!-- </div> -->
     </section>
   </div>
 

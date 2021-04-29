@@ -68,7 +68,7 @@
                                     <label for="satuan">Kategori</label>
                                     <input type="text" name="kategori" class="form-control">
                                 </div>
-                                <button class="btn btn-primary" type="submit"><i class="fa fa-plus"></i> Tambah</button>
+                                <button class="btn btn-success" type="submit"><i class="fa fa-plus"></i> Tambah</button>
                                 <a href="<?= base_url('admin/dkategori'); ?>" class="btn btn-danger">Batal</a>
                             </form>
                         </div>
