@@ -37,7 +37,7 @@
               <a href="<?= base_url('admin/profile'); ?>" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
-              <a href="<?= base_url('admin/gantiPass'); ?>" class="dropdown-item has-icon">
+              <a href="<?= base_url('login/gantiPass'); ?>" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Ganti Kata Sandi
               </a>
               <a href="<?= base_url('admin/profile_aptk'); ?>" class="dropdown-item has-icon">

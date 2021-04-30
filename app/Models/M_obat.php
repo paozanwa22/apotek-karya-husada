@@ -13,4 +13,9 @@ class M_obat extends Model
         }
         return getWhere(['id_ob' => $id_ob]);
     }
+    public function simpan($data)
+    {
+        $simpan = $this->db->table($this->table);
+        return $simpan->insert($data);
+    }
 }

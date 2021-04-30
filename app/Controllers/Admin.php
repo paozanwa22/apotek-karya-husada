@@ -43,9 +43,11 @@ class Admin extends BaseController
 	}
 	public function tobat()
 	{
+		session();
 		$data = [
-			'title'		=> 'Tambah Data Obat',
-			'uri'			=> \Config\Services::request()
+			'title'			=> 'Tambah Data Obat',
+			'uri'			=> \Config\Services::request(),
+			'validation'	=> \Config\Services::validation()
 		];
 		return view('admin/master/v_tobat', $data);
 	}
@@ -56,6 +58,68 @@ class Admin extends BaseController
 			'uri'			=> \Config\Services::request()
 		];
 		return view('admin/master/v_uobat', $data);
+	}
+	public function sobat()
+	{
+		if(!$this->validate([
+			'nm_obat'		=> [
+				'rules'		=> 'required',
+				'errors'		=> [
+					'required'		=> 'Nama obat tidak boleh kosong!'
+				]
+				],
+			'id_sup'		=> [
+				'rules'		=> 'required',
+				'errors'		=> [
+					'required'		=> 'Suplier tidak boleh kosong!'
+				]
+				],
+			'id_k'		=> [
+				'rules'		=> 'required',
+				'errors'		=> [
+					'required'		=> 'Kategori tidak boleh kosong!'
+				]
+				],
+			'harga_beli'	=> [
+				'rules'		=> 'required',
+				'errors'	=> [
+					'required'	=> 'Harga beli tidak boleh kosong!'
+				]
+				],
+			'harga_jual'	=> [
+				'rules'		=> 'required',
+				'errors'	=> [
+					'required'	=> 'Harga jual tidak boleh kosong!'
+				]
+				],
+			'stok'	=> [
+				'rules'		=> 'required',
+				'errors'	=> [
+					'required'	=> 'Stok tidak boleh kosong!'
+				]
+				],
+			'tgl_kadaluarsa'	=> [
+				'rules'		=> 'required',
+				'errors'	=> [
+					'required'	=> 'Tanggal kadaluarsa tidak boleh kosong!'
+				]
+				]
+		])){
+			return redirect()->to('/admin/tobat')->withinput();
+		}
+
+		$this->M_obat->simpan([
+			'kd_obat'	=> $this->request->getVar('kd_obat'),
+			'nm_obat'	=> $this->request->getVar('nm_obat'),
+			'id_sup'	=> $this->request->getVar('id_sup'),
+			'id_k'	=> $this->request->getVar('id_k'),
+			'harga_beli'	=> $this->request->getVar('harga_beli'),
+			'harga_jual'	=> $this->request->getVar('harga_jual'),
+			'stok'	=> $this->request->getVar('stok'),
+			'tgl_kadaluarsa'	=> $this->request->getVar('tgl_kadaluarsa'),
+		]);
+		session()->setFlashdata('sukses','Data Berhasil disimpan');
+		return redirect()->to('/admin/tobat');
 	}
 //=========================== END OBAT ======================
 //=========================== SUPPLIER ======================

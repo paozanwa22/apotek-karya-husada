@@ -11,4 +11,12 @@ class Login extends BaseController
         ];
         return view('login/v_login', $data);
     }
+    public function gantiPass()
+    {
+        $data = [
+            'title'     => 'Ganti Password',
+            'uri'			=> \Config\Services::request()
+        ];
+        return view('login/v_ganti_pass', $data);
+    }
 }

@@ -37,7 +37,7 @@
                             <textarea name="alamat" class="form-control"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simapn</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simapn</button>
                     </form>
 
                     </div>
