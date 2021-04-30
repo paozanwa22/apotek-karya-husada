@@ -43,7 +43,6 @@ class Admin extends BaseController
 	}
 	public function tobat()
 	{
-		session();
 		$data = [
 			'title'			=> 'Tambah Data Obat',
 			'uri'			=> \Config\Services::request(),
@@ -120,6 +119,11 @@ class Admin extends BaseController
 		]);
 		session()->setFlashdata('sukses','Data Berhasil disimpan');
 		return redirect()->to('/admin/tobat');
+	}
+	public function hobat($kd_ob)
+	{
+		$this->M_obat->hapus($kd_ob);
+		return redirect()->to('/admin/dobat');
 	}
 //=========================== END OBAT ======================
 //=========================== SUPPLIER ======================
