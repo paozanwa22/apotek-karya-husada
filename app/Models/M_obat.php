@@ -9,7 +9,9 @@ class M_obat extends Model
     public function ambilData($kd_obat = false)
     {
         if($kd_obat === false){
-            return $this->findAll();
+            return $this->db->table($this->table)
+            ->orderBy('kd_obat','DESC')
+            ->get()->getResultArray();
         }
         return $this->getWhere(['kd_obat' => $kd_obat]);
     }

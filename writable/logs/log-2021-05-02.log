@@ -81,3 +81,33 @@ CRITICAL - 2021-05-02 02:19:54 --> Use of undefined constant str_pad_left - assu
 #5 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #6 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #7 {main}
+CRITICAL - 2021-05-02 17:45:55 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT right(kd...', Array, false)
+#2 C:\xampp\htdocs\apotek-karya-husada\app\Models\M_obat.php(37): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(37): App\Models\M_obat->autonumber()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dobat()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-05-02 17:45:56 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\apotek-karya-husada\app\Views\errors\html\error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 100, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\app\Views\errors\html\error_exception.php(100): print_r(Object(App\Controllers\Admin), true)
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Debug\Exceptions.php(308): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\apotek-karya-husada\system\Debug\Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-05-02 17:49:03 --> Call to a member function orderBy() on array
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(42): App\Models\M_obat->ambilData()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dobat()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
