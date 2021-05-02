@@ -2,6 +2,23 @@ $(document).ready(function(){
 
     const flashdata = $('#flash').data('flash');
 
+    $('#myTable').dataTable({
+        paging: true,
+        searching: true,
+        responsive: true,
+        select: true
+      });
+  
+      $('#transaksi').dataTable({
+        paging: false,
+        searching: false,
+        responsive: true,
+        select: false,
+        "bInfo": false,
+      });
+  
+      $('.currency').mask('0.000.000.000', {reverse:true});
+
     if(flashdata){
         swal({
             title: 'Sukses',

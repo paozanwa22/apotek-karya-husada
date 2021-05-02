@@ -68,27 +68,5 @@
   <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
   <script src="<?= base_url() ?>/template/assets/js/scripts2.js"></script>
   <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
-
-  <script>
-  $(document).ready(function(){
-    $('#myTable').dataTable({
-      paging: true,
-      searching: true,
-      responsive: true,
-      select: true
-    });
-
-    $('#transaksi').dataTable({
-      paging: false,
-      searching: false,
-      responsive: true,
-      select: false,
-      "bInfo": false,
-    });
-
-    $('.currency').mask('0.000.000.000', {reverse:true});
-    
-  });
-  </script>
 </body>
 </html>

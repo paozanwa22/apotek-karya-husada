@@ -34,8 +34,10 @@ class Admin extends BaseController
 //=========================== OBAT ======================
 	public function dobat()
 	{
+		$number = $this->M_obat->autonumber();
 		$data = [
 			'title'		=> 'Data Obat',
+			'autonumber'=> $number,
 			'uri'		=> \Config\Services::request(),
 			'data'		=> $this->M_obat->ambilData()
 		];
@@ -46,6 +48,7 @@ class Admin extends BaseController
 		$data = [
 			'title'			=> 'Tambah Data Obat',
 			'uri'			=> \Config\Services::request(),
+			'autonumber'	=> $this->M_obat->autonumber(),
 			'validation'	=> \Config\Services::validation()
 		];
 		return view('admin/master/v_tobat', $data);
@@ -124,7 +127,6 @@ class Admin extends BaseController
 		])){
 			return redirect()->to('/admin/tobat')->withinput();
 		}
-
 		$this->M_obat->simpan([
 			'kd_obat'			=> $this->request->getVar('kd_obat'),
 			'nm_obat'			=> $this->request->getVar('nm_obat'),

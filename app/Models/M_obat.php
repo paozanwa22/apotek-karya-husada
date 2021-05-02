@@ -29,4 +29,22 @@ class M_obat extends Model
         $ubah->where('kd_obat', $kd_obat);
         return $ubah->update($data);
     }
+    public function autonumber()
+    {
+        $kode = $this->db->table($this->table)
+        ->select('right(kd_obat,4) as kd_obat', false)
+        ->orderBy('kd_obat','DESC')
+        ->limit(1)->get()->getRowArray();
+
+        if($kode['kd_obat'] == null){
+            $no=1;
+        }else{
+            $no= intval($kode['kd_obat']) + 1;
+        }
+        $s = "KDOB";
+        $batas = str_pad($no, 4, "0", STR_PAD_LEFT);
+        $kd_obat = $s.$batas;
+
+        return $kd_obat;
+    }
 }

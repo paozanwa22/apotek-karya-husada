@@ -14,7 +14,6 @@
                 <div class="breadcrumb-item">Tambah Data Obat</div>
 			</div>
         </div>
-
         <div class="section-body">
             <div class="row">
                 <div class="col col-md-12">
@@ -24,7 +23,7 @@
                         <?= csrf_field(); ?>
                             <div class="form-group">
                                 <label for="Kode Obat">Kode Obat</label>
-                                <input type="text" name="kd_obat" class="form-control">
+                                <input type="text" name="kd_obat" value="<?= $autonumber; ?>" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="nama obat">Nama Obat</label>

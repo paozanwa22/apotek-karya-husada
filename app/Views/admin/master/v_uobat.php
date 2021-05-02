@@ -24,7 +24,7 @@
                             <?= csrf_field(); ?>
                             <div class="form-group">
                                 <label for="Kode Obat">Kode Obat</label>
-                                <input type="text" name="kd_obat" value="<?= $dobat->kd_obat; ?>" class="form-control" required>
+                                <input type="text" name="kd_obat" value="<?= $dobat->kd_obat; ?>" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="nama obat">Nama Obat</label>
