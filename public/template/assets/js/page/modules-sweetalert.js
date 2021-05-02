@@ -1,5 +1,46 @@
 "use strict";
 
+function pesan($warna, $isi)
+{
+  switch($warna){
+    case "1" :
+      swal('Sukses', $isi, 'success');
+      break;
+    case "2" :
+      swal('Sukses', $isi, 'success');
+      }
+    }
+$(document).on('click','.tombol-hapus', function(e) {
+  e.preventDefault();
+  const link = $(this).attr('href');
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this imaginary file!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Poof! Your imaginary file has been deleted!", {
+        title: 'Dihapus',
+        icon: "success",
+        
+      });
+      window.location.href = link;
+    }
+  });
+})
+
+// $(document).on('click', '#tes', function(e){
+//   // e.preventDefault();
+//   swal({
+//         title : 'Hapus',
+//         text : 'Latihan',
+//         icon: 'warning'
+//   })
+// });
+
 $("#swal-1").click(function() {
 	swal('Hello');
 });

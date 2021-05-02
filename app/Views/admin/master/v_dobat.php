@@ -59,8 +59,8 @@
                                             <td><?= $d['tgl_kadaluarsa']; ?></td>
                                             <td>
                                                 <div class="buttons">
-                                                    <a href="<?= base_url() ?>/admin/uobat" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
-                                                    <a href="<?= base_url('admin/hobat/'.$d['kd_obat']); ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                    <a href="<?= base_url('/admin/uobat/'.$d['kd_obat']) ?>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
+                                                    <a href="<?= base_url('/admin/hobat/'.$d['kd_obat']); ?>" class="btn btn-danger btn-sm hapus-data"><i class="fa fa-trash"></i> Hapus</a>
                                                 </div>
                                             </td>
                                         </tr>

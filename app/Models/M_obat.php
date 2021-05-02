@@ -6,12 +6,12 @@ class M_obat extends Model
 {
     protected $table = 'tb_obat';
 
-    public function ambilData($id_ob = false)
+    public function ambilData($kd_obat = false)
     {
-        if($id_ob === false){
+        if($kd_obat === false){
             return $this->findAll();
         }
-        return getWhere(['kd_obat' => $id_ob]);
+        return $this->getWhere(['kd_obat' => $kd_obat]);
     }
     public function simpan($data)
     {
@@ -22,5 +22,11 @@ class M_obat extends Model
     {
         $hapus = $this->db->table($this->table);
         return $hapus->delete(['kd_obat' => $id]);
+    }
+    public function ubah($data, $kd_obat)
+    {
+        $ubah = $this->db->table($this->table);
+        $ubah->where('kd_obat', $kd_obat);
+        return $ubah->update($data);
     }
 }

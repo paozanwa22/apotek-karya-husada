@@ -23,6 +23,8 @@
 </head>
 
 <body class="<?php if(($uri->uri->getSegment(2) == 'tpenjualan') or ($uri->uri->getSegment(2) == 'tpembelian')){echo "sidebar-mini";} ?>">
+<!-- Data Alert -->
+<div id="flash" data-flash="<?= session()->getFlashdata('sukses'); ?>"></div>
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -58,10 +60,13 @@
   <!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script> -->
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
   <!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-select/js/dataTables.select.min.js"></script> -->
-  
+
+  <!-- Alert -->
+  <script src="<?= base_url(); ?>/template/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- Template JS File -->
   <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
+  <script src="<?= base_url() ?>/template/assets/js/scripts2.js"></script>
   <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
 
   <script>
@@ -82,6 +87,7 @@
     });
 
     $('.currency').mask('0.000.000.000', {reverse:true});
+    
   });
   </script>
 </body>

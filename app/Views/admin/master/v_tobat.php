@@ -16,9 +16,6 @@
         </div>
 
         <div class="section-body">
-        <?php if(session()->getFlashdata('sukses')){?>
-            <div class="alert alert-success"><?= session()->getFlashdata('sukses'); ?></div>
-        <?php }?>
             <div class="row">
                 <div class="col col-md-12">
                     <div class="card">
@@ -40,7 +37,7 @@
                                 <label for="satuan">Suplier</label>
                                 <select name="id_sup" class="form-control <?= ($validation->hasError('id_sup') ? 'is-invalid' : ''); ?>">
                                     <option value="">- Pilih Suplier -</option>
-                                    <option value="Box">PT. Kimia Farma</option>
+                                    <option value="PT. Kimia Farma">PT. Kimia Farma</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('id_sup'); ?>
