@@ -30,26 +30,21 @@
                           </tr>
                         </thead>
                         <tbody>
+                          <?php
+                            $no=1;
+                            foreach($data as $d){
+                          ?>
                           <tr>
-                            <td>1</td>
-                            <td>Haikal</td>
-                            <td>Masbagik</td>
-                            <td>0987654321123</td>
+                            <td><?= $no++; ?></td>
+                            <td><?= $d['nama']; ?></td>
+                            <td><?= $d['no_tlp']; ?></td>
+                            <td><?= $d['alamat']; ?></td>
                             <td>
                               <a href="<?= base_url() ?>/admin/usupplier" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
                               <a href="<?= base_url() ?>/admin/hsupplier" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>udin</td>
-                            <td>Masbagik</td>
-                            <td>0987654321123</td>
-                            <td>
-                              <a href="<?= base_url() ?>/admin/usupplier" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hsupplier" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
-                            </td>
-                          </tr>
+                          <?php } ?>
                         </tbody>
                       </table>
                   </div>

@@ -2,15 +2,18 @@
 use CodeIgniter\controller;
 
 use App\Models\M_obat;
+use App\Models\M_suplier;
 
 class Admin extends BaseController
 {
 	//Protected
 	protected $M_obat;
+	protected $M_suplier;
 
 	public function __construct()
 	{
 		$this->M_obat = new M_obat();
+		$this->M_suplier = new M_suplier();
 	}
 
 
@@ -69,6 +72,7 @@ class Admin extends BaseController
 		$this->M_obat->ubah([
 			'nm_obat'			=> $this->request->getVar('nm_obat'),
 			'id_sup'			=> $this->request->getVar('id_sup'),
+			'id_s'				=> $this->request->getVar('id_s'),
 			'id_k'				=> $this->request->getVar('id_k'),
 			'harga_beli'		=> $this->request->getVar('harga_beli'),
 			'harga_jual'		=> $this->request->getVar('harga_jual'),
@@ -92,6 +96,12 @@ class Admin extends BaseController
 				'rules'		=> 'required',
 				'errors'		=> [
 					'required'		=> 'Suplier tidak boleh kosong!'
+				]
+				],
+			'id_s'		=> [
+				'rules'		=> 'required',
+				'errors'		=> [
+					'required'		=> 'Satuan tidak boleh kosong!'
 				]
 				],
 			'id_k'		=> [
@@ -131,6 +141,7 @@ class Admin extends BaseController
 			'kd_obat'			=> $this->request->getVar('kd_obat'),
 			'nm_obat'			=> $this->request->getVar('nm_obat'),
 			'id_sup'			=> $this->request->getVar('id_sup'),
+			'id_s'				=> $this->request->getVar('id_s'),
 			'id_k'				=> $this->request->getVar('id_k'),
 			'harga_beli'		=> $this->request->getVar('harga_beli'),
 			'harga_jual'		=> $this->request->getVar('harga_jual'),
@@ -152,7 +163,8 @@ public function dsupplier()
 {
 	$data = [
 		'title'			=> 'Data Supplier',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'data'			=> $this->M_suplier->ambilData()
 	];
 	return view('admin/master/v_dsupplier', $data);
 }

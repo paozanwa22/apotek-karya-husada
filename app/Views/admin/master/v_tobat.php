@@ -43,6 +43,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="kategori">Satuan</label>
+                                <select name="id_s" class="form-control <?= ($validation->hasError('id_s') ? 'is-invalid' : ''); ?>">
+                                    <option value="">- Pilih Kategori -</option>
+                                    <option value="1">Tablet</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('id_s'); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="kategori">Kategori</label>
                                 <select name="id_k" class="form-control <?= ($validation->hasError('id_k') ? 'is-invalid' : ''); ?>">
                                     <option value="">- Pilih Kategori -</option>
