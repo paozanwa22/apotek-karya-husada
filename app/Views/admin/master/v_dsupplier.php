@@ -22,7 +22,7 @@
                       <table class="table table-striped responsive nowrap table-hover" width="100%" id="myTable">
                         <thead>
                           <tr>
-                            <th>No</th>
+                            <th>Kode Suplier</th>
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>No Hp</th>
@@ -31,17 +31,16 @@
                         </thead>
                         <tbody>
                           <?php
-                            $no=1;
                             foreach($data as $d){
                           ?>
                           <tr>
-                            <td><?= $no++; ?></td>
+                            <td><?= $d['kd_sup'] ?></td>
                             <td><?= $d['nama']; ?></td>
                             <td><?= $d['no_tlp']; ?></td>
                             <td><?= $d['alamat']; ?></td>
                             <td>
-                              <a href="<?= base_url() ?>/admin/usupplier" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hsupplier" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
+                              <a href="<?= base_url() ?>/admin/usupplier/<?= $d['kd_sup']; ?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
+                              <a href="<?= base_url() ?>/admin/hsupplier/<?= $d['kd_sup']; ?>" class="btn btn-danger btn-sm hapus-data"><i class="fa fa-trash"> Hapus</i></a>
                             </td>
                           </tr>
                           <?php } ?>

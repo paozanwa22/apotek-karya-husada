@@ -20,23 +20,34 @@
                 <div class="col col-md-12">
                     <div class="card mx-auto" style = "width:65%;">
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="<?= base_url(); ?>/admin/ssuplier" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="nama">Kode Suplier</label>
+                                    <input type="text" name="kd_sup" value="<?= $autonumber; ?>" class="form-control" readonly>
+                                </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" name="nama" class="form-control">
+                                    <input type="text" name="nama" class="form-control  <?= $validation->hasError('nama') ? 'is-invalid' : ''; ?>">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('nama'); ?>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="no_tlp">No Hp</label>
-                                    <input type="number" name="no_tlp" class="form-control">
+                                    <input type="number" name="no_tlp" class="form-control  <?= $validation->hasError('no_tlp') ? 'is-invalid' : ''; ?>">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('no_tlp'); ?>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <div class="col-sm-12 col-md-12">
-                                        <textarea name="alamat" class="summernote-simple"></textarea>
+                                    <textarea name="alamat" class="form-control <?= $validation->hasError('alamat') ? 'is-invalid' : ''; ?>"></textarea>
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('alamat'); ?>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Simpan</button>
-                                <a href="<?= base_url('admin/dobat'); ?>" class="btn btn-danger">Batal</a>
+                                <button class="btn btn-success" type="submit">Simpan</button>
+                                <a href="<?= base_url('admin/dsupplier'); ?>" class="btn btn-danger">Batal</a>
                             </form>
                         </div>
                     </div>

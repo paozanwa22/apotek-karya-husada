@@ -113,7 +113,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary" type="submit">Ubah</button>
+                            <button class="btn btn-success" type="submit">Ubah</button>
                             <a href="<?= base_url('admin/dobat'); ?>" class="btn btn-danger">Batal</a>
 
                         <form>

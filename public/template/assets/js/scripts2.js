@@ -1,6 +1,14 @@
 $(document).ready(function(){
 
     const flashdata = $('#flash').data('flash');
+    
+      if(flashdata){
+              swal({
+                  title: 'Sukses',
+                  text: flashdata,
+                  icon: 'success',
+              })
+          }
 
     $('#myTable').dataTable({
         paging: true,
@@ -19,13 +27,7 @@ $(document).ready(function(){
   
       $('.currency').mask('0.000.000.000', {reverse:true});
 
-    if(flashdata){
-        swal({
-            title: 'Sukses',
-            text: flashdata,
-            icon: 'success',
-        })
-    }
+    
 
     $(document).on('click','.hapus-data', function(e){
         e.preventDefault();

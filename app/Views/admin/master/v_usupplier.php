@@ -20,22 +20,25 @@
                 <div class="col col-md-12">
                     <div class="card mx-auto" style = "width:65%;">
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="<?= base_url('/admin/uaksisuplier'); ?>" method="post" enctype="multipart/form-data">
+                            <?= csrf_field(); ?>
+                                <div class="form-group">
+                                    <label for="nama">Kode Suplier</label>
+                                    <input type="text" value="<?= $data->kd_sup; ?>" name="kd_sup" class="form-control" readonly>
+                                </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" name="nama" class="form-control">
+                                    <input type="text" value="<?= $data->nama; ?>" name="nama" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="no_tlp">No Hp</label>
-                                    <input type="number" name="no_tlp" class="form-control">
+                                    <input type="number" name="no_tlp" value="<?= $data->no_tlp; ?>" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <div class="col-sm-12 col-md-12">
-                                        <textarea name="alamat" class="summernote-simple"></textarea>
-                                    </div>
+                                    <textarea name="alamat" class="form-control" required><?= $data->alamat; ?></textarea>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Ubah</button>
+                                <button class="btn btn-success" type="submit">Ubah</button>
                                 <a href="<?= base_url('admin/dsupplier'); ?>" class="btn btn-danger">Batal</a>
                             </form>
                         </div>

@@ -37,10 +37,9 @@ class Admin extends BaseController
 //=========================== OBAT ======================
 	public function dobat()
 	{
-		$number = $this->M_obat->autonumber();
 		$data = [
 			'title'		=> 'Data Obat',
-			'autonumber'=> $number,
+			'autonumber'=> $this->M_obat->autonumber(),
 			'uri'		=> \Config\Services::request(),
 			'data'		=> $this->M_obat->ambilData()
 		];
@@ -71,7 +70,7 @@ class Admin extends BaseController
 		$kd_obat = $this->request->getVar('kd_obat');
 		$this->M_obat->ubah([
 			'nm_obat'			=> $this->request->getVar('nm_obat'),
-			'id_sup'			=> $this->request->getVar('id_sup'),
+			'kd_sup'			=> $this->request->getVar('kd_sup'),
 			'id_s'				=> $this->request->getVar('id_s'),
 			'id_k'				=> $this->request->getVar('id_k'),
 			'harga_beli'		=> $this->request->getVar('harga_beli'),
@@ -92,7 +91,7 @@ class Admin extends BaseController
 					'required'		=> 'Nama obat tidak boleh kosong!'
 				]
 				],
-			'id_sup'		=> [
+			'kd_sup'		=> [
 				'rules'		=> 'required',
 				'errors'		=> [
 					'required'		=> 'Suplier tidak boleh kosong!'
@@ -140,7 +139,7 @@ class Admin extends BaseController
 		$this->M_obat->simpan([
 			'kd_obat'			=> $this->request->getVar('kd_obat'),
 			'nm_obat'			=> $this->request->getVar('nm_obat'),
-			'id_sup'			=> $this->request->getVar('id_sup'),
+			'kd_sup'			=> $this->request->getVar('kd_sup'),
 			'id_s'				=> $this->request->getVar('id_s'),
 			'id_k'				=> $this->request->getVar('id_k'),
 			'harga_beli'		=> $this->request->getVar('harga_beli'),
@@ -172,17 +171,71 @@ public function tsupplier()
 {
 	$data = [
 		'title'			=> 'Tambah Data Supplier',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'autonumber'	=> $this->M_suplier->autonumber(),
+		'validation'	=> \Config\Services::validation()
 	];
 	return view('admin/master/v_tsupplier', $data);
 }
-public function usupplier()
+public function ssuplier()
+{
+	if(!$this->validate([
+		'nama' => [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'	=> 'Nama tidak boleh kosong'
+			]
+			],
+		'no_tlp' => [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'	=> 'Nomor tidak boleh kosong'
+			]
+			],
+		'alamat' => [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'		=> 'Alamat tidak boleh kosong'
+			]
+		]
+	])){
+		return redirect()->to('/admin/tsupplier')->withInput();
+	}
+
+	$this->M_suplier->simpan([
+		'kd_sup'	=> $this->request->getVar('kd_sup'),
+		'nama'		=> $this->request->getVar('nama'),
+		'no_tlp'	=> $this->request->getVar('no_tlp'),
+		'alamat'	=> $this->request->getVar('alamat')
+	]);
+	session()->setFlashdata('sukses', 'Data berhasil disimpan');
+	return redirect()->to('/admin/tsupplier');
+}
+public function hsupplier($kd_sup)
+{
+	$this->M_suplier->hapus($kd_sup);
+	session()->setFlashdata('sukses', 'Data berhasil dihapus');
+	return redirect()->to('/admin/dsupplier');
+}
+public function usupplier($kd_sup)
 {
 	$data = [
 		'title'			=> 'Ubah Data Supplier',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'data'			=> $this->M_suplier->ambilData($kd_sup)->getRow()
 	];
 	return view('admin/master/v_usupplier', $data);
+}
+public function uaksisuplier()
+{
+	$kd_sup = $this->request->getVar('kd_sup');
+	$this->M_suplier->ubah([
+		'nama'		=> $this->request->getVar('nama'),
+		'no_tlp'	=> $this->request->getVar('no_tlp'),
+		'alamat'	=> $this->request->getVar('alamat')
+	], $kd_sup);
+	session()->setFlashdata('sukses','Data berhasil diubah');
+	return redirect()->to('/admin/dsupplier');
 }
 //=========================== END SUPPLIER ======================
 //=========================== SATUAN ======================
