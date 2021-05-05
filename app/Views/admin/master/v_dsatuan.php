@@ -26,30 +26,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    $no=1;
+                                    foreach($data as $d){
+                                    ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Box</td>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= $d['satuan']; ?></td>
                                         <td width="37px">
-                                            <a href="<?= base_url() ?>/admin/usatuan" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                                            <a href="<?= base_url() ?>/admin/hsatuan" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
+                                            <a href="<?= base_url() ?>/admin/dsatuan/<?= $d['id_s']; ?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
+                                            <a href="<?= base_url() ?>/admin/hsatuan/<?= $d['id_s']; ?>" class="btn btn-danger btn-sm hapus-data"><i class="fa fa-trash"> Hapus</i></a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Kapsul</td>
-                                        <td width="37px">
-                                            <a href="<?= base_url() ?>/admin/usatuan" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                                            <a href="<?= base_url() ?>/admin/hsatuan" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Botol</td>
-                                        <td width="37px">
-                                            <a href="<?= base_url() ?>/admin/usatuan" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                                            <a href="<?= base_url() ?>/admin/hsatuan" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
-                                        </td>
-                                    </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
 
@@ -62,14 +51,40 @@
                             <h4>Form Satuan</h4>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data">
+                        <?php
+                            if($udata == ''){
+                        ?>
+                            <form action="<?= base_url('/admin/taksisatuan'); ?>" method="post" enctype="multipart/form-data">
+                            <?= csrf_field() ?>
                                 <div class="form-group">
                                     <label for="satuan">Satuan</label>
-                                    <input type="text" name="satuan" class="form-control">
+                                    <input type="text" name="satuan" class="form-control <?= $validation->hasError('satuan') ? 'is-invalid' : ''; ?>" value="<?= old('satuan'); ?>">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('satuan'); ?>
+                                    </div>
                                 </div>
-                                <button class="btn btn-success" type="submit"><i class="fa fa-plus"></i> Tambah</button>
+                                <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
                                 <a href="<?= base_url('admin/dsatuan'); ?>" class="btn btn-danger">Batal</a>
                             </form>
+
+                                <?php }else{ ?>
+
+                            <form action="<?= base_url('/admin/uaksisatuan'); ?>" method="post" enctype="multipart/form-data">
+                            <?= csrf_field() ?>
+                                <div class="form-group">
+                                    <input type="hidden" name="id_s" value="<?= $udata->id_s; ?>">
+                                    <label for="satuan">Satuan</label>
+                                    <input type="text" name="satuan" value="<?= $udata->satuan; ?>" class="form-control <?= $validation->hasError('satuan') ? 'is-invalid' : ''; ?>">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('satuan'); ?>
+                                    </div>
+                                </div>
+                                <button class="btn btn-success" type="submit"><i class="fa fa-sync-alt"></i> Perbarui</button>
+                                <a href="<?= base_url('admin/dsatuan'); ?>" class="btn btn-danger">Batal</a>
+                            </form>
+
+                            <?php } ?>
+
                         </div>
                     </div>
                 </div><!--col-->

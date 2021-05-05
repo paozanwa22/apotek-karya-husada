@@ -3,17 +3,20 @@ use CodeIgniter\controller;
 
 use App\Models\M_obat;
 use App\Models\M_suplier;
+use App\Models\M_satuan;
 
 class Admin extends BaseController
 {
 	//Protected
 	protected $M_obat;
 	protected $M_suplier;
+	protected $M_satuan;
 
 	public function __construct()
 	{
 		$this->M_obat = new M_obat();
 		$this->M_suplier = new M_suplier();
+		$this->M_satuan = new M_satuan();
 	}
 
 
@@ -239,30 +242,88 @@ public function uaksisuplier()
 }
 //=========================== END SUPPLIER ======================
 //=========================== SATUAN ======================
-public function dsatuan()
+public function dsatuan($id_s = '')
 {
 	$data = [
 		'title'			=> 'Data Satuan',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'data'			=> $this->M_satuan->ambilData(),
+		'validation'	=> \Config\Services::validation(),
+		'udata'			=> $this->M_satuan->ambilData($id_s)->getRow()
 	];
 	return view('admin/master/v_dsatuan', $data);
 }
-public function tsatuan()
+// public function tsatuan()
+// {
+// 	$data = [
+// 		'title'			=> 'Tambah Data Satua',
+// 		'uri'			=> \Config\Services::request(),
+// 	];
+// 	return view('admin/master/v_tsatuan', $data);
+// }
+public function taksisatuan()
 {
-	$data = [
-		'title'			=> 'Tambah Data Satua',
-		'uri'			=> \Config\Services::request()
-	];
-	return view('admin/master/v_tsatuan', $data);
+	if(!$this->validate([
+		'satuan'	=> [
+			'rules'		=> 'required|is_unique[tb_satuan_obat.satuan]',
+			'errors'	=>[
+				'required'	=> 'Satuan tidak bolah kosong',
+				'is_unique'	=> 'Satuan yang anda isi sudah ada'
+			]
+		]
+	])){
+		return redirect()->to('/admin/dsatuan')->withInput();
+	}
+	
+	$this->M_satuan->simpan([
+		'satuan'		=> $this->request->getVar('satuan')
+	]);
+	session()->setFlashdata('sukses','Data berhasil disimpan');
+	return redirect()->to('/admin/dsatuan');
 }
-public function usatuan()
+public function uaksisatuan()
 {
-	$data = [
-		'title'			=> 'Ubah Data Satua',
-		'uri'			=> \Config\Services::request()
-	];
-	return view('admin/master/v_usatuan', $data);
+	$cek = $this->M_satuan->ambilData($this->request->getVar('id_s'))->getRow();
+	if($cek->satuan == $this->request->getVar('satuan'))
+	{
+		$rules = 'required';
+	}else{
+		$rules = 'required|is_unique[tb_satuan_obat.satuan]';
+	}
+	if(!$this->validate([
+		'satuan'	=> [
+			'rules'		=> $rules,
+			'errors'	=>[
+				'required'	=> 'Satuan tidak bolah kosong',
+				'is_unique'	=> 'Satuan yang anda perbarui sudah ada'
+			]
+		]
+	])){
+		return redirect()->to('/admin/dsatuan/'. $this->request->getVar('id_s'))->withInput();
+	}
+	$id_s = $this->request->getVar('id_s');
+	$this->M_satuan->ubah([
+		'satuan'	=> $this->request->getVar('satuan')
+	], $id_s);
+	session()->setFlashdata('sukses','Data berhasil diperbarui');
+	return redirect()->to('/admin/dsatuan');
 }
+public function hsatuan($id_s)
+{
+	$this->M_satuan->hapus($id_s);
+	session()->setFlashdata('sukses','Data berhasil dihapus');
+	return redirect()->to('/admin/dsatuan');
+
+}
+// public function usatuan($id_s)
+// {
+// 	$data = [
+// 		'title'			=> 'Ubah Data Satua',
+// 		'uri'			=> \Config\Services::request(),
+// 		'data'			=> $this->M_suplier->ambilData($id_s)->getRow()
+// 	];
+// 	return view('admin/master/v_usatuan', $data);
+// }
 //=========================== END SATUAN ======================
 //=========================== KATEGORI ======================
 public function dkategori()

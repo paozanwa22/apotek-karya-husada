@@ -23,7 +23,7 @@
                             <form action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="satuan">Satuan</label>
-                                    <input type="text" name="satuan" class="form-control">
+                                    <input type="text" name="satuan" class="form-control <?= $validation->hasError('satuan') ? 'is-invalid' : ''; ?>">
                                 </div>
                                 <button class="btn btn-primary" type="submit">Simpan</button>
                                 <a href="<?= base_url('admin/dsatuan'); ?>" class="btn btn-danger">Batal</a>
