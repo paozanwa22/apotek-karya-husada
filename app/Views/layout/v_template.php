@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css">
 </head>
 
-<body class="<?php if(($uri->uri->getSegment(2) == 'tpenjualan') or ($uri->uri->getSegment(2) == 'tpembelian')){echo "sidebar-mini";} ?>">
+<body class="<?php if(($uri->uri->getSegment(2) == 'tpenjualan') || ($uri->uri->getSegment(2) == 'tpembelian')){echo "sidebar-mini";} ?>">
 <!-- Data Alert -->
 <div id="flash" data-flash="<?= session()->getFlashdata('sukses'); ?>"></div>
   <div id="app">
