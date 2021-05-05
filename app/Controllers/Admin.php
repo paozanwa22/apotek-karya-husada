@@ -5,6 +5,7 @@ use App\Models\M_obat;
 use App\Models\M_suplier;
 use App\Models\M_satuan;
 use App\Models\M_kategori;
+use App\Models\M_pengguna;
 
 class Admin extends BaseController
 {
@@ -13,6 +14,7 @@ class Admin extends BaseController
 	protected $M_suplier;
 	protected $M_satuan;
 	protected $M_kategori;
+	protected $M_pengguna;
 
 	public function __construct()
 	{
@@ -20,6 +22,7 @@ class Admin extends BaseController
 		$this->M_suplier = new M_suplier();
 		$this->M_satuan = new M_satuan();
 		$this->M_kategori = new M_kategori();
+		$this->M_pengguna = new M_pengguna();
 	}
 
 
@@ -434,7 +437,8 @@ public function dpengguna()
 {
 	$data = [
 		'title'			=> 'Data Pengguna',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'data'			=> $this->M_pengguna->ambilData()
 	];
 	return view('admin/v_dpengguna', $data);
 }
@@ -442,17 +446,97 @@ public function tpengguna()
 {
 	$data = [
 		'title'			=> 'Pengguna',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'validation'	=> \Config\Services::validation()
 	];
 	return view('admin/v_tpengguna', $data);
 }
-public function upengguna()
+public function taksipengguna()
+{
+	if(!$this->validate([
+		'nama'		=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'	=> 'Nama tidak boleh kosong'
+			]
+			],
+		'password'		=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'	=> 'Password tidak boleh kosong'
+			]
+			],
+		'no_tlp'		=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'	=> 'No hp tidak boleh kosong'
+			]
+			],
+		'level'			=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'	=> 'Silahkan pilih level'
+			]
+			],
+	])){
+		return redirect()->to('/admin/tpengguna')->withInput();
+	}
+	// Upload gambar
+	$gambar = $this->request->getFile('gambar');
+	if($gambar->getError() == 4){
+		$nmgambar	= 'default.png';
+	}else{
+		//Random nama gambar/ubah nama gambar
+		$nmgambar = $gambar->getRandomName();
+		//memindahkan gambar ke folde
+		$gambar->move('gambar',$nmgambar);
+	}
+	$this->M_pengguna->simpan([
+		'nama'		=> $this->request->getVar('nama'),
+		'email'		=> "-",
+		'jk'		=> $this->request->getVar('jk'),
+		'password'	=> $this->request->getVar('password'),
+		'no_tlp'	=> $this->request->getVar('no_tlp'),
+		'alamat'	=> "-",
+		'level'		=> $this->request->getVar('level'),
+		'poto'		=> $nmgambar,
+		'tgl_buat'	=> date('Y-m-d'),
+	]);
+	session()->setFlashdata('sukses','Data berhasil disimpan');
+	return redirect()->to('/admin/tpengguna');
+}
+public function hpengguna($id)
+{
+	$gambar = $this->M_pengguna->ambilData($id)->getRow();
+	if($gambar->poto != "default.png"){
+		//Hapus data beserta file gambar
+		unlink('gambar/'.$gambar->poto);
+	}
+	$this->M_pengguna->hapus($id);
+	session()->setFlashdata('sukses','Data berhasil dihapus');
+	return redirect()->to('/admin/dpengguna');
+}
+public function upengguna($id)
 {
 	$data = [
 		'title'			=> 'Pengguna',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'udata'			=> $this->M_pengguna->ambilData($id)->getRow()
 	];
 	return view('admin/v_upengguna', $data);
+}
+public function uaksipengguna()
+{
+	$id = $this->request->getVar('id');
+	$this->M_pengguna->ubah([
+		'nama'		=> $this->request->getVar('nama'),
+		'jk'		=> $this->request->getVar('jk'),
+		'password'	=> $this->request->getVar('password'),
+		'no_tlp'	=> $this->request->getVar('no_tlp'),
+		'level'		=> $this->request->getVar('level'),
+	],$id);
+	session()->setFlashdata('sukses','Data berhasil diubah');
+	return redirect()->to('/admin/dpengguna');
 }
 //=========================== END PENGGUNA ======================
 //=========================== PROFILE ======================

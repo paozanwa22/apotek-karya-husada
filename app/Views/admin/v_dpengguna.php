@@ -33,59 +33,40 @@
                             <th>Email</th>
                             <th>Jenis Kelamin</th>
                             <th>No Hp</th>
-                            <th>Alamat</th>
                             <th>Level</th>
                             <th>Poto</th>
+                            <th>Alamat</th>
                             <th>Tgl Buat</th>
                             <th>Opsi</th>
                           </tr>
                         </thead>
                         <tbody>
+
+                        <?php
+                        $no=1;
+                        foreach($data as $d){
+                        ?>
+
                           <tr>
-                            <td>1</td>
-                            <td>Haikal</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td><img src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="50px" class="rounded-circle" alt="Foto"></td>
-                            <td>0987654321123</td>
+                            <td><?=$no++;?></td>
+                            <td><?=$d['nama'];?></td>
+                            <td><?=$d['email'];?></td>
+                            <td><?=$d['jk'];?></td>
+                            <td><?=$d['no_tlp'];?></td>
+                            <td><?=$d['level'];?></td>
+                            <td><img src="<?= base_url('/gambar/'.$d['poto']); ?>" width="50px" class="rounded-circle" alt="Foto"></td>
+                            <td><?=$d['alamat'];?></td>
+                            <td><?=$d['tgl_buat'];?></td>
                             <td>
-                              <a href="<?= base_url() ?>/admin/upengguna" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hpengguna" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
+                              <a href="<?= base_url() ?>/admin/upengguna/<?=$d['id_pengguna']?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
+                              <a href="<?= base_url() ?>/admin/hpengguna/<?=$d['id_pengguna']?>" class="btn btn-danger btn-sm hapus-data"><i class="fa fa-trash"> Hapus</i></a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>Haikal</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td><img src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="50px" class="rounded-circle" alt="Foto"></td>
-                            <td>0987654321123</td>
-                            <td>
-                              <a href="<?= base_url() ?>/admin/upengguna" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hpengguna" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>Haikal</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td>Masbagik</td>
-                            <td><img src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="50px" class="rounded-circle" alt="Foto"></td>
-                            <td>0987654321123</td>
-                            <td>
-                              <a href="<?= base_url() ?>/admin/upengguna" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
-                              <a href="<?= base_url() ?>/admin/hpengguna" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Hapus</i></a>
-                            </td>
-                          </tr>
+
+                          <?php
+                          }
+                          ?>
+
                         </tbody>
                       </table>
                   </div>
