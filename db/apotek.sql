@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Apr 2021 pada 05.56
+-- Waktu pembuatan: 05 Bulan Mei 2021 pada 13.33
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.2.32
 
@@ -45,6 +45,14 @@ CREATE TABLE `tb_kategori_obat` (
   `kategori` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tb_kategori_obat`
+--
+
+INSERT INTO `tb_kategori_obat` (`id_k`, `kategori`) VALUES
+(5, 'Narkotika'),
+(7, 'Obat bebas');
+
 -- --------------------------------------------------------
 
 --
@@ -52,7 +60,6 @@ CREATE TABLE `tb_kategori_obat` (
 --
 
 CREATE TABLE `tb_obat` (
-  `id_ob` int(11) NOT NULL,
   `kd_obat` varchar(255) NOT NULL,
   `nm_obat` varchar(150) NOT NULL,
   `id_sup` int(11) NOT NULL,
@@ -68,8 +75,9 @@ CREATE TABLE `tb_obat` (
 -- Dumping data untuk tabel `tb_obat`
 --
 
-INSERT INTO `tb_obat` (`id_ob`, `kd_obat`, `nm_obat`, `id_sup`, `id_s`, `id_k`, `harga_beli`, `harga_jual`, `stok`, `tgl_kadaluarsa`) VALUES
-(1, 'KDOB0001', 'Insto', 1, 1, 1, '20000', '22000', 20, '2021-08-25');
+INSERT INTO `tb_obat` (`kd_obat`, `nm_obat`, `id_sup`, `id_s`, `id_k`, `harga_beli`, `harga_jual`, `stok`, `tgl_kadaluarsa`) VALUES
+('KDOB0002', 'Promag', 0, 1, 0, '9.000', '10.000', 32, '2022-11-22'),
+('KDOB0003', 'sdfsdf', 0, 1, 0, '43.243', '344.243', 54, '1321-12-31');
 
 -- --------------------------------------------------------
 
@@ -146,6 +154,15 @@ CREATE TABLE `tb_satuan_obat` (
   `satuan` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tb_satuan_obat`
+--
+
+INSERT INTO `tb_satuan_obat` (`id_s`, `satuan`) VALUES
+(2, 'Box'),
+(3, 'Tablet'),
+(7, 'Botol');
+
 -- --------------------------------------------------------
 
 --
@@ -153,11 +170,18 @@ CREATE TABLE `tb_satuan_obat` (
 --
 
 CREATE TABLE `tb_supplier` (
-  `id_sup` int(11) NOT NULL,
+  `kd_sup` varchar(30) NOT NULL,
   `nama` varchar(150) NOT NULL,
   `no_tlp` varchar(15) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_supplier`
+--
+
+INSERT INTO `tb_supplier` (`kd_sup`, `nama`, `no_tlp`, `alamat`) VALUES
+('SUP0001', 'fgdfg', '5345', 'fdgd');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +203,7 @@ ALTER TABLE `tb_kategori_obat`
 -- Indeks untuk tabel `tb_obat`
 --
 ALTER TABLE `tb_obat`
-  ADD PRIMARY KEY (`id_ob`);
+  ADD PRIMARY KEY (`kd_obat`);
 
 --
 -- Indeks untuk tabel `tb_pembelian`
@@ -215,7 +239,7 @@ ALTER TABLE `tb_satuan_obat`
 -- Indeks untuk tabel `tb_supplier`
 --
 ALTER TABLE `tb_supplier`
-  ADD PRIMARY KEY (`id_sup`);
+  ADD PRIMARY KEY (`kd_sup`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -231,13 +255,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT untuk tabel `tb_kategori_obat`
 --
 ALTER TABLE `tb_kategori_obat`
-  MODIFY `id_k` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `tb_obat`
---
-ALTER TABLE `tb_obat`
-  MODIFY `id_ob` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pembelian`
@@ -267,13 +285,7 @@ ALTER TABLE `tb_profil`
 -- AUTO_INCREMENT untuk tabel `tb_satuan_obat`
 --
 ALTER TABLE `tb_satuan_obat`
-  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `tb_supplier`
---
-ALTER TABLE `tb_supplier`
-  MODIFY `id_sup` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
