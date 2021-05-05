@@ -4,6 +4,7 @@ use CodeIgniter\controller;
 use App\Models\M_obat;
 use App\Models\M_suplier;
 use App\Models\M_satuan;
+use App\Models\M_kategori;
 
 class Admin extends BaseController
 {
@@ -11,12 +12,14 @@ class Admin extends BaseController
 	protected $M_obat;
 	protected $M_suplier;
 	protected $M_satuan;
+	protected $M_kategori;
 
 	public function __construct()
 	{
 		$this->M_obat = new M_obat();
 		$this->M_suplier = new M_suplier();
 		$this->M_satuan = new M_satuan();
+		$this->M_kategori = new M_kategori();
 	}
 
 
@@ -326,29 +329,68 @@ public function hsatuan($id_s)
 // }
 //=========================== END SATUAN ======================
 //=========================== KATEGORI ======================
-public function dkategori()
+public function dkategori($id_k ='')
 {
 	$data = [
 		'title'			=> 'Data Kategori Obat',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'validation'	=> \Config\Services::validation(),
+		'data'			=> $this->M_kategori->ambilData(),
+		'cariid_k'		=> $this->M_kategori->ambilData($id_k)->getRow()
 	];
 	return view('admin/master/v_dkategori', $data);
 }
-public function tkategori()
+public function taksikategori()
 {
-	$data = [
-		'title'			=> 'Tambah Data Kategori Obat',
-		'uri'			=> \Config\Services::request()
-	];
-	return view('admin/master/v_tkategori', $data);
+	if(!$this->validate([
+		'kategori'		=> [
+			'rules'		=> 'required|is_unique[tb_kategori_obat.kategori]',
+			'errors'	=> [
+				'required'	=> 'Kategori tidak boleh kosong',
+				'is_unique'	=> 'Kategori sudah ada'
+			]
+		]
+	])){
+		return redirect()->to('/admin/dkategori')->withInput();
+	}
+	$this->M_kategori->simpan([
+		'kategori'		=> $this->request->getVar('kategori')
+	]);
+	session()->setFlashdata('sukses','Data berhasil disimpan');
+	return redirect()->to('/admin/dkategori');
 }
-public function ukategori()
+public function uaksikategori()
 {
-	$data = [
-		'title'			=> 'Ubah Data Kategori Obat',
-		'uri'			=> \Config\Services::request()
-	];
-	return view('admin/master/v_ukategori', $data);
+	$cek = $this->M_kategori->ambilData($this->request->getVar('id_k'))->getRow();
+	if($cek->kategori == $this->request->getVar('kategori'))
+	{
+		$rules = 'required';
+	}else{
+		$rules = 'required|is_unique[tb_kategori_obat.kategori]';
+	}
+	if(!$this->validate([
+		'kategori'	=> [
+			'rules'		=> $rules,
+			'errors'	=>[
+				'required'	=> 'kategori tidak bolah kosong',
+				'is_unique'	=> 'kategori yang anda perbarui sudah ada'
+			]
+		]
+	])){
+		return redirect()->to('/admin/dkategori/'.$this->request->getVar('id_k'))->withInput();
+	}
+	$id_s = $this->request->getVar('id_k');
+	$this->M_kategori->ubah([
+		'kategori'	=> $this->request->getVar('kategori')
+	], $id_s);
+	session()->setFlashdata('sukses','Data berhasil diperbarui');
+	return redirect()->to('/admin/dkategori');
+}
+public function hkategori($id_k)
+{
+	$this->M_kategori->hapus($id_k);
+	session()->setFlashdata('sukses','Data berhasil dihapus');
+	return redirect()->to('/admin/dkategori');
 }
 //=========================== END KATEGORI ======================
 //=========================== PENJUALAN ======================
