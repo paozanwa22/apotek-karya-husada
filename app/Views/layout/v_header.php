@@ -38,10 +38,10 @@
                 <i class="far fa-user"></i> Profile
               </a>
               <a href="<?= base_url('login/gantiPass'); ?>" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Ganti Kata Sandi
+                <i class="fas fa-key"></i> Ganti Kata Sandi
               </a>
               <a href="<?= base_url('admin/profile_aptk'); ?>" class="dropdown-item has-icon">
-                <i class="fas fa-cog fa-spin"></i> Pengaturan
+                <i class="fas fa-user"></i> Profile Apotek
               </a>
               <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item has-icon text-danger">

@@ -6,6 +6,7 @@ use App\Models\M_suplier;
 use App\Models\M_satuan;
 use App\Models\M_kategori;
 use App\Models\M_pengguna;
+use App\Models\M_profile;
 
 class Admin extends BaseController
 {
@@ -15,6 +16,7 @@ class Admin extends BaseController
 	protected $M_satuan;
 	protected $M_kategori;
 	protected $M_pengguna;
+	protected $M_profile;
 
 	public function __construct()
 	{
@@ -23,6 +25,7 @@ class Admin extends BaseController
 		$this->M_satuan = new M_satuan();
 		$this->M_kategori = new M_kategori();
 		$this->M_pengguna = new M_pengguna();
+		$this->M_profile = new M_profile();
 	}
 
 
@@ -460,18 +463,26 @@ public function taksipengguna()
 				'required'	=> 'Nama tidak boleh kosong'
 			]
 			],
+		'email'		=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'	=> 'Email tidak boleh kosong'
+			]
+			],
 		'password'		=> [
 			'rules'		=> 'required',
 			'errors'	=> [
 				'required'	=> 'Password tidak boleh kosong'
 			]
 			],
-		'no_tlp'		=> [
-			'rules'		=> 'required',
-			'errors'	=> [
-				'required'	=> 'No hp tidak boleh kosong'
-			]
-			],
+		// 'gambar'		=> [
+		// 	'rules'		=> 'max_size[gambar,2048]|is_image[gambar]',
+		// 	'errors'	=> [
+		// 		'max_size'	=> 'Maksimal ukuran gambar 2MB',
+		// 		'is_image'	=> 'Yang anda pilih bukan gambar',
+		// 		// 'mime_in'	=> 'Format gambar yang didukung JPG,PNG,JPEG'
+		// 	]
+		// 	],
 		'level'			=> [
 			'rules'		=> 'required',
 			'errors'	=> [
@@ -482,24 +493,24 @@ public function taksipengguna()
 		return redirect()->to('/admin/tpengguna')->withInput();
 	}
 	// Upload gambar
-	$gambar = $this->request->getFile('gambar');
-	if($gambar->getError() == 4){
-		$nmgambar	= 'default.png';
-	}else{
-		//Random nama gambar/ubah nama gambar
-		$nmgambar = $gambar->getRandomName();
-		//memindahkan gambar ke folde
-		$gambar->move('gambar',$nmgambar);
-	}
+	// $gambar = $this->request->getFile('gambar');
+	// if($gambar->getError() == 4){
+	// 	$nmgambar	= 'default.png';
+	// }else{
+	// 	//Random nama gambar/ubah nama gambar
+	// 	$nmgambar = $gambar->getRandomName();
+	// 	//memindahkan gambar ke folde
+	// 	$gambar->move('gambar',$nmgambar);
+	// }
 	$this->M_pengguna->simpan([
 		'nama'		=> $this->request->getVar('nama'),
-		'email'		=> "-",
-		'jk'		=> $this->request->getVar('jk'),
+		'email'		=> $this->request->getVar('email'),
+		'jk'		=> "-",
 		'password'	=> $this->request->getVar('password'),
-		'no_tlp'	=> $this->request->getVar('no_tlp'),
+		'no_tlp'	=> "-",
 		'alamat'	=> "-",
 		'level'		=> $this->request->getVar('level'),
-		'poto'		=> $nmgambar,
+		'poto'		=> "default.png",
 		'tgl_buat'	=> date('Y-m-d'),
 	]);
 	session()->setFlashdata('sukses','Data berhasil disimpan');
@@ -530,9 +541,8 @@ public function uaksipengguna()
 	$id = $this->request->getVar('id');
 	$this->M_pengguna->ubah([
 		'nama'		=> $this->request->getVar('nama'),
-		'jk'		=> $this->request->getVar('jk'),
+		'email'		=> $this->request->getVar('email'),
 		'password'	=> $this->request->getVar('password'),
-		'no_tlp'	=> $this->request->getVar('no_tlp'),
 		'level'		=> $this->request->getVar('level'),
 	],$id);
 	session()->setFlashdata('sukses','Data berhasil diubah');
@@ -548,13 +558,26 @@ public function profile()
 	];
 	return view('admin/v_profile', $data);
 }
-public function profile_aptk()
+public function profile_aptk($id = '1')
 {
 	$data = [
 		'title'			=> 'Profile Apotek',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'dapt'			=> $this->M_profile->cari($id)->getRow()
 	];
-	return view('admin/v_pengaturan', $data);
+	return view('admin/v_profileapotek', $data);
+}
+public function uprofileapotek()
+{
+	$id = $this->request->getVar('id');
+	$this->M_profile->ubah([
+		'nm_apotek'		=> $this->request->getVar('nm_apotek'),
+		'pimpinan'		=> $this->request->getVar('pimpinan'),
+		'alamat'		=> $this->request->getVar('alamat')
+	], $id);
+
+	session()->setFlashdata('sukses','Data berhasil diubah');
+	return redirect()->to('/admin/profile_aptk');
 }
 //=========================== END PROFILE ======================
 }

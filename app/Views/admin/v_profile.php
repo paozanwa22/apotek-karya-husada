@@ -57,8 +57,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
-                        </form>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
                         </div>
                     </div>
                 </div>
@@ -68,11 +67,18 @@
                         <div class="card-body">
                             <div class="avatar-item">
                                 <div class="col-6 col-sm-5 col-lg-5 mb-4 mb-md-0 mx-auto">
-                                    <img alt="image" src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="150px" data-toggle="tooltip" title="Syahdan Ubaidillah">
-                                    <a href="#" class="avatar-badge" data-toggle="tooltip"><i class="fas fa-camera"></i></a>
+                                    <img alt="image" src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="150px" class="img-thumbnail" data-toggle="tooltip">
                                 </div>
+                                <div class="form-group">
+                                    <label>Ganti Poto</label>
+                                    <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                         </div>
+                            </div>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
