@@ -37,7 +37,7 @@
                                 <label for="satuan">Suplier</label>
                                 <select name="id_sup" class="form-control <?= ($validation->hasError('id_sup') ? 'is-invalid' : ''); ?>" required>
                                     <option value="">- Pilih Suplier -</option>
-                                    <option value="PT. Kimia Farma" <?php if($dobat->id_sup == "PT. Kimia Farma"){echo "selected";} ?>>PT. Kimia Farma</option>
+                                    <option value="PT. Kimia Farma" <?php if($dobat->kd_sup == "PT. Kimia Farma"){echo "selected";} ?>>PT. Kimia Farma</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('id_sup'); ?>

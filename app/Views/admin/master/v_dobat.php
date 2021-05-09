@@ -51,7 +51,7 @@
                                             <td><?=  $no++ ?></td>
                                             <td><?= $d['kd_obat']; ?></td>
                                             <td><?= $d['nm_obat']; ?></td>
-                                            <td><?= $d['id_sup']; ?></td>
+                                            <td><?= $d['kd_sup']; ?></td>
                                             <td><?= $d['id_k']; ?></td>
                                             <td><?= $d['harga_beli']; ?></td>
                                             <td><?= $d['harga_jual']; ?></td>

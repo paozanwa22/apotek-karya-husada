@@ -34,9 +34,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="satuan">Suplier</label>
-                                <select name="id_sup" class="form-control <?= ($validation->hasError('id_sup') ? 'is-invalid' : ''); ?>">
+                                <select name="kd_sup" class="form-control <?= ($validation->hasError('id_sup') ? 'is-invalid' : ''); ?>">
                                     <option value="">- Pilih Suplier -</option>
-                                    <option value="PT. Kimia Farma">PT. Kimia Farma</option>
+                                    <option value="1">PT. Kimia Farma</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('id_sup'); ?>

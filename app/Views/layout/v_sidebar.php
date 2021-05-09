@@ -10,7 +10,7 @@
         <li class="<?=($uri->uri->getSegment('2') == '') ? 'active' : ''; ?>"><a class="nav-link" href="<?= base_url('admin'); ?>"><i class="fas fa-tachometer-alt"></i> <span>Beranda</span></a></li>
         <li class="menu-header">Menu</li>
         <li class="nav-item dropdown <?= ($uri->uri->getSegment('2')=='dobat') || ($uri->uri->getSegment('2')=='dsupplier') || ($uri->uri->getSegment('2')=='dsatuan') || ($uri->uri->getSegment('2')=='dkategori') ? 'active' : '' ?>">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Table Master</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Data Master</span></a>
           <ul class="dropdown-menu">
             <li class="<?= ($uri->uri->getSegment('2')=='dobat') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url() ?>/admin/dobat">Obat</a></li>
             <li class="<?= ($uri->uri->getSegment('2')=='dsupplier') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url() ?>/admin/dsupplier">Supplier</a></li>
@@ -27,6 +27,8 @@
             <li class="<?= ($uri->uri->getSegment('2')=='dpembelian') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url(); ?>/admin/dpembelian">History Pembelian</a></li>
           </ul>
         </li>
+
+        <li class="<?=($uri->uri->getSegment('2')=='laporan') ? 'active' : '';?>"><a href="<?= base_url(); ?>/admin/laporan" class="nav-link"><i class="fas fa-file-alt"></i> <span>Laporan</span></a></li>
 
        <li class="menu-header">Akun</li>
         <li class="<?=($uri->uri->getSegment('2')=='dpengguna') ? 'active' : '';?>"><a href="<?= base_url(); ?>/admin/dpengguna" class="nav-link"><i class="fas fa-users"></i> <span>Pengguna</span></a></li>
