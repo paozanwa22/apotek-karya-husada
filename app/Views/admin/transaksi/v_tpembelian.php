@@ -17,26 +17,6 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="" method="post">
-                            <!-- <div class="row">
-                                <div class="col-12 col-md-4 col-lg-3">
-                                    <div class="card card-primary">
-                                    <div class="card-header">
-                                        <h4 class="mx-auto">Info</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label>Kode Transaksi</label>
-                                            <input type="text" name="" class="form-control form-control-sm" readonly>
-                                        
-                                            <label>Tanggal</label>
-                                            <input type="text" name="" value="<?= date('d/m/y'); ?>" class="form-control form-control-sm" readonly>
-                                       
-                                            <label>Kasir</label>
-                                            <input type="text" name="" class="form-control form-control-sm" readonly>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div> -->
 
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group row">
@@ -108,18 +88,6 @@
                                         <div class="col-md-6">
                                             <div class="alert alert-dark">
                                                 <h2 class="text-right p-1 mt-2">Rp10.000</h2>
-                                            </div>
-                                            <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Bayar</strong></label>
-                                                <div class="col-sm-12 col-md-7 col-lg-9">
-                                                    <input type="text" class="form-control form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Kembalian</strong></label>
-                                                <div class="col-sm-12 col-md-7 col-lg-9">
-                                                    <input type="text" class="form-control">
-                                                </div>
                                             </div>
 
                                             <div class="buttons float-right">

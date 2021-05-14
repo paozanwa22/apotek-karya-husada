@@ -6,6 +6,10 @@ class M_profile extends Model
 {
     protected $table = 'tb_profil';
 
+    public function tampil()
+    {
+        return $this->findAll();
+    }
     public function cari($id)
     {
         $cari = $this->db->table($this->table);
