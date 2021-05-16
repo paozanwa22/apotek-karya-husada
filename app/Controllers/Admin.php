@@ -35,7 +35,7 @@ class Admin extends BaseController
 			'title'		=> "Dashboard",
 			'uri'			=> \Config\Services::request()
 		];
-		return view('admin/v_dashboard',$data);
+		return view('admin/v_beranda',$data);
 	}
 
 	public function blankpage()

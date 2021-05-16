@@ -67,12 +67,12 @@
                         <div class="card-body">
                             <div class="avatar-item">
                                 <div class="col-6 col-sm-5 col-lg-5 mb-4 mb-md-0 mx-auto">
-                                    <img alt="image" src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="150px" class="img-thumbnail" data-toggle="tooltip">
+                                    <img alt="image" src="<?= base_url(); ?>/template/assets/img/avatar/avatar-1.png" width="150px" class="img-thumbnail img-preview" data-toggle="tooltip">
                                 </div>
                                 <div class="form-group">
                                     <label>Ganti Poto</label>
                                     <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <input type="file" class="custom-file-input" id="customFile sampul" onchange="previewImage()">
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                         </div>
