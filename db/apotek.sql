@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Bulan Mei 2021 pada 13.33
+-- Waktu pembuatan: 17 Bulan Mei 2021 pada 01.24
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.2.32
 
@@ -62,7 +62,7 @@ INSERT INTO `tb_kategori_obat` (`id_k`, `kategori`) VALUES
 CREATE TABLE `tb_obat` (
   `kd_obat` varchar(255) NOT NULL,
   `nm_obat` varchar(150) NOT NULL,
-  `id_sup` int(11) NOT NULL,
+  `kd_sup` int(11) NOT NULL,
   `id_s` int(11) NOT NULL,
   `id_k` int(11) NOT NULL,
   `harga_beli` varchar(30) NOT NULL,
@@ -75,9 +75,9 @@ CREATE TABLE `tb_obat` (
 -- Dumping data untuk tabel `tb_obat`
 --
 
-INSERT INTO `tb_obat` (`kd_obat`, `nm_obat`, `id_sup`, `id_s`, `id_k`, `harga_beli`, `harga_jual`, `stok`, `tgl_kadaluarsa`) VALUES
-('KDOB0002', 'Promag', 0, 1, 0, '9.000', '10.000', 32, '2022-11-22'),
-('KDOB0003', 'sdfsdf', 0, 1, 0, '43.243', '344.243', 54, '1321-12-31');
+INSERT INTO `tb_obat` (`kd_obat`, `nm_obat`, `kd_sup`, `id_s`, `id_k`, `harga_beli`, `harga_jual`, `stok`, `tgl_kadaluarsa`) VALUES
+('KDOB0003', 'sdfsdf', 0, 1, 0, '43.243', '344.243', 54, '1321-12-31'),
+('KDOB0004', 'tree', 0, 1, 0, '435.435', '34.543', 34534, '4543-05-31');
 
 -- --------------------------------------------------------
 
@@ -114,6 +114,13 @@ CREATE TABLE `tb_pengguna` (
   `tgl_buat` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tb_pengguna`
+--
+
+INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `jk`, `password`, `no_tlp`, `alamat`, `level`, `poto`, `tgl_buat`) VALUES
+(13, 'Haikal Wahyudilllll', 'haikal@gmail.comlllll', '', 'mkkkllllllllllllllllllllllllllllllllllllllll', '', '-', 'Pimpinan', 'default.png', '2021-05-06');
+
 -- --------------------------------------------------------
 
 --
@@ -142,6 +149,13 @@ CREATE TABLE `tb_profil` (
   `alamat` text NOT NULL,
   `poto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_profil`
+--
+
+INSERT INTO `tb_profil` (`id`, `nm_apotek`, `pimpinan`, `alamat`, `poto`) VALUES
+(1, 'Apotek Karya Husada', 'aaa', 'Jln. Masbagik - Labuhan Lombok', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -181,7 +195,8 @@ CREATE TABLE `tb_supplier` (
 --
 
 INSERT INTO `tb_supplier` (`kd_sup`, `nama`, `no_tlp`, `alamat`) VALUES
-('SUP0001', 'fgdfg', '5345', 'fdgd');
+('SUP0001', 'ss', '5345', 'fdgd'),
+('SUP0002', 'SJDFHSD', '8326478', 'ueruwe');
 
 --
 -- Indexes for dumped tables
@@ -267,7 +282,7 @@ ALTER TABLE `tb_pembelian`
 -- AUTO_INCREMENT untuk tabel `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_penjualan`
@@ -279,13 +294,13 @@ ALTER TABLE `tb_penjualan`
 -- AUTO_INCREMENT untuk tabel `tb_profil`
 --
 ALTER TABLE `tb_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_satuan_obat`
 --
 ALTER TABLE `tb_satuan_obat`
-  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
