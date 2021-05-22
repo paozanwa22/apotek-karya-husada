@@ -20,7 +20,7 @@
 
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group row">
-                                        <label class="col-form-label col-md-2 text-right"><strong>Kode Transaksi</strong></label>
+                                        <label class="col-form-label col-md-2 text-right"><strong>No Transaksi</strong></label>
                                         <div class="col-md-4">
                                             <input type="text" class="form-control form-control-sm" readonly>
                                         </div>

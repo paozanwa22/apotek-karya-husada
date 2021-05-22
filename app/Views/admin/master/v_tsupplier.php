@@ -33,10 +33,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="no_tlp">No Hp</label>
-                                    <input type="number" name="no_tlp" class="form-control  <?= $validation->hasError('no_tlp') ? 'is-invalid' : ''; ?>">
+                                    <label for="no_hp">No Hp</label>
+                                    <input type="number" name="no_hp" class="form-control  <?= $validation->hasError('no_hp') ? 'is-invalid' : ''; ?>">
                                     <div class="invalid-feedback">
-                                        <?= $validation->getError('no_tlp'); ?>
+                                        <?= $validation->getError('no_hp'); ?>
                                     </div>
                                 </div>
                                 <div class="form-group">

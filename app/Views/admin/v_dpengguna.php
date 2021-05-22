@@ -52,7 +52,7 @@
                             <td><?=$d['nama'];?></td>
                             <td><?=$d['email'];?></td>
                             <td><?=$d['jk'];?></td>
-                            <td><?=$d['no_tlp'];?></td>
+                            <td><?=$d['no_hp'];?></td>
                             <td><?=$d['level'];?></td>
                             <td><img src="<?= base_url('/gambar/'.$d['poto']); ?>" width="50px" class="rounded-circle" alt="Foto"></td>
                             <td><?=$d['alamat'];?></td>

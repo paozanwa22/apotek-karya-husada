@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label>Kode Transaksi</label>
+                                            <label>No Transaksi</label>
                                             <input type="text" name="" class="form-control form-control-sm" readonly>
                                         
                                             <label>Tanggal</label>

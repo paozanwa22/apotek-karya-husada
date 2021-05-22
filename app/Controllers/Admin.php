@@ -198,7 +198,7 @@ public function ssuplier()
 				'required'	=> 'Nama tidak boleh kosong'
 			]
 			],
-		'no_tlp' => [
+		'no_hp' => [
 			'rules'		=> 'required',
 			'errors'	=> [
 				'required'	=> 'Nomor tidak boleh kosong'
@@ -217,7 +217,7 @@ public function ssuplier()
 	$this->M_suplier->simpan([
 		'kd_sup'	=> $this->request->getVar('kd_sup'),
 		'nama'		=> $this->request->getVar('nama'),
-		'no_tlp'	=> $this->request->getVar('no_tlp'),
+		'no_hp'	=> $this->request->getVar('no_hp'),
 		'alamat'	=> $this->request->getVar('alamat')
 	]);
 	session()->setFlashdata('sukses', 'Data berhasil disimpan');
@@ -243,7 +243,7 @@ public function uaksisuplier()
 	$kd_sup = $this->request->getVar('kd_sup');
 	$this->M_suplier->ubah([
 		'nama'		=> $this->request->getVar('nama'),
-		'no_tlp'	=> $this->request->getVar('no_tlp'),
+		'no_hp'	=> $this->request->getVar('no_hp'),
 		'alamat'	=> $this->request->getVar('alamat')
 	], $kd_sup);
 	session()->setFlashdata('sukses','Data berhasil diubah');
@@ -507,7 +507,7 @@ public function taksipengguna()
 		'email'		=> $this->request->getVar('email'),
 		'jk'		=> "-",
 		'password'	=> $this->request->getVar('password'),
-		'no_tlp'	=> "-",
+		'no_hp'	=> "-",
 		'alamat'	=> "-",
 		'level'		=> $this->request->getVar('level'),
 		'poto'		=> "default.png",
@@ -563,7 +563,7 @@ public function profile_aptk($id = '1')
 	$data = [
 		'title'			=> 'Profile Apotek',
 		'uri'			=> \Config\Services::request(),
-		'dapt'			=> $this->M_profile->cari($id)->getRow()
+		'dapt'			=> $this->M_profile->cari($id)->getRowArray()
 	];
 	return view('admin/v_profileapotek', $data);
 }

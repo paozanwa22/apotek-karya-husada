@@ -1,7 +1,14 @@
 <div class="main-sidebar">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <a href="#">Apotek Karya Husada</a>
+
+    <!-- Database -->
+    <?php
+      $db = \Config\Database::connect();
+      $data = $db->query('SELECT nm_apotek FROM tb_profile');
+      $row = $data->getRow();
+      echo "<a href='/admin'>$row->nm_apotek</a>";
+    ?>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
       <a href="index.html">APT</a>

@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
-                                <a href="<?= base_url('admin/dkategori'); ?>" class="btn btn-danger">Batal</a>
+                                <!-- <a href="<?= base_url('admin/dkategori'); ?>" class="btn btn-danger">Batal</a> -->
                             </form>
 
                                 <?php }else{?>

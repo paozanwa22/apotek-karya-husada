@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class M_profile extends Model
 {
-    protected $table = 'tb_profil';
+    protected $table = 'tb_profile';
 
     public function tampil()
     {

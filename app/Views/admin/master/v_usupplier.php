@@ -31,8 +31,8 @@
                                     <input type="text" value="<?= $data->nama; ?>" name="nama" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="no_tlp">No Hp</label>
-                                    <input type="number" name="no_tlp" value="<?= $data->no_tlp; ?>" class="form-control" required>
+                                    <label for="no_hp">No Hp</label>
+                                    <input type="number" name="no_hp" value="<?= $data->no_hp; ?>" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>

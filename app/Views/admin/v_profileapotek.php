@@ -17,18 +17,18 @@
 
                         <div class="form-group">
                             <label><strong>Nama Apotek</strong></label>
-                            <input type="hidden" name="id" value="<?= $dapt->id; ?>">
-                            <input type="text" name="nm_apotek" value="<?= $dapt->nm_apotek; ?>" class="form-control">
+                            <input type="hidden" name="id" value="<?= $dapt['id']; ?>">
+                            <input type="text" name="nm_apotek" value="<?= $dapt['nm_apotek']; ?>" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label><strong>Nama Pimpinan</strong></label>
-                            <input type="text" name="pimpinan" value="<?= $dapt->pimpinan;?>" class="form-control">
+                            <input type="text" name="pimpinan" value="<?= $dapt['pimpinan']?>" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label><strong>Alamat Apotek</strong></label>
-                            <textarea name="alamat" class="form-control"><?= $dapt->alamat;?></textarea>
+                            <textarea name="alamat" class="form-control"><?= $dapt['alamat']?></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simapn</button>

@@ -36,7 +36,7 @@
                           <tr>
                             <td><?= $d['kd_sup'] ?></td>
                             <td><?= $d['nama']; ?></td>
-                            <td><?= $d['no_tlp']; ?></td>
+                            <td><?= $d['no_hp']; ?></td>
                             <td><?= $d['alamat']; ?></td>
                             <td>
                               <a href="<?= base_url() ?>/admin/usupplier/<?= $d['kd_sup']; ?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
