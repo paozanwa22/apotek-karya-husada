@@ -49,7 +49,7 @@
                                 <label for="harga beli">Hak Akses</label>
                                 <select name="level" class="form-control <?= ($validation->hasError('level')) ? 'is-invalid' : '' ?>">
                                     <option value="Admin">Admin</option>
-                                    <option value="Kasir">Kasir</option>
+                                    <option value="Kasir">Apoteker</option>
                                     <option value="Pimpinan">Pimpinan</option>
                                 </select>
                             <div class="invalid-feedback">

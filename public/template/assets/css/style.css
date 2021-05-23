@@ -2983,3 +2983,8 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 
     /* ==================  Inprovisasi ================== */
 
+#bg-login{
+    background-image: url('../../../gambar/medical2.webp');
+    background-size: 100%;
+  }
+

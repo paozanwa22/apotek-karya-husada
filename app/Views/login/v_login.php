@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="<?= base_url(); ?>/template/assets/css/components.css">
 </head>
 
-<body>
+<body id='bg-login'>
   <div id="app">
     <section class="section">
       <div class="container mt-5">
@@ -27,22 +27,22 @@
               <div class="card-header"><h4>Silahkan Login Terlebih Dahulu</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
+                <form method="POST" action="<?= base_url('login/ceklogin'); ?>">
                   <div class="form-group">
-                    <label for="username">Username</label>
-                    <input id="username" type="username" class="form-control" name="username" tabindex="1" required autofocus>
+                    <label>Email</label>
+                    <input type="text" class="form-control <?= ($validation->hasError('email') ? 'is-invalid' : '') ?>" name="email" value="<?= old('email'); ?>" autofocus>
                     <div class="invalid-feedback">
-                      Silahkan masukkan Username
+                      <?= $validation->getError('email'); ?>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <div class="d-block">
-                    	<label for="password" class="control-label">Password</label>
+                    	<label class="control-label">Password</label>
                     </div>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                    <input type="password" class="form-control <?= ($validation->hasError('password') ? 'is-invalid' : '') ?>" name="password" value="<?= old('password'); ?>">
                     <div class="invalid-feedback">
-                      Silahkan masukkan Password
+                      <?= $validation->getError('password'); ?>
                     </div>
                   </div>
 

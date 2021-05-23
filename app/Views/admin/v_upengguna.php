@@ -32,16 +32,16 @@
                                 <input type="email" name="email" class="form-control" value="<?=$udata->email?>" required>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" name="password" value="<?=$udata->password?>" class="form-control" required>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label for="harga beli">Hak Akses</label>
                                 <select name="level" class="form-control" required>
                                     <option value="Admin">Admin</option>
-                                    <option value="Kasir">Kasir</option>
+                                    <option value="Kasir">Apoteker</option>
                                     <option value="Pimpinan">Pimpinan</option>
                                 </select>
                             </div>

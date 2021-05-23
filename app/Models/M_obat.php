@@ -10,6 +10,9 @@ class M_obat extends Model
     {
         if($kd_obat === false){
             return $this->db->table($this->table)
+            ->join('tb_supplier','tb_supplier.kd_sup = tb_obat.kd_sup')
+            ->join('tb_satuan_obat','tb_satuan_obat.id_s = tb_obat.id_s')
+            ->join('tb_kategori_obat','tb_kategori_obat.id_k = tb_obat.id_k')
             ->orderBy('kd_obat','DESC')
             ->get()->getResultArray();
         }

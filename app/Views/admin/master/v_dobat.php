@@ -31,6 +31,7 @@
                                             <th>Kode Obat</th>
                                             <th>Nama Obat</th>
                                             <th>Suplier</th>
+                                            <th>Satuan</th>
                                             <th>Kategori</th>
                                             <th>Harga Beli</th>
                                             <th>Harga Jual</th>
@@ -51,8 +52,9 @@
                                             <td><?=  $no++ ?></td>
                                             <td><?= $d['kd_obat']; ?></td>
                                             <td><?= $d['nm_obat']; ?></td>
-                                            <td><?= $d['kd_sup']; ?></td>
-                                            <td><?= $d['id_k']; ?></td>
+                                            <td><?= $d['nama']; ?></td>
+                                            <td><?= $d['satuan']; ?></td>
+                                            <td><?= $d['kategori']; ?></td>
                                             <td><?= $d['harga_beli']; ?></td>
                                             <td><?= $d['harga_jual']; ?></td>
                                             <td><?= $d['stok']; ?></td>

@@ -35,9 +35,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="satuan">Suplier</label>
-                                <select name="id_sup" class="form-control <?= ($validation->hasError('id_sup') ? 'is-invalid' : ''); ?>" required>
+                                <select name="kd_sup" class="form-control <?= ($validation->hasError('id_sup') ? 'is-invalid' : ''); ?>" required>
                                     <option value="">- Pilih Suplier -</option>
-                                    <option value="PT. Kimia Farma" <?php if($dobat->kd_sup == "PT. Kimia Farma"){echo "selected";} ?>>PT. Kimia Farma</option>
+                                    <?php foreach($dsuplier as $dsuplier){ ?>
+                                    <option value="<?= $dsuplier['kd_sup']; ?>" <?php if($dsuplier['kd_sup'] == $dobat->kd_sup){echo "selected";} ?>><?= $dsuplier['nama']; ?></option>
+                                    <?php } ?>
                                 </select>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('id_sup'); ?>
@@ -47,7 +49,9 @@
                                 <label for="id_s">Satuan</label>
                                 <select name="id_s" class="form-control <?= ($validation->hasError('id_s') ? 'is-invalid' : ''); ?>" required>
                                     <option value="">- Pilih Kategori -</option>
-                                    <option value="1">Tablet</option>
+                                    <?php foreach($dsatuan as $dsatuan){ ?>
+                                    <option value="<?= $dsatuan['id_s']; ?>" <?php if($dsatuan['id_s'] == $dobat->id_s){echo "selected";} ?>><?= $dsatuan['satuan']; ?></option>
+                                    <?php } ?>
                                 </select>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('id_s'); ?>
@@ -57,7 +61,9 @@
                                 <label for="kategori">Kategori</label>
                                 <select name="id_k" class="form-control <?= ($validation->hasError('id_k') ? 'is-invalid' : ''); ?>" required>
                                     <option value="">- Pilih Kategori -</option>
-                                    <option value="Obat Keras">Obat Keras</option>
+                                    <?php foreach($dkategori as $dkategori){ ?>
+                                    <option value="<?= $dkategori['id_k']; ?>" <?php if($dkategori['id_k'] == $dobat->id_k){echo "selected";} ?>><?= $dkategori['kategori']; ?></option>
+                                    <?php } ?>
                                 </select>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('id_k'); ?>

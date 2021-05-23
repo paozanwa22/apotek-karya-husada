@@ -63,7 +63,10 @@ class Admin extends BaseController
 			'title'			=> 'Tambah Data Obat',
 			'uri'			=> \Config\Services::request(),
 			'autonumber'	=> $this->M_obat->autonumber(),
-			'validation'	=> \Config\Services::validation()
+			'validation'	=> \Config\Services::validation(),
+			'dsuplier'		=> $this->M_suplier->ambilData(),
+			'dsatuan'		=> $this->M_satuan->ambilData(),
+			'dkategori'		=> $this->M_kategori->ambilData()
 		];
 		return view('admin/master/v_tobat', $data);
 	}
@@ -73,7 +76,10 @@ class Admin extends BaseController
 			'title'		=> 'Ubah Data Obat',
 			'uri'			=> \Config\Services::request(),
 			'validation'	=> \Config\Services::validation(),
-			'dobat'			=> $this->M_obat->ambilData($kd_obat)->getRow()
+			'dobat'			=> $this->M_obat->ambilData($kd_obat)->getRow(),
+			'dsuplier'		=> $this->M_suplier->ambilData(),
+			'dsatuan'		=> $this->M_satuan->ambilData(),
+			'dkategori'		=> $this->M_kategori->ambilData()
 		];
 		return view('admin/master/v_uobat', $data);
 	}
@@ -506,7 +512,7 @@ public function taksipengguna()
 		'nama'		=> $this->request->getVar('nama'),
 		'email'		=> $this->request->getVar('email'),
 		'jk'		=> "-",
-		'password'	=> $this->request->getVar('password'),
+		'password'	=> password_hash($this->request->getVar('password'),PASSWORD_DEFAULT),
 		'no_hp'	=> "-",
 		'alamat'	=> "-",
 		'level'		=> $this->request->getVar('level'),

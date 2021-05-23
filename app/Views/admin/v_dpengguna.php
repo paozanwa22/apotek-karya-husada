@@ -19,7 +19,17 @@
 
 		<div class="section-body">
 		<div class="row">
-              <div class="col-12">
+    <div class="col-md-12">
+      <div class="card card-success">
+        <div class="card-body">
+          <div class="author-box-details">
+            <h6><i class="fa fa-bullhorn"></i> Info</h6>
+          </div>
+          <p>Jika melakukan <b>RESET PASSWORD</b> maka password akan diubah menjadi <b>apotek123</b></p>
+        </div>
+      </div>
+    </div>
+              <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
                   <a href="<?= base_url() ?>/admin/tpengguna" class="btn btn-success"><i class="fa fa-plus"></i> Pengguna</a>
@@ -49,15 +59,16 @@
 
                           <tr>
                             <td><?=$no++;?></td>
+                            <td><img src="<?= base_url('/gambar/'.$d['poto']); ?>" width="50px" class="rounded-circle" alt="Foto"></td>
                             <td><?=$d['nama'];?></td>
                             <td><?=$d['email'];?></td>
                             <td><?=$d['jk'];?></td>
                             <td><?=$d['no_hp'];?></td>
                             <td><?=$d['level'];?></td>
-                            <td><img src="<?= base_url('/gambar/'.$d['poto']); ?>" width="50px" class="rounded-circle" alt="Foto"></td>
                             <td><?=$d['alamat'];?></td>
                             <td><?=$d['tgl_buat'];?></td>
                             <td>
+                              <a href="<?= base_url() ?>/admin/upengguna/<?=$d['id_pengguna']?>" title="Reset password" class="btn btn-primary btn-sm"><i class="fa fa-lock"> Reset</i></a>
                               <a href="<?= base_url() ?>/admin/upengguna/<?=$d['id_pengguna']?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
                               <a href="<?= base_url() ?>/admin/hpengguna/<?=$d['id_pengguna']?>" class="btn btn-danger btn-sm hapus-data"><i class="fa fa-trash"> Hapus</i></a>
                             </td>

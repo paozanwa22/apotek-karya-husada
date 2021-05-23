@@ -7,7 +7,7 @@
       $db = \Config\Database::connect();
       $data = $db->query('SELECT nm_apotek FROM tb_profile');
       $row = $data->getRow();
-      echo "<a href='/admin'>$row->nm_apotek</a>";
+      echo "<a href='/admin'>$row->nm_apotek</a>"; 
     ?>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
