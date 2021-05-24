@@ -470,9 +470,10 @@ public function taksipengguna()
 			]
 			],
 		'email'		=> [
-			'rules'		=> 'required',
+			'rules'		=> 'required|is_unique[tb_pengguna.email]',
 			'errors'	=> [
-				'required'	=> 'Email tidak boleh kosong'
+				'required'	=> 'Email tidak boleh kosong',
+				'is_unique'	=> 'Email sudah terdaftar, gunakan email lain.'
 			]
 			],
 		'password'		=> [
@@ -538,6 +539,7 @@ public function upengguna($id)
 	$data = [
 		'title'			=> 'Pengguna',
 		'uri'			=> \Config\Services::request(),
+		'validation'	=> \Config\Services::validation(),
 		'udata'			=> $this->M_pengguna->ambilData($id)->getRow()
 	];
 	return view('admin/v_upengguna', $data);
@@ -545,10 +547,30 @@ public function upengguna($id)
 public function uaksipengguna()
 {
 	$id = $this->request->getVar('id');
+	// Pengecekan
+	$cek_email = $this->M_pengguna->ambilData($id)->getRowArray();
+
+	if($cek_email['email'] == $this->request->getVar('email')){
+		$rules = 'required';
+	}else{
+		$rules = 'is_unique[tb_pengguna.email]';
+	}
+	// dd($cek_email);
+	if(!$this->validate([
+		'email'		=> [
+			'rules'		=> $rules,
+			'errors'	=> [
+				'is_unique'	=> 'Email sudah terdaftar, gunakan email lain.',
+				'required'	=> 'Email harus diisi.'
+			]
+			]
+	])){
+		return redirect()->to('/admin/upengguna/'.$this->request->getVar('id'))->withinput();
+	}
+	
 	$this->M_pengguna->ubah([
 		'nama'		=> $this->request->getVar('nama'),
 		'email'		=> $this->request->getVar('email'),
-		'password'	=> $this->request->getVar('password'),
 		'level'		=> $this->request->getVar('level'),
 	],$id);
 	session()->setFlashdata('sukses','Data berhasil diubah');

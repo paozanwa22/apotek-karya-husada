@@ -29,7 +29,10 @@
 
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" name="email" class="form-control" value="<?=$udata->email?>" required>
+                                <input type="email" name="email" class="form-control <?= ($validation->hasError('email') ? 'is-invalid':''); ?>" value="<?= ($validation->hasError('email') ? old('email') : $udata->email); ?>" required>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('email'); ?>
+                                </div>
                             </div>
 
                             <!-- <div class="form-group">
@@ -40,9 +43,9 @@
                             <div class="form-group">
                                 <label for="harga beli">Hak Akses</label>
                                 <select name="level" class="form-control" required>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Apoteker</option>
-                                    <option value="3">Pimpinan</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Apoteker">Apoteker</option>
+                                    <option value="Pimpinan">Pimpinan</option>
                                 </select>
                             </div>
 

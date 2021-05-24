@@ -14,6 +14,9 @@
       <a href="index.html">APT</a>
     </div>
     <ul class="sidebar-menu">
+
+
+
         <li class="<?=($uri->uri->getSegment('2') == '') ? 'active' : ''; ?>"><a class="nav-link" href="<?= base_url('admin'); ?>"><i class="fas fa-tachometer-alt"></i> <span>Beranda</span></a></li>
         <li class="menu-header">Menu</li>
         <li class="nav-item dropdown <?= ($uri->uri->getSegment('2')=='dobat') || ($uri->uri->getSegment('2')=='dsupplier') || ($uri->uri->getSegment('2')=='dsatuan') || ($uri->uri->getSegment('2')=='dkategori') ? 'active' : '' ?>">
@@ -21,7 +24,7 @@
           <ul class="dropdown-menu">
             <li class="<?= ($uri->uri->getSegment('2')=='dobat') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url() ?>/admin/dobat">Obat</a></li>
             <li class="<?= ($uri->uri->getSegment('2')=='dsupplier') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url() ?>/admin/dsupplier">Supplier</a></li>
-            <li class="<?= ($uri->uri->getSegment('2')=='dsatuan') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url() ?>/admin/dsatuan">Satuan</a></li>
+<li class="<?= ($uri->uri->getSegment('2')=='dsatuan') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url() ?>/admin/dsatuan">Satuan</a></li>
             <li class="<?= ($uri->uri->getSegment('2')=='dkategori') ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url() ?>/admin/dkategori">Kategori</a></li>
           </ul>
         </li>
