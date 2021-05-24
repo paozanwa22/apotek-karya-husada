@@ -58,6 +58,7 @@ class Login extends BaseController
                 'id_pengguna'   => $cek['id_pengguna'],
                 'nama'          => $cek['nama'],
                 'level'         => $cek['level'],
+                'poto'          => $cek['poto'],
                 'log_in'        => TRUE
             ];
             if(password_verify($password, $cek['password'])){

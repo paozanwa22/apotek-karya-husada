@@ -1,14 +1,9 @@
 <nav class="navbar navbar-expand-lg main-navbar sidebar-collapse">
-        <form class="form-inline mr-auto">
+        <div class="mr-auto">
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
           </ul>
-          <div class="search-element">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
-            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-          </div>
-        </form>
+        </div>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg"><i class="far fa-bell"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
@@ -31,9 +26,11 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="<?= base_url() ?>/template/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ucriets</div></a>
+            <img alt="image" src="<?= base_url('/gambar/'.$data->poto) ?>" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block"><?= session()->get('level'); ?>, <?= session()->get('nama'); ?></div></a>
             <div class="dropdown-menu dropdown-menu-right">
+            <?php if(session()->get('level') == "Admin"){ ?>
+
               <a href="<?= base_url('admin/profile'); ?>" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
@@ -47,6 +44,34 @@
               <a href="<?= base_url('/login/logout'); ?>" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Keluar
               </a>
+              
+              <?php }elseif(session()->get('level') == "Apoteker"){ ?>
+
+              <a href="<?= base_url('/Pengguna/profilepengguna'); ?>" class="dropdown-item has-icon">
+                <i class="far fa-user"></i> Profile
+              </a>
+              <a href="<?= base_url('login/gantiPass'); ?>" class="dropdown-item has-icon">
+                <i class="fas fa-key"></i> Ganti Kata Sandi
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="<?= base_url('/login/logout'); ?>" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Keluar
+              </a>
+
+              <?php }elseif(session()->get('level') == "Pimpinan"){ ?>
+
+              <a href="<?= base_url('admin/profile'); ?>" class="dropdown-item has-icon">
+              <i class="far fa-user"></i> Profile
+              </a>
+              <a href="<?= base_url('login/gantiPass'); ?>" class="dropdown-item has-icon">
+              <i class="fas fa-key"></i> Ganti Kata Sandi
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="<?= base_url('/login/logout'); ?>" class="dropdown-item has-icon text-danger">
+              <i class="fas fa-sign-out-alt"></i> Keluar
+              </a>
+
+              <?php } ?>
             </div>
           </li>
         </ul>
