@@ -54,11 +54,40 @@ class Login extends BaseController
 
         // Pengecekan
         if($cek != null){
-            return redirect()->to('/admin');
+            $data_ses = [
+                'id_pengguna'   => $cek['id_pengguna'],
+                'nama'          => $cek['nama'],
+                'level'         => $cek['level'],
+                'log_in'        => TRUE
+            ];
+            if(password_verify($password, $cek['password'])){
+                session()->set($data_ses);
+                return redirect()->to('/admin');
+            }else{
+                session()->setFlashdata('gagal','Password anda tidak valid. Mohon periksa kembali');
+                return redirect()->to('/login')->withInput();
+            }
         }else{
+            session()->setFlashdata('gagal','Email yang anda masukkan tidak valid. Mohon periksa kembali');
             return redirect()->to('/login')->withInput();
         }
+    }
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/login');
+    }
+    public function resetPass($id)
+    {
+        $model  = new M_login();
 
+        $cari = $model->cariData($id);
+        $id_pengguna = $cari->id_pengguna;
+        $model->reset([
+            'password'		=> password_hash('apotek123', PASSWORD_DEFAULT)
+        ],$id_pengguna);
 
+        session()->setFlashdata('sukses','Password berhasil direset');
+        return redirect()->to('/admin/dpengguna');
     }
 }

@@ -8,7 +8,10 @@
 		</div>
 
 		<div class="section-body">
-		
+		<?= session()->get('id_pengguna'); ?>
+		<?= session()->get('nama'); ?>
+		<?= session()->get('level'); ?>
+		<?= session()->get('log_in'); ?>
 		</div>
 	</section>
 </div>

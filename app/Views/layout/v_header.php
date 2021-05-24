@@ -44,7 +44,7 @@
                 <i class="fas fa-user"></i> Profile Apotek
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
+              <a href="<?= base_url('/login/logout'); ?>" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Keluar
               </a>
             </div>

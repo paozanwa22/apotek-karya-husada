@@ -20,9 +20,10 @@
 		<div class="section-body">
 		<div class="row">
     <div class="col-md-12">
-      <div class="card card-success">
+      <div class="card card-success" id="mycard-dimiss">
         <div class="card-body">
           <div class="author-box-details">
+          <a data-dismiss="#mycard-dimiss" class="btn btn-icon btn-danger float-right btn-sm" href="#"><i class="fas fa-times"></i></a>
             <h6><i class="fa fa-bullhorn"></i> Info</h6>
           </div>
           <p>Jika melakukan <b>RESET PASSWORD</b> maka password akan diubah menjadi <b>apotek123</b></p>
@@ -39,12 +40,12 @@
                         <thead>
                           <tr>
                             <th>No</th>
+                            <th>Poto</th>
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Jenis Kelamin</th>
                             <th>No Hp</th>
                             <th>Level</th>
-                            <th>Poto</th>
                             <th>Alamat</th>
                             <th>Tgl Buat</th>
                             <th>Opsi</th>
@@ -68,7 +69,7 @@
                             <td><?=$d['alamat'];?></td>
                             <td><?=$d['tgl_buat'];?></td>
                             <td>
-                              <a href="<?= base_url() ?>/admin/upengguna/<?=$d['id_pengguna']?>" title="Reset password" class="btn btn-primary btn-sm"><i class="fa fa-lock"> Reset</i></a>
+                              <a href="<?= base_url() ?>/login/resetPass/<?=$d['id_pengguna']?>" title="Reset password" class="btn btn-primary btn-sm"><i class="fa fa-lock"> Reset</i></a>
                               <a href="<?= base_url() ?>/admin/upengguna/<?=$d['id_pengguna']?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"> Ubah</i></a>
                               <a href="<?= base_url() ?>/admin/hpengguna/<?=$d['id_pengguna']?>" class="btn btn-danger btn-sm hapus-data"><i class="fa fa-trash"> Hapus</i></a>
                             </td>

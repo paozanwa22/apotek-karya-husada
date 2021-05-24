@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <title>Login Apotek</title>
 
   <!-- General CSS Files -->
+  <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/@fortawesome/fontawesome-free/css/all.css">
   <link rel="stylesheet" href="<?= base_url(); ?>/template/node_modules/bootstrap/dist/css/bootstrap.min.css">
 
   <!-- Template CSS -->
@@ -27,6 +28,18 @@
               <div class="card-header"><h4>Silahkan Login Terlebih Dahulu</h4></div>
 
               <div class="card-body">
+
+              <!-- Alert -->
+                  <?php if(session()->getFlashdata('gagal')){ ?>
+                    <div class="alert alert-has-icon text-dark" style="background-color:#ffb0b0;">
+                      <div class="alert-icon"><i class="fa fa-exclamation-triangle"></i></div>
+                      <div class="alert-body">
+                      <?= session()->getFlashdata('gagal'); ?>
+                      </div>
+                    </div>
+                    <?php } ?>
+              <!-- End Alert -->
+
                 <form method="POST" action="<?= base_url('login/ceklogin'); ?>">
                   <div class="form-group">
                     <label>Email</label>
@@ -66,7 +79,14 @@
   <script src="<?= base_url(); ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="<?= base_url(); ?>/template/assets/js/stisla.js"></script>
 
-  <!-- JS Libraies -->
+  <!-- Close Alert -->
+  <script>
+    setTimeout(function() {
+      $('.alert').fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+      })
+    }, 9000);
+  </script>
 
   <!-- Template JS File -->
   <script src="<?= base_url(); ?>/template/assets/js/scripts.js"></script>
@@ -75,9 +95,3 @@
   <!-- Page Specific JS File -->
 </body>
 </html>
-
-
-
-
-
-<link rel="stylesheet" href="<?= base_url(); ?>/template/node_modules/bootstrap/dist/css/bootstrap.min.css">

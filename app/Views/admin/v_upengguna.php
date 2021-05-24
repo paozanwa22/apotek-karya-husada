@@ -40,9 +40,9 @@
                             <div class="form-group">
                                 <label for="harga beli">Hak Akses</label>
                                 <select name="level" class="form-control" required>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Kasir">Apoteker</option>
-                                    <option value="Pimpinan">Pimpinan</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Apoteker</option>
+                                    <option value="3">Pimpinan</option>
                                 </select>
                             </div>
 
