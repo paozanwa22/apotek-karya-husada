@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Bulan Mei 2021 pada 14.59
+-- Waktu pembuatan: 26 Bulan Mei 2021 pada 04.34
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.2.32
 
@@ -49,7 +49,8 @@ CREATE TABLE `tb_kategori_obat` (
 --
 
 INSERT INTO `tb_kategori_obat` (`id_k`, `kategori`) VALUES
-(1, 'Obat bebaskk');
+(1, 'Obat bebaskk'),
+(3, 'Narkotika');
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,7 @@ CREATE TABLE `tb_obat` (
 --
 
 INSERT INTO `tb_obat` (`kd_obat`, `nm_obat`, `kd_sup`, `id_s`, `id_k`, `harga_beli`, `harga_jual`, `stok`, `tgl_kadaluarsa`) VALUES
-('KDOB0001', 'Boderxxx', '', 1, 0, '10.000', '12.000', 12, '2021-05-29');
+('KDOB0001', 'Bodrexx', 'SUP0001', 1, 1, '10.000', '12.000', 12, '2021-05-31');
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,9 @@ CREATE TABLE `tb_pengguna` (
 --
 
 INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `jk`, `password`, `no_hp`, `tgl_buat`, `poto`, `level`, `alamat`) VALUES
-(2, 'Froksas', 'syahrul20.utama@facebook.com', '-', 'qwertyui', '-', '2021-05-21', 'default.png', 'Admin', '-');
+(11, 'Udin tralala', 'admin@gmail.com', 'Perempuan', '$2y$10$Kx.5CSgGwtRPZ4owG4KL9.Bw.Q53sbEHvb2Fu1cBYA5JpfJR4L7py', '123456789045635', '2021-05-24', '1621907613_9453940a334b8615b279.jpg', 'Admin', 'Lotim fdgfdg'),
+(12, 'Ucriets', 'apoteker@gmail.com', 'Laki-Laki', '$2y$10$Sj3NkbJ7Z71/mEWJMJUtk.FgoHl6e4NfC0O0WP9Tn2adMUkgf1CGe', '083123454321', '2021-05-24', '1621864509_0703b515f07447d08277.jpg', 'Apoteker', 'Masbagik'),
+(13, 'Udang', 'pimpinan@gmail.com', '-', '$2y$10$CqzcLdF/xLrsmCFXwzSXMen8n67KnOYO0fv7/431QHLJ0a.7LHJSS', '-', '2021-05-24', 'default.png', 'Pimpinan', '-');
 
 -- --------------------------------------------------------
 
@@ -170,7 +173,8 @@ CREATE TABLE `tb_satuan_obat` (
 --
 
 INSERT INTO `tb_satuan_obat` (`id_s`, `satuan`) VALUES
-(1, 'Tabletyy');
+(1, 'Tabletyy'),
+(3, 'box');
 
 -- --------------------------------------------------------
 
@@ -264,13 +268,13 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT untuk tabel `tb_kategori_obat`
 --
 ALTER TABLE `tb_kategori_obat`
-  MODIFY `id_k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_profile`
@@ -282,7 +286,7 @@ ALTER TABLE `tb_profile`
 -- AUTO_INCREMENT untuk tabel `tb_satuan_obat`
 --
 ALTER TABLE `tb_satuan_obat`
-  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
