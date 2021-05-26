@@ -37,6 +37,10 @@ class Admin extends BaseController
 		];
 		return view('admin/v_beranda',$data);
 	}
+	public function data()
+	{
+		dd($data);
+	}
 
 	public function blankpage()
 	{
@@ -580,11 +584,56 @@ public function uaksipengguna()
 //=========================== PROFILE ======================
 public function profile()
 {
+	$id_pengguna = session()->get('id_pengguna');
 	$data = [
 		'title'			=> 'Profile Pengguna',
-		'uri'			=> \Config\Services::request()
+		'uri'			=> \Config\Services::request(),
+		'validation'=> \Config\Services::validation(),
+		'data'      	=> $this->M_pengguna->ambilData($id_pengguna)->getRow()
 	];
 	return view('admin/v_profile', $data);
+}
+public function updateProfilePengguna()
+{
+	if(!$this->validate([
+		'poto' => [
+			'rules' => 'max_size[poto,1024]|is_image[poto]|mime_in[poto,image/jpg,image/jpeg,image/png]',
+			'errors' => [
+				'max_size' => 'Ukuran gambar terlalu besar, max 1MB',
+				'is_image' => 'Yang anda pilih bukan gambar',
+				'mime_in'   => 'Yang anda pilih bukan gambar',
+			]
+		]
+	])){
+		return redirect()->to('/admin/profile')->withInput();
+	}
+	
+	$id_pengguna = $this->request->getVar('id');
+	$cariId = $this->M_pengguna->ambilData($id_pengguna)->getRow();
+	
+	$inputGambar = $this->request->getFile('poto');
+
+	if($inputGambar->getError() == 4){
+		$gambarLama = $this->request->getVar('gambarLama');
+		$nmGambar = $gambarLama;
+	}else{
+		$nmGambar = $inputGambar->getRandomName();
+		$inputGambar->move('gambar',$nmGambar);
+		if($cariId->poto != "default.png")
+		{
+			unlink('gambar/'.$this->request->getVar('gambarLama'));
+		}
+	}
+	$this->M_pengguna->ubah([
+		'nama'		=> $this->request->getVar('nama'),
+		'alamat'	=> $this->request->getVar('alamat'),
+		'jk'		=> $this->request->getVar('jk'),
+		'no_hp'		=> $this->request->getVar('no_hp'),
+		'poto'		=> $nmGambar,
+	], $id_pengguna);
+
+	session()->setFlashdata('sukses','Data berhasil disimpan');
+	return redirect()->to('/admin/profile');
 }
 public function profile_aptk($id = '1')
 {

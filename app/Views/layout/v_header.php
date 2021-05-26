@@ -25,9 +25,18 @@
               </div>
             </div>
           </li>
+
+          <!-- Kode untuk menampilkan poto pada header berdasarkan user login -->
+          <?php
+            $db = \Config\Database::connect();
+            $id_pengguna = session()->get('id_pengguna');
+            $cari = $db->query("SELECT * FROM tb_pengguna WHERE id_pengguna = $id_pengguna");
+            $data = $cari->getRow();
+          ?>
+
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="<?= base_url('/gambar/'.$data->poto) ?>" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block"><?= session()->get('level'); ?>, <?= session()->get('nama'); ?></div></a>
+            <div class="d-sm-none d-lg-inline-block"><?= session()->get('level'); ?>, <?= $data->nama; ?></div></a>
             <div class="dropdown-menu dropdown-menu-right">
             <?php if(session()->get('level') == "Admin"){ ?>
 

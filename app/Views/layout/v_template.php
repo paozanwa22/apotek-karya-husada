@@ -59,12 +59,9 @@
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.js"></script>
 
-  <!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script> -->
+  <script src="<?= base_url() ?>/template/node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-  <!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-select/js/dataTables.select.min.js"></script> -->
   <script src="/template/node_modules/selectric/public/jquery.selectric.min.js"></script>
-  <!-- <script src="/template/node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.min.js"></script> -->
-  <!-- <script src="/template/assets/js/page/features-post-create.js"></script> -->
   <!-- Alert -->
   <script src="<?= base_url(); ?>/template/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -72,6 +69,7 @@
   <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
   <script src="<?= base_url() ?>/template/assets/js/scripts2.js"></script>
   <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
+  <script src="<?= base_url() ?>/template/assets/js/chart-setting.js"></script>
 
   <script>
     function previewImage()

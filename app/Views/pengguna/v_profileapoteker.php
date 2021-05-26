@@ -16,17 +16,17 @@
                         </div>
 
                         <div class="card-body">
-                            <form action="<?= base_url('/admin/updateProfilePengguna'); ?>" method="post" enctype="multipart/form-data">
+                            <form action="<?=base_url('/pengguna/updateProfile'); ?>" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label><strong>Nama</strong></label>
-                                            <input type="hidden" name="id" value="<?= $data->id_pengguna; ?>">
                                             <input type="text" name="nama" value="<?= $data->nama; ?>" class="form-control">
                                         </div>
                                         <div class="form-group">
                                         <label text><strong>Email</strong></label>
                                             <input type="email" name="email" value="<?= $data->email; ?>" class="form-control" readonly>
+                                            <small>Hubungi admin untuk mengubah Email.</small>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -68,13 +68,13 @@
                         <div class="card-body">
                             <div class="avatar-item">
                                 <div class="col-6 col-sm-5 col-lg-5 mb-4 mb-md-0 mx-auto">
-                                    <img alt="image" src="<?= base_url('gambar/'.$data->poto); ?>" width="150px" class="img-thumbnail img-preview" data-toggle="tooltip">
+                                    <input type="hidden" name="gambarLama" value="<?= $data->poto; ?>">
+                                    <img alt="image" src="<?= base_url('/gambar/'.$data->poto); ?>" class="img-thumbnail img-preview" data-toggle="tooltip">
                                 </div>
-                                <input type="hidden" name="gambarLama" value="<?= $data->poto; ?>">
                                 <div class="form-group">
                                     <label>Ganti Poto</label>
                                     <div class="custom-file">
-                                    <input type="file" class="custom-file-input <?= ($validation->hasError('poto') ? 'is-invalid' : ''); ?>" id="sampul" name="poto" onchange="previewImage()">
+                                    <input type="file" class="custom-file-input <?= ($validation->hasError('poto') ? 'is-invalid' : ''); ?>" name="poto" id="sampul" onchange="previewImage()">
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('poto'); ?>

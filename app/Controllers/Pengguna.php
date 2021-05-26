@@ -21,7 +21,7 @@ class Pengguna extends BaseController
             'validation'=> \Config\Services::validation(),
             'data'      => $this->M_pengguna->ambilData($id_pengguna)->getRow()
         ];
-        return view('/admin/v_profile',$data);
+        return view('/pengguna/v_profileapoteker',$data);
     }
     public function updateProfile()
     {
