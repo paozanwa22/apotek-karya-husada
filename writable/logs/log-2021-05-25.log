@@ -248,3 +248,35 @@ CRITICAL - 2021-05-25 21:58:31 --> Undefined variable: uri
 #8 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+CRITICAL - 2021-05-25 23:11:15 --> syntax error, unexpected '='
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('admin/gantiPass')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(795): CodeIgniter\Router\Router->handle('admin/gantiPass')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-25 23:27:34 --> syntax error, unexpected 'if' (T_IF)
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('admin/gantiPass')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(795): CodeIgniter\Router\Router->handle('admin/gantiPass')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-25 23:28:30 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->gantiPassAksi()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-25 23:45:35 --> syntax error, unexpected ';'
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('login/v_ganti_p...', Array, true)
+#1 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(650): view('login/v_ganti_p...', Array)
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->gantiPass()
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#7 {main}

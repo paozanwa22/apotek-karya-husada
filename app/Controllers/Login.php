@@ -16,15 +16,6 @@ class Login extends BaseController
         ];
         return view('login/v_login', $data);
     }
-    public function gantiPass()
-    {
-        $data = [
-            'title'         => 'Ganti Password',
-            'uri'			=> \Config\Services::request(),
-            'validation'    =>\Config\Services::validation()
-        ];
-        return view('login/v_ganti_pass', $data);
-    }
     public function cekLogin()
     {
         $model = new M_login();

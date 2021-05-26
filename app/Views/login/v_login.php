@@ -51,7 +51,7 @@
 
                   <div class="form-group">
                     <div class="d-block">
-                    	<label class="control-label">Password</label>
+                      <label class="control-label">Password</label>
                     </div>
                     <input type="password" class="form-control <?= ($validation->hasError('password') ? 'is-invalid' : '') ?>" name="password" value="<?= old('password'); ?>">
                     <div class="invalid-feedback">

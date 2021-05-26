@@ -1,0 +1,8 @@
+CRITICAL - 2021-05-26 00:25:35 --> syntax error, unexpected 'session' (T_STRING)
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('admin')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(795): CodeIgniter\Router\Router->handle('admin')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}

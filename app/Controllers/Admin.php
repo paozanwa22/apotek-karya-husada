@@ -486,14 +486,6 @@ public function taksipengguna()
 				'required'	=> 'Password tidak boleh kosong'
 			]
 			],
-		// 'gambar'		=> [
-		// 	'rules'		=> 'max_size[gambar,2048]|is_image[gambar]',
-		// 	'errors'	=> [
-		// 		'max_size'	=> 'Maksimal ukuran gambar 2MB',
-		// 		'is_image'	=> 'Yang anda pilih bukan gambar',
-		// 		// 'mime_in'	=> 'Format gambar yang didukung JPG,PNG,JPEG'
-		// 	]
-		// 	],
 		'level'			=> [
 			'rules'		=> 'required',
 			'errors'	=> [
@@ -503,16 +495,6 @@ public function taksipengguna()
 	])){
 		return redirect()->to('/admin/tpengguna')->withInput();
 	}
-	// Upload gambar
-	// $gambar = $this->request->getFile('gambar');
-	// if($gambar->getError() == 4){
-	// 	$nmgambar	= 'default.png';
-	// }else{
-	// 	//Random nama gambar/ubah nama gambar
-	// 	$nmgambar = $gambar->getRandomName();
-	// 	//memindahkan gambar ke folde
-	// 	$gambar->move('gambar',$nmgambar);
-	// }
 	$this->M_pengguna->simpan([
 		'nama'		=> $this->request->getVar('nama'),
 		'email'		=> $this->request->getVar('email'),
@@ -657,4 +639,81 @@ public function uprofileapotek()
 	return redirect()->to('/admin/profile_aptk');
 }
 //=========================== END PROFILE ======================
+//=========================== GANTI PASSWORD ======================
+public function gantiPass()
+    {
+        $data = [
+            'title'         => 'Ganti Password',
+            'uri'			=> \Config\Services::request(),
+            'validation'    =>\Config\Services::validation()
+        ];
+        return view('login/v_ganti_pass', $data);
+    }
+public function gantiPassAksi()
+{
+	$id_pengguna = session()->get('id_pengguna');
+	if(!$this->validate([
+		'pass_lama'	=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'		=> 'Password lama tidak bolah kosong'
+			]
+			],
+		'password'	=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'		=> 'Password baru tidak bolah kosong'
+			]
+			],
+		'konfir_password'	=> [
+			'rules'		=> 'required',
+			'errors'	=> [
+				'required'		=> 'Password tidak boleh kosong',
+				'matches'		=> 'Konfirmasi Password tidak sama'
+			]
+			],
+	])){
+		return redirect()->to('/admin/gantiPass')->withInput();
+	}
+
+	$cek = $this->M_pengguna->ambilData($id_pengguna)->getRowArray();
+	// dd($cek);
+	$passLama = $this->request->getVar('pass_lama');
+
+	if(password_verify($passLama, $cek['password']))
+	{
+		if(!$this->validate([
+			'konfir_password'	=> [
+				'rules'		=> 'matches[password]',
+				'errors'	=> [
+					'matches'		=> 'Konfirmasi Password tidak sama'
+				]
+				],
+		])){
+			return redirect()->to('/admin/gantiPass')->withInput();
+		}
+
+		$this->M_pengguna->ubah([
+			'password'		=> password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+		], $id_pengguna);
+
+		session()->setFlashdata('sukses','Password Berhasil Diubah');
+		return redirect()->to('/admin/gantiPass');
+	}else{
+		session()->setFlashdata('gagal','Password Lama Tidak Sesuia');
+		if(!$this->validate([
+			'konfir_password'	=> [
+				'rules'		=> 'matches[password]',
+				'errors'	=> [
+					'matches'		=> 'Konfirmasi Password tidak sama'
+				]
+				],
+		])){
+			return redirect()->to('/admin/gantiPass')->withInput();
+		}
+
+		return redirect()->to('/admin/gantiPass')->withInput();
+	}
+}
+//=========================== END GAMNTI PASSWORD ======================
 }
