@@ -28,7 +28,8 @@ class Filters extends BaseConfig
 			'filteradmin'	=> [
 				'except'	=> [
 					'admin', 'admin/*',
-					'pengguna', 'pengguna/*'
+					'pengguna', 'pengguna/*',
+					'laporan', 'laporan/*'
 				]
 				],
 			'toolbar',

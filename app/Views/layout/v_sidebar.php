@@ -52,7 +52,7 @@
       </li>
 
       <li class="<?=($uri->uri->getSegment('2')=='laporan') ? 'active' : '';?>"><a
-          href="<?= base_url(); ?>/admin/laporan" class="nav-link"><i class="fas fa-file-alt"></i>
+          href="<?= base_url(); ?>/laporan/laporan" class="nav-link"><i class="fas fa-file-alt"></i>
           <span>Laporan</span></a>
       </li>
 
