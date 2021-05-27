@@ -18,11 +18,11 @@
 							<div class="card-body">
 								<div class="row">
 									<div class="col-md-6 text-center">
-										<h4>12</h4>
+										<h4><?= $count_obat; ?></h4>
 										<div class="card-label small">Total Obat</div>
 									</div>
 									<div class="col-md-6 text-center">
-										<h4>12</h4>
+										<h4><?= $count_supplier; ?></h4>
 										<div class="card-label small">Total Supplier</div>
 									</div>
 								</div>

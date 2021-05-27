@@ -49,4 +49,8 @@ class M_suplier extends Model
 
         return $kd_sup;
     }
+    public function count()
+    {
+        return $this->db->table($this->table)->countAll();
+    }
 }

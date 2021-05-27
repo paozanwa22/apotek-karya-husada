@@ -32,8 +32,10 @@ class Admin extends BaseController
 	public function index()
 	{
 		$data = [
-			'title'		=> "Dashboard",
-			'uri'			=> \Config\Services::request()
+			'title'				=> "Beranda",
+			'uri'				=> \Config\Services::request(),
+			'count_obat'		=> $this->M_obat->count(),
+			'count_supplier'	=> $this->M_suplier->count()
 		];
 		return view('admin/v_beranda',$data);
 	}

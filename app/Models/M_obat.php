@@ -52,4 +52,8 @@ class M_obat extends Model
 
         return $kd_obat;
     }
+    public function count()
+    {
+        return $this->db->table($this->table)->countAll();
+    }
 }
