@@ -19,7 +19,7 @@
                             <div class="card-label">Data Laporan Penjualan</div>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-success">Lihat Laporan</a>
+                            <a href="<?= base_url('/laporan/lap_penjualan'); ?>" class="btn btn-success">Lihat Laporan</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                             <div class="card-label">Data Laporan Pembelian</div>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Lihat Laporan</a>
+                            <a href="<?= base_url('/laporan/lap_pembelian'); ?>" class="btn btn-primary">Lihat Laporan</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             <div class="card-label">Data Laporan Stok Obat</div>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-danger">Lihat Laporan</a>
+                            <a href="<?= base_url('/laporan/lap_stok_obat'); ?>" class="btn btn-danger">Lihat Laporan</a>
                         </div>
                     </div>
                 </div>
