@@ -50,7 +50,7 @@
                                                     <option value="3">Three</option>
                                                 </select>
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button">Tambah</button>
+                                                    <button class="btn btn-success" type="button">Tambah</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -86,8 +86,10 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="alert alert-dark">
-                                                <h2 class="text-right p-1 mt-2">Rp10.000</h2>
+                                            <div class="card">
+                                                <div class="card-body bg-dark">
+                                                    <h2 class="text-right text-white p-1 mt-2">Rp10.000</h2>
+                                                </div>
                                             </div>
 
                                             <div class="buttons float-right">

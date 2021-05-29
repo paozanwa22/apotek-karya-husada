@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/@fortawesome/fontawesome-free/css/all.css">
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables/media/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.css">
-  
+
   <!-- <link rel="stylesheet" href="/template/node_modules/selectric/public/selectric.css"> -->
 
-  
+
   <!-- Data Table -->
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
@@ -24,13 +24,15 @@
   <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css">
 </head>
 
-<body class="<?php if(($uri->uri->getSegment(2) == 'tpenjualan') || ($uri->uri->getSegment(2) == 'tpembelian')){echo "sidebar-mini";} ?>">
-<!-- Data Alert -->
-<div id="flash" data-flash="<?= session()->getFlashdata('sukses'); ?>"></div>
+<body class="<?php if (($uri->uri->getSegment(2) == 'tpenjualan') || ($uri->uri->getSegment(2) == 'tpembelian') || ($uri->uri->getSegment('2') == 'pilihObat')) {
+                echo "sidebar-mini";
+              } ?>">
+  <!-- Data Alert -->
+  <div id="flash" data-flash="<?= session()->getFlashdata('sukses'); ?>"></div>
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
-      
+
       <!-- Header -->
       <?= $this->include("layout/v_header"); ?>
       <!-- End Header -->
@@ -47,53 +49,58 @@
       <?= $this->include("layout/v_footer"); ?>
       <!-- End Footer -->
 
-      
-        <!-- General JS Scripts -->
-  <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/jquery/dist/popper.min.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
-  <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.mask.min.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.js"></script>
 
-  <script src="<?= base_url() ?>/template/node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="/template/node_modules/selectric/public/jquery.selectric.min.js"></script>
-  <!-- Alert -->
-  <script src="<?= base_url(); ?>/template/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+      <!-- General JS Scripts -->
+      <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/jquery/dist/popper.min.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+      <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.mask.min.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.js"></script>
 
-  <!-- Template JS File -->
-  <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
-  <script src="<?= base_url() ?>/template/assets/js/scripts2.js"></script>
-  <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
-  <script src="<?= base_url() ?>/template/assets/js/chart-setting.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/chart.js/dist/Chart.min.js"></script>
+      <script src="<?= base_url() ?>/template/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+      <script src="/template/node_modules/selectric/public/jquery.selectric.min.js"></script>
+      <!-- Alert -->
+      <script src="<?= base_url(); ?>/template/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 
-  <script>
-    function previewImage()
-    {
-      const sampul = document.querySelector('#sampul');    
-      const sampulLabel = document.querySelector('.custom-file-label');    
-      const imgPreview = document.querySelector('.img-preview');
+      <!-- Template JS File -->
+      <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
+      <script src="<?= base_url() ?>/template/assets/js/scripts2.js"></script>
+      <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
+      <script src="<?= base_url() ?>/template/assets/js/chart-setting.js"></script>
 
-      sampulLabel.textContent = sampul.files[0].name;
+      <script>
+        function previewImage() {
+          const sampul = document.querySelector('#sampul');
+          const sampulLabel = document.querySelector('.custom-file-label');
+          const imgPreview = document.querySelector('.img-preview');
 
-      const fileSampul = new FileReader();
-      fileSampul.readAsDataURL(sampul.files[0]);
+          sampulLabel.textContent = sampul.files[0].name;
 
-      fileSampul.onload = function(e){
-        imgPreview.src = e.target.result;
-      }
-    }
+          const fileSampul = new FileReader();
+          fileSampul.readAsDataURL(sampul.files[0]);
 
-    // Close Alert
-    setTimeout(function() {
-      $('.alert').fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove();
-      })
-    }, 9000);
-  </script>
+          fileSampul.onload = function(e) {
+            imgPreview.src = e.target.result;
+          }
+        }
+
+        // Close Alert
+        setTimeout(function() {
+          $('.alert').fadeTo(500, 0).slideUp(500, function() {
+            $(this).remove();
+          })
+        }, 9000);
+
+        $("#modal-1").fireModal({
+          title: 'Data Obat',
+          body: $("#modal-item")
+        });
+      </script>
 </body>
+
 </html>
