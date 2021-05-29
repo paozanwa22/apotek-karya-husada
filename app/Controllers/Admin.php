@@ -10,6 +10,7 @@ use App\Models\M_satuan;
 use App\Models\M_kategori;
 use App\Models\M_pengguna;
 use App\Models\M_profile;
+use App\Models\M_penjualan;
 
 class Admin extends BaseController
 {
@@ -20,6 +21,7 @@ class Admin extends BaseController
 	protected $M_kategori;
 	protected $M_pengguna;
 	protected $M_profile;
+	protected $M_penjualan;
 
 	public function __construct()
 	{
@@ -29,6 +31,7 @@ class Admin extends BaseController
 		$this->M_kategori = new M_kategori();
 		$this->M_pengguna = new M_pengguna();
 		$this->M_profile = new M_profile();
+		$this->M_penjualan = new M_penjualan();
 	}
 
 
@@ -421,7 +424,9 @@ class Admin extends BaseController
 		$data = [
 			'title'			=> 'Penjualan',
 			'uri'			=> \Config\Services::request(),
-			'data'			=> $this->M_obat->ambilData()
+			'data'			=> $this->M_obat->ambilData(),
+			'cart'			=> \Config\Services::cart(),
+			'autonumber'	=> $this->M_penjualan->autonumber()
 		];
 		return view('admin/transaksi/v_tpenjualan', $data);
 	}
@@ -431,7 +436,9 @@ class Admin extends BaseController
 			'title'		=> 'Penjualan',
 			'dobat'		=> $this->M_obat->ambilData($id)->getRow(),
 			'uri'		=> \Config\Services::request(),
-			'data'		=> $this->M_obat->ambilData()
+			'data'		=> $this->M_obat->ambilData(),
+			'cart'			=> \Config\Services::cart(),
+			'autonumber'	=> $this->M_penjualan->autonumber()
 		];
 		return view('/admin/transaksi/v_tpenjualan', $data);
 	}
@@ -723,4 +730,38 @@ class Admin extends BaseController
 		}
 	}
 	//=========================== END GAMNTI PASSWORD ======================
+	//=========================== CRUD Cart ======================
+	public function cek()
+	{
+		$cart = \Config\Services::cart();
+		$respon = $cart->contents();
+		$data = json_encode($respon);
+		echo '<pre>';
+		print_r($data);
+		echo '</pre';
+	}
+	public function add()
+	{
+		$cart = \Config\Services::cart();
+		$cart->insert(array(
+			'id'      => $this->request->getVar('kd_obat'),
+			'qty'     => $this->request->getVar('qty'),
+			'price'   => $this->request->getVar('harga_jual'),
+			'name'    => $this->request->getVar('nama'),
+			// 'options' => array('Size' => 'L', 'Color' => 'Red')
+		));
+		return redirect()->to('/admin/tpenjualan');
+	}
+	public function clear()
+	{
+		$cart = \Config\Services::cart();
+		$cart->destroy();
+	}
+	public function deletecart($rowid)
+	{
+		$cart = \Config\Services::cart();
+		$cart->remove($rowid);
+		return redirect()->to('/admin/tpenjualan');
+	}
+	//=========================== End CRUD Cart ======================
 }

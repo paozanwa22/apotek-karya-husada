@@ -25,13 +25,13 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>No Transaksi</label>
-                                        <input type="text" name="" class="form-control form-control-sm" readonly>
+                                        <input type="text" name="no_trs" value="<?= $autonumber; ?>" class="form-control form-control-sm" readonly>
 
                                         <label>Tanggal</label>
-                                        <input type="text" name="" value="<?= date('d/m/y'); ?>" class="form-control form-control-sm" readonly>
+                                        <input type="text" name="tanggal" value="<?= date('d/m/y'); ?>" class="form-control form-control-sm" readonly>
 
                                         <label>Kasir</label>
-                                        <input type="text" name="" class="form-control form-control-sm" readonly>
+                                        <input type="text" name="kasir" class="form-control form-control-sm" value="<?= session()->get('nama'); ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -40,21 +40,25 @@
                         <div class="col-12 col-md-12 col-lg-9">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" readonly name="cari" value="<?= ($uri->uri->getSegment("2") == "pilihObat") ? $dobat->nm_obat : ''; ?>" class="form-control">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-search"></i> Cari</button>
+                                    <form action="<?= base_url('/admin/add'); ?>" method="post">
+                                        <input type="hidden" name="kd_obat" value="<?= ($uri->uri->getSegment("2") == "pilihObat") ? $dobat->kd_obat : ''; ?>">
+                                        <input type="hidden" name="harga_jual" value="<?= ($uri->uri->getSegment("2") == "pilihObat") ? $dobat->harga_jual : ''; ?>">
+                                        <div class="input-group">
+                                            <input type="text" readonly name="nama" value="<?= ($uri->uri->getSegment("2") == "pilihObat") ? $dobat->nm_obat : ''; ?>" class="form-control">
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-search"></i> Cari</button>
+                                            </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <input type="number" min="1" name="cari" class="form-control" placeholder="Qty">
+                                        <input type="number" min="1" name="qty" class="form-control" required placeholder="Qty">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <button class="btn btn-success btn-lg">Tambah</button>
                                 </div>
+                                </form>
                             </div><br>
 
                             <table class="table table-striped responsive nowrap" width="100%" id="transaksi">
@@ -69,16 +73,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            Bodrex
-                                        </td>
-                                        <td>Rp10.000</td>
-                                        <td>1</td>
-                                        <td>Rp20.000</td>
-                                        <td><a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a></td>
-                                    </tr>
+                                    <?php
+                                    $keranjang = $cart->contents();
+                                    $no = 1;
+                                    foreach ($keranjang as $caobat) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $caobat['name']; ?></td>
+                                            <td>Rp<?= number_format($caobat['price']); ?></td>
+                                            <td><?= $caobat['qty']; ?></td>
+                                            <td>Rp<?= number_format($caobat['subtotal']); ?></td>
+                                            <td><a href="<?= base_url('/admin/deletecart/' . $caobat['rowid']); ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a></td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                             <div class="row">
@@ -88,19 +96,34 @@
                                 <div class="col-md-6">
                                     <div class="card">
                                         <div class="card-body bg-dark">
-                                            <h2 class="text-right text-white p-1 mt-2">Rp10.000</h2>
+                                            <input type="hidden" id="total" value="<?= $cart->total(); ?>">
+                                            <h2 class="text-right text-white p-1 mt-2">Rp<?= number_format($cart->total()); ?></h2>
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Bayar</strong></label>
                                         <div class="col-sm-12 col-md-7 col-lg-9">
-                                            <input type="text" class="form-control form-control">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <b>Rp</b>
+                                                    </div>
+                                                </div>
+                                                <input type="text" name="harga_jual" id="bayar" class="form-control">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Kembalian</strong></label>
                                         <div class="col-sm-12 col-md-7 col-lg-9">
-                                            <input type="text" class="form-control">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text bg-secondary">
+                                                        <b>Rp</b>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" id="kembali" readonly>
+                                            </div>
                                         </div>
                                     </div>
 

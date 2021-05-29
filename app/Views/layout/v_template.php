@@ -100,6 +100,45 @@
           title: 'Data Obat',
           body: $("#modal-item")
         });
+
+        function formatAngka(angka) {
+          if (typeof(angka) != 'string') angka = angka.toString();
+          var reg = new RegExp('([0-9]+)([0-9]{3})');
+          while (reg.test(angka)) angka = angka.replace(reg, '$1.$2');
+          return angka;
+        }
+
+        <?php $cart = \Config\Services::cart(); ?>
+        var total = <?= $cart->total(); ?>;
+        bayar = 0;
+        kembalian = 0;
+
+        $("#total").val(total);
+
+        $('#bayar').on('keypress', function(e) {
+          var c = e.keyCode || e.charCode;
+          switch (c) {
+            case 8:
+            case 9:
+            case 27:
+            case 13:
+              return;
+            case 65:
+              if (e.ctrlKey === true) return;
+          }
+          if (c < 48 || c > 57) e.preventDefault();
+        }).on('keyup', function() {
+          var inp = $(this).val().replace(/\./g, '');
+
+          // set nilai ke variabel bayar
+          bayar = new Number(inp);
+          $(this).val(formatAngka(inp));
+
+          // set kembalian, validasi
+          if (bayar > total) kembalian = bayar - total;
+          if (total > bayar) kembalian = 0;
+          $('#kembali').val(formatAngka(kembalian));
+        });
       </script>
 </body>
 
