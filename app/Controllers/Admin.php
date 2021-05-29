@@ -11,6 +11,7 @@ use App\Models\M_kategori;
 use App\Models\M_pengguna;
 use App\Models\M_profile;
 use App\Models\M_penjualan;
+use App\Models\M_invoice;
 
 class Admin extends BaseController
 {
@@ -22,6 +23,7 @@ class Admin extends BaseController
 	protected $M_pengguna;
 	protected $M_profile;
 	protected $M_penjualan;
+	protected $M_invoice;
 
 	public function __construct()
 	{
@@ -32,6 +34,7 @@ class Admin extends BaseController
 		$this->M_pengguna = new M_pengguna();
 		$this->M_profile = new M_profile();
 		$this->M_penjualan = new M_penjualan();
+		$this->M_invoice = new M_invoice();
 	}
 
 
@@ -429,6 +432,32 @@ class Admin extends BaseController
 			'autonumber'	=> $this->M_penjualan->autonumber()
 		];
 		return view('admin/transaksi/v_tpenjualan', $data);
+	}
+	public function tpenjualanaksi()
+	{
+		$cart = \Config\Services::cart();
+		$this->M_invoice->addInvoice([
+			'id_pengguna'	=> session()->get('id_pengguna'),
+			'tgl_beli'		=> date('Y-m-d')
+		]);
+
+		$id_invoice = $this->M_invoice->insertID();
+
+
+		$cart = \Config\Services::cart();
+		foreach ($cart->contents() as $value) {
+			$this->M_penjualan->simpan([
+				'no_transaksi'	=> $this->request->getVar('no_trs'),
+				'kd_obat'		=> $value['id'],
+				'id_invoice'	=> $id_invoice,
+				'tgl_jual'		=> date('Y-m-d'),
+				'jumlah'		=> $value['qty'],
+				'total'			=> $value['subtotal']
+			]);
+		}
+
+		$cart->destroy();
+		return redirect()->to('/admin/tpenjualan');
 	}
 	public function pilihObat($id)
 	{

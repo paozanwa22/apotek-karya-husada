@@ -11,19 +11,23 @@ class M_penjualan extends Model
     public function autonumber()
     {
         $kode = $this->db->table($this->table)
-            ->select('right(id_pen,4) as id_pen', false)
-            ->orderBy('id_pen', 'DESC')
+            ->select('right(no_transaksi,4) as no_transaksi', false)
+            ->orderBy('no_transaksi', 'DESC')
             ->limit(1)->get()->getRowArray();
 
-        if ($kode['id_pen'] == null) {
+        if ($kode['no_transaksi'] == null) {
             $no = 1;
         } else {
-            $no = intval($kode['id_pen']) + 1;
+            $no = intval($kode['no_transaksi']) + 1;
         }
         $s = date('dmY');
         $batas = str_pad($no, 4, "0", STR_PAD_LEFT);
-        $id_pen = $s . $batas;
+        $no_transaksi = $s . $batas;
 
-        return $id_pen;
+        return $no_transaksi;
+    }
+    public function simpan($data)
+    {
+        return $this->db->table($this->table)->insert($data);
     }
 }

@@ -25,13 +25,13 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>No Transaksi</label>
-                                        <input type="text" name="no_trs" value="<?= $autonumber; ?>" class="form-control form-control-sm" readonly>
+                                        <input type="text" value="<?= $autonumber; ?>" class="form-control form-control-sm" readonly>
 
                                         <label>Tanggal</label>
                                         <input type="text" name="tanggal" value="<?= date('d/m/y'); ?>" class="form-control form-control-sm" readonly>
 
                                         <label>Kasir</label>
-                                        <input type="text" name="kasir" class="form-control form-control-sm" value="<?= session()->get('nama'); ?>" readonly>
+                                        <input type="text" class="form-control form-control-sm" value="<?= session()->get('nama'); ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -60,80 +60,83 @@
                                 </div>
                                 </form>
                             </div><br>
-
-                            <table class="table table-striped responsive nowrap" width="100%" id="transaksi">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Obat Yang Dijual</th>
-                                        <th>Harga Satuan</th>
-                                        <th>Qty</th>
-                                        <th>Subtotal</th>
-                                        <th>Opsi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $keranjang = $cart->contents();
-                                    $no = 1;
-                                    foreach ($keranjang as $caobat) {
-                                    ?>
+                            <form action="<?= base_url('/admin/tpenjualanaksi'); ?>" method="post">
+                                <input type="hidden" name="no_trs" value="<?= $autonumber; ?>">
+                                <table class="table table-striped responsive nowrap" width="100%" id="transaksi">
+                                    <thead>
                                         <tr>
-                                            <td><?= $no++; ?></td>
-                                            <td><?= $caobat['name']; ?></td>
-                                            <td>Rp<?= number_format($caobat['price']); ?></td>
-                                            <td><?= $caobat['qty']; ?></td>
-                                            <td>Rp<?= number_format($caobat['subtotal']); ?></td>
-                                            <td><a href="<?= base_url('/admin/deletecart/' . $caobat['rowid']); ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a></td>
+                                            <th>No</th>
+                                            <th>Nama Obat Yang Dijual</th>
+                                            <th>Harga Satuan</th>
+                                            <th>Qty</th>
+                                            <th>Subtotal</th>
+                                            <th>Opsi</th>
                                         </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <!-- <Button class="btn btn-primary"><i class="fa fa-plus"> Baru</i></Button> -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body bg-dark">
-                                            <input type="hidden" id="total" value="<?= $cart->total(); ?>">
-                                            <h2 class="text-right text-white p-1 mt-2">Rp<?= number_format($cart->total()); ?></h2>
-                                        </div>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $keranjang = $cart->contents();
+                                        $no = 1;
+                                        foreach ($keranjang as $caobat) {
+                                        ?>
+                                            <tr>
+                                                <td><?= $no++; ?></td>
+                                                <td><?= $caobat['name']; ?></td>
+                                                <td>Rp<?= number_format($caobat['price']); ?></td>
+                                                <td><?= $caobat['qty']; ?></td>
+                                                <td>Rp<?= number_format($caobat['subtotal']); ?></td>
+                                                <td><a href="<?= base_url('/admin/deletecart/' . $caobat['rowid']); ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a></td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- <Button class="btn btn-primary"><i class="fa fa-plus"> Baru</i></Button> -->
                                     </div>
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Bayar</strong></label>
-                                        <div class="col-sm-12 col-md-7 col-lg-9">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <b>Rp</b>
-                                                    </div>
-                                                </div>
-                                                <input type="text" name="harga_jual" id="bayar" class="form-control">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-body bg-dark">
+                                                <input type="hidden" id="total" value="<?= $cart->total(); ?>">
+                                                <h2 class="text-right text-white p-1 mt-2">Rp<?= number_format($cart->total()); ?></h2>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Kembalian</strong></label>
-                                        <div class="col-sm-12 col-md-7 col-lg-9">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text bg-secondary">
-                                                        <b>Rp</b>
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Bayar</strong></label>
+                                            <div class="col-sm-12 col-md-7 col-lg-9">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <b>Rp</b>
+                                                        </div>
                                                     </div>
+                                                    <input type="text" name="harga_jual" id="bayar" class="form-control">
                                                 </div>
-                                                <input type="text" class="form-control" id="kembali" readonly>
                                             </div>
                                         </div>
-                                    </div>
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-4 col-lg-3"><strong>Kembalian</strong></label>
+                                            <div class="col-sm-12 col-md-7 col-lg-9">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text bg-secondary">
+                                                            <b>Rp</b>
+                                                        </div>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="kembali" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <div class="buttons float-right">
-                                        <a href="#" class="btn btn-warning"><i class="fa fa-save"></i> Simpan</a>
-                                        <a href="#" class="btn btn-danger"><i class="fa fa-close"></i> Batal</a>
-                                    </div>
+                                        <div class="buttons float-right">
+                                            <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Simpan</button>
+                                            <a href="#" class="btn btn-danger"><i class="fa fa-close"></i> Batal</a>
+                                        </div>
 
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
