@@ -19,10 +19,11 @@
 
                     <!-- Alert -->
                     <?php if (session()->getFlashdata('gagal')) { ?>
-                        <div class="alert alert-has-icon text-dark" style="background-color:#ffb0b0;">
+                        <div class="alert alert-danger alert-has-icon">
                             <div class="alert-icon"><i class="fa fa-exclamation-triangle"></i></div>
                             <div class="alert-body">
-                                <h6><?= session()->getFlashdata('gagal'); ?></h6>
+                                <div class="alert-title">Pemberitahuan</div>
+                                <?= session()->getFlashdata('gagal'); ?>
                             </div>
                         </div>
                     <?php } ?>
@@ -72,8 +73,7 @@
                                 </div>
                                 </form>
                             </div><br>
-                            <form action="<?= base_url('/admin/tpenjualanaksi'); ?>" method="post">
-                                <input type="hidden" name="no_trs" value="<?= $autonumber; ?>">
+                            <form action="<?= base_url('/admin/updatecart'); ?>" method="post">
                                 <table class="table table-striped responsive nowrap" width="100%" id="transaksi">
                                     <thead>
                                         <tr>
@@ -89,24 +89,31 @@
                                         <?php
                                         $keranjang = $cart->contents();
                                         $no = 1;
+                                        $i = 1;
                                         foreach ($keranjang as $caobat) {
                                         ?>
                                             <tr>
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $caobat['name']; ?></td>
                                                 <td>Rp<?= number_format($caobat['price']); ?></td>
-                                                <td><?= $caobat['qty']; ?></td>
+                                                <td width="100px"><input type="number" name="qty<?= $i++; ?>" value="<?= $caobat['qty']; ?>" class="form-control form-control-sm"></td>
                                                 <td>Rp<?= number_format($caobat['subtotal']); ?></td>
-                                                <td><a href="<?= base_url('/admin/deletecart/' . $caobat['rowid']); ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a></td>
+                                                <td>
+                                                    <button class="btn btn-warning btn-sm"> Update</button>
+                                                    <a href="<?= base_url('/admin/deletecart/' . $caobat['rowid']); ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
                                 </table>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <!-- <Button class="btn btn-primary"><i class="fa fa-plus"> Baru</i></Button> -->
-                                    </div>
-                                    <div class="col-md-6">
+                            </form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- <Button class="btn btn-primary"><i class="fa fa-plus"> Baru</i></Button> -->
+                                </div>
+                                <div class="col-md-6">
+                                    <form action="<?= base_url('/admin/tpenjualanaksi'); ?>" method="post">
+                                        <input type="hidden" name="no_trs" value="<?= $autonumber; ?>">
                                         <div class="card">
                                             <div class="card-body bg-dark">
                                                 <input type="hidden" id="total" value="<?= $cart->total(); ?>">
@@ -122,7 +129,7 @@
                                                             <b>Rp</b>
                                                         </div>
                                                     </div>
-                                                    <input type="text" name="harga_jual" id="bayar" class="form-control">
+                                                    <input type="text" name="harga_jual" id="bayar" class="form-control" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -144,10 +151,10 @@
                                             <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Simpan</button>
                                             <a href="#" class="btn btn-danger"><i class="fa fa-close"></i> Batal</a>
                                         </div>
-
-                                    </div>
+                                    </form>
                                 </div>
-                            </form>
+                            </div>
+
 
                         </div>
                     </div>

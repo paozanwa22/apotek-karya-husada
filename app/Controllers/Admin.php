@@ -450,19 +450,6 @@ class Admin extends BaseController
 			$this->M_obat->ubah([
 				'stok'	=> $kurangi
 			], $data['id']);
-
-			// $ambilData = $this->M_obat->ambilData($id)->getRowArray();
-
-			// $stok = $ambilData['stok'];
-
-			// if ($qty > $stok) {
-			// 	session()->setFlashdata('gagal', 'Stok tidak cukup');
-			// 	return redirect()->to('/admin/tpenjualan');
-			// }
-			// $kurangi = $stok - $qty;
-			// $this->M_obat->ubah([
-			// 	'stok'	=> $kurangi,
-			// ], $ambilData);
 		}
 
 		$this->M_invoice->addInvoice([
@@ -818,6 +805,19 @@ class Admin extends BaseController
 	{
 		$cart = \Config\Services::cart();
 		$cart->remove($rowid);
+		return redirect()->to('/admin/tpenjualan');
+	}
+	public function updatecart()
+	{
+		$cart = \Config\Services::cart();
+		$i = 1;
+		foreach ($cart->contents() as $d) {
+			$cart->update(array(
+				'rowid'   => $d['rowid'],
+				'qty'     => $this->request->getVar('qty' . $i++),
+			));
+		}
+		session()->setFlashdata('sukses', 'Data berhasil diperbarui');
 		return redirect()->to('/admin/tpenjualan');
 	}
 	//=========================== End CRUD Cart ======================
