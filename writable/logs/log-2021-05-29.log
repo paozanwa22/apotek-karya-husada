@@ -803,3 +803,87 @@ CRITICAL - 2021-05-29 15:05:12 --> Unknown column 'no_transaksi' in 'field list'
 #9 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #11 {main}
+CRITICAL - 2021-05-29 19:50:45 --> Illegal string offset 'stok'
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(446): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 446, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualanaksi()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-29 19:53:56 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualanaksi()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-29 20:01:44 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Database\MySQLi\Connection.php(331): mysqli->query('UPDATE `tb_obat...')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_obat...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_obat...')
+#3 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseBuilder.php(2456): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_obat...', Array, false)
+#4 C:\xampp\htdocs\apotek-karya-husada\app\Models\M_obat.php(35): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(453): App\Models\M_obat->ubah(Array, Array)
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualanaksi()
+#7 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-05-29 20:03:12 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Database\MySQLi\Connection.php(331): mysqli->query('UPDATE `tb_obat...')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_obat...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_obat...')
+#3 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseBuilder.php(2456): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_obat...', Array, false)
+#4 C:\xampp\htdocs\apotek-karya-husada\app\Models\M_obat.php(35): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(453): App\Models\M_obat->ubah(Array, Array)
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualanaksi()
+#7 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-05-29 20:12:26 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Database\MySQLi\Connection.php(331): mysqli->query('UPDATE `tb_obat...')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_obat...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_obat...')
+#3 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseBuilder.php(2456): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_obat...', Array, false)
+#4 C:\xampp\htdocs\apotek-karya-husada\app\Models\M_obat.php(35): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(447): App\Models\M_obat->ubah(Array, Array)
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualanaksi()
+#7 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-05-29 20:16:03 --> Illegal parameter data types varchar and row for operation '='
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Database\MySQLi\Connection.php(331): mysqli->query('UPDATE `tb_obat...')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_obat...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_obat...')
+#3 C:\xampp\htdocs\apotek-karya-husada\system\Database\BaseBuilder.php(2456): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_obat...', Array, false)
+#4 C:\xampp\htdocs\apotek-karya-husada\app\Models\M_obat.php(35): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(445): App\Models\M_obat->ubah(Array, Array)
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualanaksi()
+#7 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-05-29 20:19:11 --> Array to string conversion
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(446): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 446, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualanaksi()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-29 20:42:44 --> syntax error, unexpected 'stok' (T_STRING), expecting ',' or ';'
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#1 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(434): view('admin/transaksi...', Array)
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpenjualan()
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#7 {main}

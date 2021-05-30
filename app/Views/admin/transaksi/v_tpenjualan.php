@@ -16,6 +16,18 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-body">
+
+                    <!-- Alert -->
+                    <?php if (session()->getFlashdata('gagal')) { ?>
+                        <div class="alert alert-has-icon text-dark" style="background-color:#ffb0b0;">
+                            <div class="alert-icon"><i class="fa fa-exclamation-triangle"></i></div>
+                            <div class="alert-body">
+                                <h6><?= session()->getFlashdata('gagal'); ?></h6>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <!-- End Alert -->
+
                     <div class="row">
                         <div class="col-12 col-md-4 col-lg-3">
                             <div class="card card-success">
@@ -178,7 +190,7 @@
                                     <td><?= $d['nama']; ?></td>
                                     <td><?= $d['harga_beli']; ?></td>
                                     <td><?= $d['harga_jual']; ?></td>
-                                    <td><?= $d['stok']; ?></td>
+                                    <td><?= ($d['stok'] == "0") ? "<div class='text-danger'>Habis</div>" : $d['stok']; ?></td>
                                     <td><a href="<?= base_url('/admin/pilihObat/' . $d['kd_obat']); ?>" class="btn btn-secondary">Pilih</a></td>
                                 </tr>
                             <?php } ?>

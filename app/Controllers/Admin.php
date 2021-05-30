@@ -436,6 +436,35 @@ class Admin extends BaseController
 	public function tpenjualanaksi()
 	{
 		$cart = \Config\Services::cart();
+		foreach ($cart->contents() as $data) {
+
+			$ambilData = $this->M_obat->ambilData($data['id'])->getRowArray();
+
+			if ($ambilData['stok'] < $data['qty']) {
+				session()->setFlashdata('gagal', 'Stok ' . $data['name'] . ' Hanya Tersisa Tinggal ' . $ambilData['stok']);
+				return redirect()->to('/admin/tpenjualan');
+			}
+			$kurangi = $ambilData['stok'] - $data['qty'];
+			// dd($kurangi);
+
+			$this->M_obat->ubah([
+				'stok'	=> $kurangi
+			], $data['id']);
+
+			// $ambilData = $this->M_obat->ambilData($id)->getRowArray();
+
+			// $stok = $ambilData['stok'];
+
+			// if ($qty > $stok) {
+			// 	session()->setFlashdata('gagal', 'Stok tidak cukup');
+			// 	return redirect()->to('/admin/tpenjualan');
+			// }
+			// $kurangi = $stok - $qty;
+			// $this->M_obat->ubah([
+			// 	'stok'	=> $kurangi,
+			// ], $ambilData);
+		}
+
 		$this->M_invoice->addInvoice([
 			'id_pengguna'	=> session()->get('id_pengguna'),
 			'tgl_beli'		=> date('Y-m-d')
@@ -443,9 +472,8 @@ class Admin extends BaseController
 
 		$id_invoice = $this->M_invoice->insertID();
 
-
-		$cart = \Config\Services::cart();
 		foreach ($cart->contents() as $value) {
+			// dd($value);
 			$this->M_penjualan->simpan([
 				'no_transaksi'	=> $this->request->getVar('no_trs'),
 				'kd_obat'		=> $value['id'],
