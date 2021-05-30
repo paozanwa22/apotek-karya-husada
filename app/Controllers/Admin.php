@@ -817,7 +817,6 @@ class Admin extends BaseController
 				'qty'     => $this->request->getVar('qty' . $i++),
 			));
 		}
-		session()->setFlashdata('sukses', 'Data berhasil diperbarui');
 		return redirect()->to('/admin/tpenjualan');
 	}
 	//=========================== End CRUD Cart ======================
