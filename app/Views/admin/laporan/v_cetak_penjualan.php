@@ -99,12 +99,12 @@
     </div>
 
     <script>
-        // print();
-        // onafterprint = back;
+        print();
+        onafterprint = back;
 
-        // function back() {
-        //     history.back();
-        // }
+        function back() {
+            history.back();
+        }
     </script>
     <script src="<?= base_url(); ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
