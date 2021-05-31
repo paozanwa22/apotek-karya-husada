@@ -467,12 +467,17 @@ class Admin extends BaseController
 				'id_invoice'	=> $id_invoice,
 				'tgl_jual'		=> date('Y-m-d'),
 				'jumlah'		=> $value['qty'],
-				'total'			=> $value['subtotal']
+				'total'			=> $value['subtotal'],
+				'total_bayar'	=> $this->request->getVar('bayar'),
+				'kembalian'	=> $this->request->getVar('kembali')
 			]);
 		}
 
+		// $cari = $this->M_penjualan->cari($id_invoice);
+
 		$cart->destroy();
-		return redirect()->to('/admin/tpenjualan');
+		// return redirect()->to('/admin/tpenjualan');
+		return redirect()->to('/cetak/cetak_penjualan/' . $id_invoice);
 	}
 	public function pilihObat($id)
 	{

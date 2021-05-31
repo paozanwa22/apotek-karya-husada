@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -20,7 +22,7 @@ class Filters extends BaseConfig
 				'except'	=> [
 					'login', 'login/*'
 				]
-				],
+			],
 			//'honeypot'
 			// 'csrf',
 		],
@@ -29,9 +31,10 @@ class Filters extends BaseConfig
 				'except'	=> [
 					'admin', 'admin/*',
 					'pengguna', 'pengguna/*',
-					'laporan', 'laporan/*'
+					'laporan', 'laporan/*',
+					'cetak', 'cetak/*'
 				]
-				],
+			],
 			'toolbar',
 			//'honeypot'
 		],

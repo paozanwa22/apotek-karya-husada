@@ -30,4 +30,16 @@ class M_penjualan extends Model
     {
         return $this->db->table($this->table)->insert($data);
     }
+    public function cari($id)
+    {
+        return $this->db->table("tb_penjualan")
+            ->join('tb_obat', 'tb_obat.kd_obat = tb_penjualan.kd_obat')
+            ->getWhere(['id_invoice' => $id]);
+    }
+    public function ambilInvoice($id_invoice)
+    {
+        return $this->db->table("invoice")
+            ->join('tb_pengguna', 'tb_pengguna.id_pengguna = invoice.id_pengguna')
+            ->getWhere(['id_invoice' => $id_invoice])->getRow();
+    }
 }

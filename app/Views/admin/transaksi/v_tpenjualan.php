@@ -147,7 +147,7 @@
                                                                 <b>Rp</b>
                                                             </div>
                                                         </div>
-                                                        <input type="text" name="harga_jual" id="bayar" class="form-control" required>
+                                                        <input type="text" name="bayar" id="bayar" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -160,7 +160,7 @@
                                                                 <b>Rp</b>
                                                             </div>
                                                         </div>
-                                                        <input type="text" class="form-control" id="kembali" readonly>
+                                                        <input type="text" class="form-control" name="kembali" id="kembali" readonly>
                                                     </div>
                                                 </div>
                                             </div>
