@@ -8,6 +8,18 @@ class M_penjualan extends Model
 {
     protected $table = "tb_penjualan";
 
+    public function ambilData($id)
+    {
+        return $this->db->table($this->table)
+            ->join('tb_obat', 'tb_obat.kd_obat = tb_penjualan.kd_obat')
+            ->getWhere(['id_invoice' => $id])->getResultArray();
+    }
+    public function ambilDataInvoice()
+    {
+        return $this->db->table('invoice')
+            ->join('tb_pengguna', 'tb_pengguna.id_pengguna = invoice.id_pengguna')
+            ->get()->getResultArray();
+    }
     public function autonumber()
     {
         $kode = $this->db->table($this->table)

@@ -307,3 +307,60 @@ CRITICAL - 2021-05-31 01:23:19 --> Undefined property: stdClass::$pimpinan
 #7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #9 {main}
+CRITICAL - 2021-05-31 23:02:50 --> Undefined variable: dpenjuala
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpenjualan.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(424): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpenjualan()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-05-31 23:13:00 --> Trying to get property 'id_invoice' of non-object
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpenjualan.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 34, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(424): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpenjualan()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-05-31 23:13:32 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpenjualan.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 34, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(424): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpenjualan()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-05-31 23:20:35 --> Call to undefined method App\Models\M_invoice::ambilIdInvoice
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(422): CodeIgniter\Model->__call('ambilIdInvoice', Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpenjualan()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-31 23:21:04 --> Call to undefined method App\Models\M_invoice::ambilIdInvoice
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(422): CodeIgniter\Model->__call('ambilIdInvoice', Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpenjualan()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-31 23:21:06 --> Call to undefined method App\Models\M_invoice::ambilIdInvoice
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(422): CodeIgniter\Model->__call('ambilIdInvoice', Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpenjualan()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}

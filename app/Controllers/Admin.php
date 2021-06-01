@@ -418,7 +418,8 @@ class Admin extends BaseController
 	{
 		$data = [
 			'title'			=> 'Data Penjualan Barang',
-			'uri'			=> \Config\Services::request()
+			'uri'			=> \Config\Services::request(),
+			'dpenjualan'	=> $this->M_penjualan->ambilDataInvoice(),
 		];
 		return view('admin/transaksi/v_dpenjualan', $data);
 	}
@@ -490,6 +491,15 @@ class Admin extends BaseController
 			'autonumber'	=> $this->M_penjualan->autonumber()
 		];
 		return view('/admin/transaksi/v_tpenjualan', $data);
+	}
+	public function detailpenjualan($id)
+	{
+		$data = [
+			'title'		=> 'Detail Penjualan',
+			'uri'		=> \Config\Services::request(),
+			'idInvoice'	=> $this->M_penjualan->ambilData($id)
+		];
+		return view('/admin/laporan/v_detail_penjualan', $data);
 	}
 	//=========================== END PENJUALAN ======================
 	//=========================== PEMBELIAN ======================

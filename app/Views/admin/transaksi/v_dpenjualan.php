@@ -20,48 +20,24 @@
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>Obat Yang Terjual</th>
-										<th>Admin</th>
+										<th>Apoteker</th>
 										<th>Tanggal Pembelian</th>
 										<th>Opsi</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>
-											<p>
-												<span class="badge badge-success">20</span>
-												<span class="badge badge-success">aaaa aaaa aa</span>
-											</p>
-											
-                                        </td>
-										<td>Haikal</td>
-										<td>20-01-2021</td>
-										<td>
-											<a href="" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Detail</a>
-											<a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
-										</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>
-											<p>
-												<span class="badge badge-success">15</span>
-												<span class="badge badge-success">aaaa aaaa aa</span>
-											</p>
-											<p>
-												<span class="badge badge-success">10</span>
-												<span class="badge badge-success">aaaa aaaa aa</span>
-											</p>
-                                        </td>
-										<td>Haikal</td>
-										<td>20-01-2021</td>
-										<td>
-											<a href="" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Detail</a>
-											<a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
-										</td>
-									</tr>
+									<?php $no = 1;
+									foreach ($dpenjualan as $d) { ?>
+										<tr>
+											<td><?= $no++; ?></td>
+											<td><?= $d['nama'] ?></td>
+											<td><?= $d['tgl_beli'] ?></td>
+											<td>
+												<a href="<?= base_url('/admin/detailpenjualan/' . $d['id_invoice']); ?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Detail</a>
+												<a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+											</td>
+										</tr>
+									<?php } ?>
 								</tbody>
 							</table>
 						</div>

@@ -103,7 +103,8 @@
         onafterprint = back;
 
         function back() {
-            history.back();
+            // history.back();
+            location = "<?= base_url('/admin/tpenjualan'); ?>";
         }
     </script>
     <script src="<?= base_url(); ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
