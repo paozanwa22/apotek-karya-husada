@@ -11,85 +11,69 @@
 </head>
 
 <body style="background: #cecece;">
-    <div class="section">
-        <div class="row">
-            <div class="col-md-4 offset-md-4">
-                <div class="card mt-3 mb-3">
-                    <div class="card-body">
-                        <div class="section">
-                            <?php
-                            $db = \Config\Database::connect();
-                            $data = $db->query('SELECT nm_apotek,alamat FROM tb_profile');
-                            $row = $data->getRow();
-                            ?>
-                            <div class="section-header text-center">
-                                <p>
-                                <h5><?= $row->nm_apotek ?></h5><small><?= $row->alamat; ?></small>
-                                </p>
-                            </div>
-                            <p class="text-center">==========================</p>
-                            <div class="section-body">
-                                <table>
-                                    <tr>
-                                        <td width="130px">Tanggal</td>
-                                        <td>:</td>
-                                        <td><?= $dinvoice->tgl_beli; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td width="130px">No Transaksi</td>
-                                        <td>:</td>
-                                        <td><?= $dcetak[0]->no_transaksi ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td width="130px">Apoteker</td>
-                                        <td>:</td>
-                                        <td><?= $dinvoice->nama; ?></td>
-                                    </tr>
-                                </table>
-                                <p class="text-center">==========================</p>
-                                <b>BARANG</b>
-                                <table width="100%">
-                                    <?php
-                                    $subtotal = 0;
-                                    $total = 0;
-                                    foreach ($dcetak as $data) {
-                                        // dd($data);
-                                        $subtotal = $data->jumlah * $data->harga_jual;
-                                        $total += $subtotal;
+    <div class="container mt-2">
+        <div class="section">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
 
-                                    ?>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <b>Apotek Karya Husada</b><br>
+                                    Jln. Masbagik - Labuhan Lombok
+                                </div>
+                                <div class="col-md-5">
+                                    <table align="right">
                                         <tr>
-                                            <td><?= $data->nm_obat ?></td>
+                                            <td>Tanggal</td>
+                                            <td>:</td>
+                                            <td><?= date('d-m-Y'); ?></td>
                                         </tr>
-                                        <tr>
-                                            <td><?= $data->jumlah; ?> x Rp<?= number_format($data->harga_jual); ?></td>
-                                            <td align="right">Rp<?= number_format($subtotal); ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                </table>
-                                <p class="text-center">==========================</p>
-                                <table width="100%">
-                                    <tr>
-                                        <td>Total</td>
-                                        <td width="190px">:</td>
-                                        <td align="right">Rp<?= number_format($total); ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bayar</td>
-                                        <td>:</td>
-                                        <td align="right">Rp<?= $dcetak[0]->total_bayar ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kembalian</td>
-                                        <td>:</td>
-                                        <td align="right"><?= $dcetak[0]->kembalian ?></td>
-                                    </tr>
-                                </table>
-                                <p class="text-center">==========================</p>
-                                <b>Info :</b>
-                                <p>Melayani dengan setulus hati</p>
-                                <p class="text-center">==========================</p>
-                                <p class="text-center">*** Terima Kasih ***</p>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="text-center">Detail Penjualan Obat</h5>
+
+                                    <table border="1" class="" width="100%">
+                                        <tbody>
+                                            <tr height="30px" class="text-center">
+                                                <td width="30px" class="text-center">No</td>
+                                                <td>Nama Obat</td>
+                                                <td width="150px">Harga Satuan</td>
+                                                <td width="100px">Jumlah</td>
+                                                <td width="150px">Subtotal</td>
+                                            </tr>
+                                            <?php
+                                            $no = 1;
+                                            $total = 0;
+                                            $subtotal = 0;
+                                            foreach ($idInvoice as $inv) {
+                                                $jumlah = $inv['jumlah'];
+                                                $satuan = $inv['harga_jual'];
+                                                $total = $satuan * $jumlah;
+                                                $subtotal += $total;
+                                            ?>
+                                                <tr>
+                                                    <td class="text-center"><?= $no++; ?></td>
+                                                    <td><?= $inv['nm_obat']; ?></td>
+                                                    <td>Rp<?= number_format($inv['harga_jual']); ?></td>
+                                                    <td class="text-center"><?= $inv['jumlah']; ?></td>
+                                                    <td>Rp<?= number_format($total) ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <tr>
+                                                <td colspan="4" class="text-center"><b>Total</b></td>
+                                                <td><b>Rp<?= number_format($subtotal) ?></b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,15 +81,8 @@
             </div>
         </div>
     </div>
-
     <script>
         print();
-        onafterprint = back;
-
-        function back() {
-            // history.back();
-            location = "<?= base_url('/admin/tpenjualan'); ?>";
-        }
     </script>
     <script src="<?= base_url(); ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

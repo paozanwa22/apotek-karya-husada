@@ -34,7 +34,7 @@
 											<td><?= $d['tgl_beli'] ?></td>
 											<td>
 												<a href="<?= base_url('/admin/detailpenjualan/' . $d['id_invoice']); ?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Detail</a>
-												<a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+												<a href="<?= base_url('/admin/hapuspenjualan/' . $d['id_invoice']); ?>" class="btn btn-danger btn-sm hapus-data"><i class="fa fa-trash"></i> Hapus</a>
 											</td>
 										</tr>
 									<?php } ?>

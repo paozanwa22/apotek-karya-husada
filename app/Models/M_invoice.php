@@ -12,4 +12,8 @@ class M_invoice extends Model
     {
         return $this->db->table($this->table)->insert($data);
     }
+    public function hapus($id)
+    {
+        return $this->db->table(($this->table))->delete(['id_invoice' => $id]);
+    }
 }

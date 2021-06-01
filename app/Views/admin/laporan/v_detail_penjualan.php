@@ -25,8 +25,14 @@
 
                             <div class="row">
                                 <div class="col-md-7">
-                                    <b>Apotek Karya Husada</b><br>
-                                    Jln. Masbagik - Labuhan Lombok
+                                    <!-- Kode untuk menampilkan poto pada header berdasarkan user login -->
+                                    <?php
+                                    $db = \Config\Database::connect();
+                                    $data = $db->query('SELECT nm_apotek,alamat FROM tb_profile');
+                                    $row = $data->getRow();
+                                    echo "<b>" . $row->nm_apotek . "</b><br>";
+                                    echo "<small>" . $row->alamat . "</small>";
+                                    ?>
                                 </div>
                                 <div class="col-md-5">
                                     <table align="right">
@@ -68,21 +74,21 @@
                                                 <tr>
                                                     <td class="text-center"><?= $no++; ?></td>
                                                     <td><?= $inv['nm_obat']; ?></td>
-                                                    <td><?= number_format($inv['harga_jual']); ?></td>
+                                                    <td>Rp<?= number_format($inv['harga_jual']); ?></td>
                                                     <td class="text-center"><?= $inv['jumlah']; ?></td>
-                                                    <td><?= number_format($total) ?></td>
+                                                    <td>Rp<?= number_format($total) ?></td>
                                                 </tr>
                                             <?php } ?>
                                             <tr>
                                                 <td colspan="4" class="text-center"><b>Total</b></td>
-                                                <td><b><?= number_format($subtotal) ?></b></td>
+                                                <td><b>Rp<?= number_format($subtotal) ?></b></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
 
-                            <br><a href="#" class="btn btn-secondary"><i class="fa fa-print"></i> Cetak</a>
+                            <br><a href="<?= base_url('/cetak/cetak_penjualan/' . $inv['id_invoice']); ?>" class="btn btn-secondary" target="_blank"><i class="fa fa-print"></i> Cetak</a>
 
                         </div>
                     </div>

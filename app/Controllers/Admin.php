@@ -478,7 +478,7 @@ class Admin extends BaseController
 
 		$cart->destroy();
 		// return redirect()->to('/admin/tpenjualan');
-		return redirect()->to('/cetak/cetak_penjualan/' . $id_invoice);
+		return redirect()->to('/cetak/struk_penjualan/' . $id_invoice);
 	}
 	public function pilihObat($id)
 	{
@@ -500,6 +500,12 @@ class Admin extends BaseController
 			'idInvoice'	=> $this->M_penjualan->ambilData($id)
 		];
 		return view('/admin/laporan/v_detail_penjualan', $data);
+	}
+	public function hapuspenjualan($id)
+	{
+		$this->M_invoice->hapus($id);
+		session()->setFlashdata('sukses', 'Berhasil menghapus data');
+		return redirect()->to('/admin/dpenjualan');
 	}
 	//=========================== END PENJUALAN ======================
 	//=========================== PEMBELIAN ======================
