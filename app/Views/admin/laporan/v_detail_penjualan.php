@@ -88,7 +88,7 @@
                                 </div>
                             </div>
 
-                            <br><a href="<?= base_url('/cetak/cetak_penjualan/' . $inv['id_invoice']); ?>" class="btn btn-secondary" target="_blank"><i class="fa fa-print"></i> Cetak</a>
+                            <br><a href="<?= base_url('/cetak/cetak_penjualan/' . $inv['id_invoice']); ?>" class="btn btn-light" target="_blank"><i class="fa fa-print"></i> Cetak</a>
 
                         </div>
                     </div>

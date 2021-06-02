@@ -12,6 +12,7 @@ use App\Models\M_pengguna;
 use App\Models\M_profile;
 use App\Models\M_penjualan;
 use App\Models\M_invoice;
+use App\Models\M_pembelian;
 
 class Admin extends BaseController
 {
@@ -24,6 +25,7 @@ class Admin extends BaseController
 	protected $M_profile;
 	protected $M_penjualan;
 	protected $M_invoice;
+	protected $M_pembelian;
 
 	public function __construct()
 	{
@@ -35,6 +37,7 @@ class Admin extends BaseController
 		$this->M_profile = new M_profile();
 		$this->M_penjualan = new M_penjualan();
 		$this->M_invoice = new M_invoice();
+		$this->M_pembelian = new M_pembelian();
 	}
 
 
@@ -517,13 +520,44 @@ class Admin extends BaseController
 		];
 		return view('admin/transaksi/v_dpembelian', $data);
 	}
-	public function tpembelian()
+	public function tpembelian($id = '')
 	{
 		$data = [
 			'title'			=> 'Pembelian',
-			'uri'			=> \Config\Services::request()
+			'uri'			=> \Config\Services::request(),
+			'autonumber'	=> $this->M_pembelian->autonumber(),
+			'dsup'			=> $this->M_suplier->ambilData(),
+			'idsup'			=> $this->M_suplier->ambilData($id)->getRowArray(),
+			'cariidobat'	=> $this->M_obat->cariid($id),
+			'cart'			=> \Config\Services::cart()
 		];
 		return view('admin/transaksi/v_tpembelian', $data);
+	}
+	public function tpembelianaksi()
+	{
+		$cart = \Config\Services::cart();
+		$this->M_invoice->addInvoice([
+			'id_pengguna'	=> session()->get('id_pengguna'),
+			'tgl_beli'		=> date('Y-m-d')
+		]);
+
+		$id_invoice = $this->M_invoice->insertID();
+
+		foreach ($cart->contents() as $value) {
+			$this->M_pembelian->simpan([
+				'no_transaksi'		=> $this->request->getVar('no_transaksi'),
+				'kd_sup'			=> $value['options']['kd_sup'],
+				'id_invoice'		=> $id_invoice,
+				'tgl_pembelian'		=> date('Y-m-d'),
+				'nm_obat'			=> $value['name'],
+				'harga'				=> $value['price'],
+				'banyak'			=> $value['qty'],
+				'total_beli'		=> $value['subtotal'],
+			]);
+		}
+		session()->setFlashdata('sukses', 'Data berhasil disimpan');
+		$cart->destroy();
+		return redirect()->to('/admin/tpembelian');
 	}
 	//=========================== END PEMBELIAN ======================
 	//=========================== PENGGUNA ======================
@@ -828,6 +862,12 @@ class Admin extends BaseController
 		$cart->remove($rowid);
 		return redirect()->to('/admin/tpenjualan');
 	}
+	public function deletecartpembelian($rowid)
+	{
+		$cart = \Config\Services::cart();
+		$cart->remove($rowid);
+		return redirect()->to('/admin/tpembelian');
+	}
 	public function updatecart()
 	{
 		$cart = \Config\Services::cart();
@@ -839,6 +879,35 @@ class Admin extends BaseController
 			));
 		}
 		return redirect()->to('/admin/tpenjualan');
+	}
+	public function updatecartpembelian()
+	{
+		$cart = \Config\Services::cart();
+		$i = 1;
+		foreach ($cart->contents() as $d) {
+			$cart->update(array(
+				'rowid'   => $d['rowid'],
+				'qty'     => $this->request->getVar('qty' . $i++),
+			));
+		}
+		return redirect()->to('/admin/tpembelian');
+	}
+
+	public function addPembelian()
+	{
+		$cart = \Config\Services::cart();
+		$id_obat = $this->request->getVar('nm_obat');
+		$data = $this->M_obat->ambilData($id_obat)->getRow();
+		$harga = $data->harga_beli;
+		$nama = $data->nm_obat;
+		$cart->insert(array(
+			'id'      => $this->request->getVar('nm_obat'),
+			'qty'     => 1,
+			'price'   => $harga,
+			'name'    => $nama,
+			'options' => array('kd_sup' => $this->request->getVar('kd_sup'))
+		));
+		return redirect()->to('/admin/tpembelian/');
 	}
 	//=========================== End CRUD Cart ======================
 }

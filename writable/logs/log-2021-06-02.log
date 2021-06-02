@@ -1,0 +1,193 @@
+CRITICAL - 2021-06-02 00:01:39 --> Undefined index: 6a885ef35a0073340943cea5dc4f5d68
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 83, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 00:49:20 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->addPembelian()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-06-02 00:58:50 --> Undefined index: nama
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(84): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 84, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:22:16 --> Too few arguments to function App\Controllers\Admin::deletecartpembelian(), 0 passed in C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php on line 920 and exactly 1 expected
+#0 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->deletecartpembelian()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-06-02 01:23:23 --> Trying to get property 'harga_beli' of non-object
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(875): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 875, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->addPembelian()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 01:30:56 --> Undefined index: total
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:31:38 --> Undefined index: total
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:31:58 --> Trying to get property 'total' of non-object
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:32:07 --> Undefined index: total
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:34:22 --> Undefined index: total
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:34:23 --> Undefined index: total
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:36:01 --> Cannot use object of type CodeIgniterCart\Cart as array
+#0 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#2 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-06-02 01:36:11 --> Undefined property: CodeIgniterCart\Cart::$total
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 01:52:02 --> Trying to get property 'harga_beli' of non-object
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(878): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 878, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->addPembelian()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 02:53:07 --> Trying to get property 'harga_beli' of non-object
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(898): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 898, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->addPembelian()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 03:02:49 --> Undefined index: kd_sup
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian('SUP0013')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 03:02:59 --> Undefined index: kd_sup
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_tpembelian.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(534): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelian('SUP0013')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 03:20:56 --> Undefined index: kd_sup
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(549): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 549, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelianaksi()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 03:22:49 --> Undefined index: kd_sup
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(549): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 549, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->tpembelianaksi()
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 03:26:12 --> syntax error, unexpected '}', expecting ';'
+#0 C:\xampp\htdocs\apotek-karya-husada\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('admin/tpembelia...')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(795): CodeIgniter\Router\Router->handle('admin/tpembelia...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
