@@ -14,10 +14,11 @@ class M_penjualan extends Model
             ->join('tb_obat', 'tb_obat.kd_obat = tb_penjualan.kd_obat')
             ->getWhere(['id_invoice' => $id])->getResultArray();
     }
-    public function ambilDataInvoice()
+    public function ambilDataInvoice($aksi)
     {
         return $this->db->table('invoice')
             ->join('tb_pengguna', 'tb_pengguna.id_pengguna = invoice.id_pengguna')
+            ->where(['aksi' => $aksi])
             ->get()->getResultArray();
     }
     public function autonumber()

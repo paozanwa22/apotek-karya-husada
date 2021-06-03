@@ -191,3 +191,229 @@ CRITICAL - 2021-06-02 03:26:12 --> syntax error, unexpected '}', expecting ';'
 #4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #6 {main}
+CRITICAL - 2021-06-02 16:00:32 --> Undefined variable: inv
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_penjualan.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(505): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpenjualan('88')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 16:00:49 --> Undefined variable: inv
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_penjualan.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(505): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpenjualan('88')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 16:18:04 --> Undefined variable: inv
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_penjualan.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(506): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpenjualan('90')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 16:18:33 --> Too few arguments to function App\Controllers\Cetak::cetak_penjualan(), 0 passed in C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php on line 920 and exactly 1 expected
+#0 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Cetak->cetak_penjualan()
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-06-02 16:18:50 --> Undefined variable: inv
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_penjualan.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(506): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpenjualan('88')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 16:29:00 --> Undefined variable: inv
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_penjualan.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(506): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpenjualan('97')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 16:34:48 --> Undefined variable: inv
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_penjualan.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(506): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpenjualan('97')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 17:15:22 --> Undefined variable: dpembelain
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpembelian.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(524): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 17:34:59 --> Undefined index: id_pem
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpembelian.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(524): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 17:35:18 --> Undefined index: id_pen
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpembelian.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(524): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 17:35:46 --> Undefined index: id_pen
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpembelian.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(524): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 17:44:56 --> Undefined index: banyak
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\transaksi\v_dpembelian.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('admin/transaksi...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(524): view('admin/transaksi...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->dpembelian()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 18:17:18 --> Invalid file: {0}
+#0 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/v_detail...')
+#1 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/v_detail...', Array, true)
+#2 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(493): view('/admin/v_detail...', Array)
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpembelain('101')
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-06-02 18:19:45 --> Undefined variable: idInvoice
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_pembelian.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 67, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(493): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpembelain('101')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 18:21:08 --> Undefined variable: idInvoice
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_detail_pembelian.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 67, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(493): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpembelain('101')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 18:21:57 --> Undefined variable: uri
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\layout\v_template.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(257): CodeIgniter\View\View->render('layout/v_templa...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#4 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\Admin.php(493): view('/admin/laporan/...', Array)
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Admin->detailpembelain('101')
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-06-02 20:04:11 --> Undefined property: App\Controllers\Cetak::$M_pembelian
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\cetak.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Cetak->cetak_pembelian('102')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 20:06:04 --> Undefined property: App\Controllers\Cetak::$M_pembelian
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\cetak.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Cetak->cetak_pembelian('102')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 20:06:51 --> Undefined property: App\Controllers\Cetak::$M_pembelian
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\cetak.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Cetak->cetak_pembelian('102')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 20:07:54 --> Undefined property: App\Controllers\Cetak::$M_pembelian
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\cetak.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Cetak->cetak_pembelian('102')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+#3 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-02 20:08:44 --> Undefined index: jumlah
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_cetak_penjualan.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 57, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\cetak.php(40): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Cetak->cetak_pembelian('102')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-06-02 20:09:05 --> Undefined index: jumlah
+#0 C:\xampp\htdocs\apotek-karya-husada\app\Views\admin\laporan\v_cetak_penjualan.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 57, Array)
+#1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\apotek-karya-husada\system\Common.php(1119): CodeIgniter\View\View->render('/admin/laporan/...', Array, true)
+#3 C:\xampp\htdocs\apotek-karya-husada\app\Controllers\cetak.php(40): view('/admin/laporan/...', Array)
+#4 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(920): App\Controllers\Cetak->cetak_pembelian('102')
+#5 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+#6 C:\xampp\htdocs\apotek-karya-husada\system\CodeIgniter.php(314): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#9 {main}

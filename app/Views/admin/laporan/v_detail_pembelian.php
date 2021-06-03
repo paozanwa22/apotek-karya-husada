@@ -9,11 +9,11 @@
                     <div class="btn btn-icon"><i class="fas fa-arrow-left"></i> </div>
                 </a>
             </div>
-            <h1>Detail Penjualan</h1>
+            <h1>Detail Pembelian</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="<?= base_url('/admin') ?>">Beranda</a></div>
-                <div class="breadcrumb-item active"><a href="<?= base_url('/admin/dpenjualan') ?>">History Penjualan</a></div>
-                <div class="breadcrumb-item">Detail Penjualan</div>
+                <div class="breadcrumb-item active"><a href="<?= base_url('/admin/dpenjualan') ?>">History Pembelian</a></div>
+                <div class="breadcrumb-item">Detail Pembelian</div>
             </div>
         </div>
 
@@ -48,46 +48,47 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h5 class="text-center">Detail Penjualan Obat</h5>
+                                    <h5 class="text-center">Detail Pembelian Obat</h5>
+                                    <br>
 
                                     <table border="1" class="" width="100%">
                                         <tbody>
+
                                             <tr height="30px" class="text-center">
                                                 <td width="30px" class="text-center">No</td>
                                                 <td>Nama Obat</td>
+                                                <td>Suplier</td>
                                                 <td width="150px">Harga Satuan</td>
                                                 <td width="100px">Jumlah</td>
                                                 <td width="150px">Subtotal</td>
                                             </tr>
                                             <?php
                                             $no = 1;
-                                            $total = 0;
                                             $subtotal = 0;
-                                            foreach ($idInvoice as $inv) {
-                                                $jumlah = $inv['jumlah'];
-                                                $satuan = $inv['harga_jual'];
-                                                $total = $satuan * $jumlah;
-                                                $subtotal += $total;
-
+                                            $total = 0;
+                                            foreach ($dpembelian as $data) {
+                                                $subtotal = $data['harga'] * $data['banyak'];
+                                                $total += $subtotal;
                                             ?>
                                                 <tr>
                                                     <td class="text-center"><?= $no++; ?></td>
-                                                    <td><?= $inv['nm_obat']; ?></td>
-                                                    <td>Rp<?= number_format($inv['harga_jual']); ?></td>
-                                                    <td class="text-center"><?= $inv['jumlah']; ?></td>
-                                                    <td>Rp<?= number_format($total) ?></td>
+                                                    <td><?= $data['nm_obat']; ?></td>
+                                                    <td><?= $data['nama']; ?></td>
+                                                    <td>Rp<?= number_format($data['harga']); ?></td>
+                                                    <td class="text-center"><?= $data['banyak']; ?></td>
+                                                    <td>Rp<?= number_format($data['total_beli']); ?></td>
                                                 </tr>
                                             <?php } ?>
                                             <tr>
-                                                <td colspan="4" class="text-center"><b>Total</b></td>
-                                                <td><b>Rp<?= number_format($subtotal) ?></b></td>
+                                                <td colspan="5" class="text-center"><b>Total</b></td>
+                                                <td><b>Rp<?= number_format($total); ?></b></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
 
-                            <br><a href="<?= base_url('/cetak/cetak_penjualan/' . $inv['id_invoice']); ?>" class="btn btn-light" target="_blank"><i class="fa fa-print"></i> Cetak</a>
+                            <br><a href="<?= base_url('/cetak/cetak_pembelian/' . $data['id_invoice']); ?>" class="btn btn-light" target="_blank"><i class="fa fa-print"></i> Cetak</a>
 
                         </div>
                     </div>

@@ -8,6 +8,12 @@ class M_pembelian extends Model
 {
     protected $table = "tb_pembelian";
 
+    public function ambilData($id)
+    {
+        return $this->db->table($this->table)
+            ->join('tb_supplier', 'tb_supplier.kd_sup = tb_pembelian.kd_sup')
+            ->where(['id_invoice' => $id])->get()->getResultArray();
+    }
     public function autonumber()
     {
         $kode = $this->db->table($this->table)
@@ -29,5 +35,18 @@ class M_pembelian extends Model
     public function simpan($data)
     {
         return $this->db->table($this->table)->insert($data);
+    }
+    public function ambilDataInvoice($aksi)
+    {
+        return $this->db->table('invoice')
+            ->join('tb_pengguna', 'tb_pengguna.id_pengguna = invoice.id_pengguna')
+            ->where(['aksi' => $aksi])
+            ->get()->getResultArray();
+    }
+    public function cariid($id)
+    {
+        return $this->db->table($this->table)
+            ->join('tb_supplier', 'tb_supplier.kd_sup = tb_pembelian.kd_sup')
+            ->where(['id_invoice' => $id])->get()->getResultArray();
     }
 }

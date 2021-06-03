@@ -13,6 +13,7 @@ use App\Models\M_profile;
 use App\Models\M_penjualan;
 use App\Models\M_invoice;
 use App\Models\M_pembelian;
+use CodeIgniter\Config\Config;
 
 class Admin extends BaseController
 {
@@ -43,6 +44,7 @@ class Admin extends BaseController
 
 	public function index()
 	{
+		// DD(password_hash('admin', PASSWORD_DEFAULT));
 		$data = [
 			'title'				=> "Beranda",
 			'uri'				=> \Config\Services::request(),
@@ -417,12 +419,12 @@ class Admin extends BaseController
 	}
 	//=========================== END KATEGORI ======================
 	//=========================== PENJUALAN ======================
-	public function dpenjualan()
+	public function dpenjualan($aksi = "1")
 	{
 		$data = [
 			'title'			=> 'Data Penjualan Barang',
 			'uri'			=> \Config\Services::request(),
-			'dpenjualan'	=> $this->M_penjualan->ambilDataInvoice(),
+			'dpenjualan'	=> $this->M_penjualan->ambilDataInvoice($aksi),
 		];
 		return view('admin/transaksi/v_dpenjualan', $data);
 	}
@@ -458,7 +460,8 @@ class Admin extends BaseController
 
 		$this->M_invoice->addInvoice([
 			'id_pengguna'	=> session()->get('id_pengguna'),
-			'tgl_beli'		=> date('Y-m-d')
+			'tgl_beli'		=> date('Y-m-d'),
+			'aksi'			=> 1
 		]);
 
 		$id_invoice = $this->M_invoice->insertID();
@@ -482,6 +485,15 @@ class Admin extends BaseController
 		$cart->destroy();
 		// return redirect()->to('/admin/tpenjualan');
 		return redirect()->to('/cetak/struk_penjualan/' . $id_invoice);
+	}
+	public function detailpembelain($id)
+	{
+		$data = [
+			'title'			=> 'Detail Pembelian',
+			'uri'			=> \Config\Services::request(),
+			'dpembelian'	=> $this->M_pembelian->cariid($id)
+		];
+		return view('/admin/laporan/v_detail_pembelian', $data);
 	}
 	public function pilihObat($id)
 	{
@@ -512,11 +524,12 @@ class Admin extends BaseController
 	}
 	//=========================== END PENJUALAN ======================
 	//=========================== PEMBELIAN ======================
-	public function dpembelian()
+	public function dpembelian($aksi = "2")
 	{
 		$data = [
 			'title'			=> 'Data Pembelian Barang',
-			'uri'			=> \Config\Services::request()
+			'uri'			=> \Config\Services::request(),
+			'dpembelian'	=> $this->M_pembelian->ambilDataInvoice($aksi)
 		];
 		return view('admin/transaksi/v_dpembelian', $data);
 	}
@@ -538,7 +551,8 @@ class Admin extends BaseController
 		$cart = \Config\Services::cart();
 		$this->M_invoice->addInvoice([
 			'id_pengguna'	=> session()->get('id_pengguna'),
-			'tgl_beli'		=> date('Y-m-d')
+			'tgl_beli'		=> date('Y-m-d'),
+			'aksi'			=> 2
 		]);
 
 		$id_invoice = $this->M_invoice->insertID();

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\controller;
 use App\Models\M_penjualan;
+use App\Models\M_pembelian;
 
 class Cetak extends BaseController
 {
@@ -11,6 +12,7 @@ class Cetak extends BaseController
     public function __construct()
     {
         $this->M_penjualan = new M_penjualan();
+        $this->M_pembelian = new M_pembelian();
     }
     public function struk_penjualan($id)
     {
@@ -28,5 +30,13 @@ class Cetak extends BaseController
             'idInvoice'     => $this->M_penjualan->ambilData($id)
         ];
         return View('/admin/laporan/v_cetak_penjualan', $data);
+    }
+    public function cetak_pembelian($id)
+    {
+        $data = [
+            'title'         => 'Cetak Penjualan Barang',
+            'idInvoice'     => $this->M_pembelian->ambilData($id)
+        ];
+        return View('/admin/laporan/v_cetak_pembelian', $data);
     }
 }
