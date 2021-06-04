@@ -33,7 +33,7 @@
 				<div class="col-md-4">
 					<div class="card">
 						<div class="card-body">
-						<div class="card-title">
+							<div class="card-title">
 								<b>Pendapatan Setiap Hari</b>
 							</div>
 							<div class="row p-3">
@@ -46,7 +46,9 @@
 											<td>Harian</td>
 										</tr>
 										<tr>
-											<td><h5>Rp340.000</h5></td>
+											<td>
+												<h5>Rp340.000</h5>
+											</td>
 										</tr>
 									</table>
 								</div>
@@ -68,7 +70,9 @@
 											<td>Pendapatan per bulan</td>
 										</tr>
 										<tr>
-											<td><h5>Rp340.000</h5></td>
+											<td>
+												<h5>Rp10.340.000</h5>
+											</td>
 										</tr>
 									</table>
 								</div>

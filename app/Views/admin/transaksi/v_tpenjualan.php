@@ -61,7 +61,7 @@
                                                 <label>Tanggal</label>
                                                 <input type="text" name="tanggal" value="<?= date('d/m/y'); ?>" class="form-control form-control-sm" readonly>
 
-                                                <label>Kasir</label>
+                                                <label>Apoteker</label>
                                                 <input type="text" class="form-control form-control-sm" value="<?= session()->get('nama'); ?>" readonly>
                                             </div>
                                         </div>
