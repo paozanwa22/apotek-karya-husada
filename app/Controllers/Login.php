@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 use CodeIgniter\controller;
 use App\Models\M_profile;
@@ -12,7 +14,7 @@ class Login extends BaseController
         $data = [
             'title'     => 'Login',
             'nmaptk'     => $tapil->tampil(),
-            'validation'    =>\Config\Services::validation()
+            'validation'    => \Config\Services::validation()
         ];
         return view('login/v_login', $data);
     }
@@ -20,21 +22,21 @@ class Login extends BaseController
     {
         $model = new M_login();
 
-        if(!$this->validate([
+        if (!$this->validate([
             'email' => [
                 'rules'     => 'required|valid_email',
                 'errors'    => [
                     'required'      => 'Email harus diisi',
                     'valid_email'   => 'Masukkan email dengan benar'
                 ]
-                ],
-                'password'  => [
-                    'rules'     => 'required',
-                    'errors'    => [
-                        'required'  => 'Password harus diisi'
-                    ]
+            ],
+            'password'  => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required'  => 'Password harus diisi'
                 ]
-        ])){
+            ]
+        ])) {
             return redirect()->to('/Login')->withInput();
         }
 
@@ -44,7 +46,7 @@ class Login extends BaseController
         $cek = $model->cekData($email);
 
         // Pengecekan
-        if($cek != null){
+        if ($cek != null) {
             $data_ses = [
                 'id_pengguna'   => $cek['id_pengguna'],
                 'nama'          => $cek['nama'],
@@ -52,15 +54,15 @@ class Login extends BaseController
                 'poto'          => $cek['poto'],
                 'log_in'        => TRUE
             ];
-            if(password_verify($password, $cek['password'])){
+            if (password_verify($password, $cek['password'])) {
                 session()->set($data_ses);
                 return redirect()->to('/admin');
-            }else{
-                session()->setFlashdata('gagal','Password anda tidak valid. Mohon periksa kembali');
+            } else {
+                session()->setFlashdata('gagal', 'Password anda tidak valid. Mohon periksa kembali');
                 return redirect()->to('/login')->withInput();
             }
-        }else{
-            session()->setFlashdata('gagal','Email yang anda masukkan tidak valid. Mohon periksa kembali');
+        } else {
+            session()->setFlashdata('gagal', 'Email yang anda masukkan tidak valid. Mohon periksa kembali');
             return redirect()->to('/login')->withInput();
         }
     }
@@ -76,10 +78,10 @@ class Login extends BaseController
         $cari = $model->cariData($id);
         $id_pengguna = $cari->id_pengguna;
         $model->reset([
-            'password'		=> password_hash('apotek123', PASSWORD_DEFAULT)
-        ],$id_pengguna);
+            'password'        => password_hash('apotek123', PASSWORD_DEFAULT)
+        ], $id_pengguna);
 
-        session()->setFlashdata('sukses','Password berhasil direset');
+        session()->setFlashdata('sukses', 'Password berhasil direset');
         return redirect()->to('/admin/dpengguna');
     }
 }
