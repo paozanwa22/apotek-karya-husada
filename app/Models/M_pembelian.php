@@ -49,4 +49,15 @@ class M_pembelian extends Model
             ->join('tb_supplier', 'tb_supplier.kd_sup = tb_pembelian.kd_sup')
             ->where(['id_invoice' => $id])->get()->getResultArray();
     }
+    public function caridatatanggalpembelian($awal)
+    {
+        $cari = $this->db->table($this->table)
+            ->join('tb_supplier', 'tb_supplier.kd_sup = tb_pembelian.kd_sup')
+            // ->join('invoice', 'invoice.id_invoice = tb_penjualan.id_invoice')
+            ->where(['tgl_pembelian >=' => $awal['awal']])
+            ->where(['tgl_pembelian <=' => $awal['akhir']])
+            ->get()->getResultArray();
+        // dd($cari);
+        return $cari;
+    }
 }

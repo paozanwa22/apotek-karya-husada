@@ -5,7 +5,7 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-back">
-                <a href="<?= base_url('/admin/dpenjualan'); ?>">
+                <a href="<?= base_url('/admin/dpembelian'); ?>">
                     <div class="btn btn-icon"><i class="fas fa-arrow-left"></i> </div>
                 </a>
             </div>

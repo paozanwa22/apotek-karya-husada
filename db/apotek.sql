@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2021 at 05:15 AM
+-- Generation Time: Jun 16, 2021 at 12:22 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -40,10 +40,28 @@ CREATE TABLE `invoice` (
 
 INSERT INTO `invoice` (`id_invoice`, `id_pengguna`, `tgl_beli`, `aksi`) VALUES
 (99, 11, '2021-06-02', 1),
-(100, 11, '2021-06-02', 1),
 (101, 11, '2021-06-02', 2),
 (102, 11, '2021-06-02', 2),
-(103, 11, '2021-06-03', 1);
+(104, 11, '2021-06-06', 1),
+(105, 11, '2021-06-06', 2),
+(106, 11, '2021-06-06', 1),
+(119, 11, '2021-06-08', 2),
+(120, 11, '2021-06-08', 2),
+(121, 11, '2021-06-08', 2),
+(122, 12, '2021-06-08', 1),
+(123, 12, '2021-06-08', 2),
+(124, 11, '2021-06-08', 2),
+(125, 11, '2021-06-08', 1),
+(126, 11, '2021-06-08', 1),
+(127, 11, '2021-06-08', 1),
+(128, 11, '2021-06-08', 1),
+(129, 11, '2021-06-09', 1),
+(130, 11, '2021-06-09', 1),
+(131, 11, '2021-06-09', 2),
+(132, 11, '2021-06-09', 1),
+(133, 11, '2021-06-09', 2),
+(134, 11, '2021-06-09', 2),
+(135, 11, '2021-06-09', 1);
 
 -- --------------------------------------------------------
 
@@ -78,9 +96,9 @@ INSERT INTO `tb_kategori_obat` (`id_k`, `kategori`) VALUES
 --
 
 CREATE TABLE `tb_obat` (
-  `kd_obat` varchar(150) NOT NULL,
-  `nm_obat` varchar(150) NOT NULL,
-  `kd_sup` varchar(150) NOT NULL,
+  `kd_obat` varchar(20) NOT NULL,
+  `nm_obat` varchar(50) NOT NULL,
+  `kd_sup` varchar(20) NOT NULL,
   `id_s` int(11) NOT NULL,
   `id_k` int(11) NOT NULL,
   `harga_beli` varchar(20) DEFAULT NULL,
@@ -94,20 +112,19 @@ CREATE TABLE `tb_obat` (
 --
 
 INSERT INTO `tb_obat` (`kd_obat`, `nm_obat`, `kd_sup`, `id_s`, `id_k`, `harga_beli`, `harga_jual`, `stok`, `tgl_kadaluarsa`) VALUES
-('KDOB0001', 'Etoricoxib 90 mg', 'SUP0025', 4, 4, '6000', '7000', 56, '2022-01-02'),
-('KDOB0002', 'Hansaplast princess Isi 10', 'SUP0025', 7, 5, '5500', '9000', 69, '2022-12-01'),
+('KDOB0001', 'Etoricoxib 90 mg', 'SUP0025', 4, 4, '6000', '7000', 81, '2022-01-02'),
+('KDOB0002', 'Hansaplast princess Isi 10', 'SUP0025', 7, 5, '5500', '9000', 75, '2022-12-01'),
 ('KDOB0003', 'Hansaplast Roll Kain 1,25x5M', 'SUP0025', 7, 5, '6000', '10000', 44, '2022-11-01'),
-('KDOB0004', 'Nivea Deo Invisible 50', 'SUP0024', 7, 5, '13500', '18000', 64, '2023-02-03'),
+('KDOB0004', 'Nivea Deo Invisible 50', 'SUP0024', 7, 5, '13500', '18000', 67, '2023-02-03'),
 ('KDOB0005', 'Nivea Roll On ext white ac 50', 'SUP0024', 7, 5, '15500', '20500', 44, '2024-09-04'),
 ('KDOB0006', 'Nivea Deo wht h. shave ro 50 ml', 'SUP0023', 7, 5, '14000', '19000', 21, '2023-12-08'),
-('KDOB0007', 'Ibuprofen 400 mg', 'SUP0023', 4, 4, '25000', '29000', 37, '2024-09-25'),
+('KDOB0007', 'Ibuprofen 400 mg', 'SUP0023', 4, 4, '25000', '29000', 40, '2024-09-25'),
 ('KDOB0008', 'Amlodipine 10 mg', 'SUP0022', 4, 4, '8000', '11000', 40, '2023-09-22'),
 ('KDOB0009', 'Theraskin Serum Vit C plus', 'SUP0007', 6, 7, '45000', '60000', 23, '2024-11-12'),
 ('KDOB0010', 'Theraskin deo lotion 20ml', 'SUP0007', 6, 7, '12500', '16000', 35, '2023-10-03'),
 ('KDOB0011', 'Theraskin AHA 10 Cream 10gr', 'SUP0007', 14, 7, '17000', '25000', 19, '2023-12-24'),
-('KDOB0012', 'Tremenza Syrup', 'SUP0008', 6, 4, '21000', '25000', 9, '2023-06-11'),
-('KDOB0013', 'Valproic Acid Syrup', 'SUP0010', 6, 4, '50600', '70500', 26, '2024-11-12'),
-('KDOB0014', 'Vectrine Syrup', 'SUP0011', 6, 4, '45000', '65000', 19, '2023-02-22');
+('KDOB0012', 'Tremenza Syrup', 'SUP0008', 6, 4, '21000', '25000', 29, '2023-06-11'),
+('KDOB0013', 'Valproic Acid Syrup', 'SUP0010', 6, 4, '50600', '70500', 22, '2024-11-12');
 
 -- --------------------------------------------------------
 
@@ -118,10 +135,10 @@ INSERT INTO `tb_obat` (`kd_obat`, `nm_obat`, `kd_sup`, `id_s`, `id_k`, `harga_be
 CREATE TABLE `tb_pembelian` (
   `id_pem` int(11) NOT NULL,
   `no_transaksi` varchar(20) NOT NULL,
-  `kd_sup` varchar(150) NOT NULL,
+  `kd_sup` varchar(30) NOT NULL,
   `id_invoice` int(11) NOT NULL,
   `tgl_pembelian` date NOT NULL,
-  `nm_obat` varchar(150) NOT NULL,
+  `nm_obat` varchar(50) NOT NULL,
   `harga` int(11) NOT NULL,
   `banyak` int(11) NOT NULL,
   `total_beli` int(11) NOT NULL
@@ -136,7 +153,25 @@ INSERT INTO `tb_pembelian` (`id_pem`, `no_transaksi`, `kd_sup`, `id_invoice`, `t
 (10, '020620210001', 'SUP0010', 101, '2021-06-02', 'Valproic Acid Syrup', 50600, 1, 50600),
 (11, '020620210002', 'SUP0007', 102, '2021-06-02', 'Theraskin Serum Vit C plus', 45000, 1, 45000),
 (12, '020620210002', 'SUP0008', 102, '2021-06-02', 'Tremenza Syrup', 21000, 2, 42000),
-(13, '020620210002', 'SUP0024', 102, '2021-06-02', 'Nivea Roll On ext white ac 50', 15500, 1, 15500);
+(13, '020620210002', 'SUP0024', 102, '2021-06-02', 'Nivea Roll On ext white ac 50', 15500, 1, 15500),
+(14, '060620210003', 'SUP0024', 105, '2021-06-06', 'Nivea Deo Invisible 50', 13500, 1, 13500),
+(15, '060620210004', 'SUP0023', 107, '2021-06-06', 'Nivea Deo wht h. shave ro 50 ml', 14000, 1, 14000),
+(16, '070620210005', 'SUP0025', 108, '2021-06-07', 'Hansaplast princess Isi 10', 5500, 1, 5500),
+(17, '080620210006', 'SUP0023', 109, '2021-06-08', 'Ibuprofen 400 mg', 25000, 1, 25000),
+(18, '080620210007', 'SUP0023', 110, '2021-06-08', 'Ibuprofen 400 mg', 25000, 1, 25000),
+(19, '080620210008', 'SUP0023', 111, '2021-06-08', 'Ibuprofen 400 mg', 25000, 1, 25000),
+(20, '080620210009', 'SUP0023', 112, '2021-06-08', 'Ibuprofen 400 mg', 25000, 1, 25000),
+(21, '080620210010', 'SUP0023', 115, '2021-06-08', 'Ibuprofen 400 mg', 25000, 3, 75000),
+(22, '080620210011', 'SUP0025', 116, '2021-06-08', 'Etoricoxib 90 mg', 6000, 25, 150000),
+(23, '080620210012', 'SUP0008', 118, '2021-06-08', 'Tremenza Syrup', 21000, 25, 525000),
+(24, '080620210013', 'SUP0025', 119, '2021-06-08', 'Hansaplast princess Isi 10', 5500, 2, 11000),
+(25, '080620210014', 'SUP0010', 120, '2021-06-08', 'Valproic Acid Syrup', 50600, 1, 50600),
+(26, '080620210015', 'SUP0010', 121, '2021-06-08', 'Valproic Acid Syrup', 50600, 3, 151800),
+(27, '080620210016', 'SUP0024', 123, '2021-06-08', 'Nivea Deo Invisible 50', 13500, 1, 13500),
+(28, '080620210017', 'SUP0024', 124, '2021-06-08', 'Nivea Deo Invisible 50', 13500, 2, 27000),
+(29, '090620210018', 'SUP0008', 131, '2021-06-09', 'Tremenza Syrup', 21000, 5, 105000),
+(30, '090620210019', 'SUP0025', 133, '2021-06-09', 'Hansaplast princess Isi 10', 5500, 5, 27500),
+(31, '090620210020', 'SUP0025', 134, '2021-06-09', 'Hansaplast princess Isi 10', 5500, 4, 22000);
 
 -- --------------------------------------------------------
 
@@ -146,14 +181,14 @@ INSERT INTO `tb_pembelian` (`id_pem`, `no_transaksi`, `kd_sup`, `id_invoice`, `t
 
 CREATE TABLE `tb_pengguna` (
   `id_pengguna` int(11) NOT NULL,
-  `nama` varchar(150) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `jk` char(20) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `jk` varchar(15) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `no_hp` varchar(15) NOT NULL,
   `tgl_buat` date NOT NULL,
-  `poto` varchar(255) NOT NULL,
-  `level` varchar(50) NOT NULL,
+  `poto` varchar(200) NOT NULL,
+  `level` varchar(20) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -162,9 +197,10 @@ CREATE TABLE `tb_pengguna` (
 --
 
 INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `jk`, `password`, `no_hp`, `tgl_buat`, `poto`, `level`, `alamat`) VALUES
-(11, 'Haikal Wahyudi', 'admin@gmail.com', 'Perempuan', '$2y$10$Kx.5CSgGwtRPZ4owG4KL9.Bw.Q53sbEHvb2Fu1cBYA5JpfJR4L7py', '123456789045635', '2021-05-24', '1622748655_3031746b59ded0191bfd.png', 'Admin', 'Lotim fdgfdg'),
-(12, 'Ucriets', 'apoteker@gmail.com', 'Laki-Laki', '$2y$10$Sj3NkbJ7Z71/mEWJMJUtk.FgoHl6e4NfC0O0WP9Tn2adMUkgf1CGe', '083123454321', '2021-05-24', '1621864509_0703b515f07447d08277.jpg', 'Apoteker', 'Masbagik'),
-(13, 'Udang', 'pimpinan@gmail.com', '-', '$2y$10$CqzcLdF/xLrsmCFXwzSXMen8n67KnOYO0fv7/431QHLJ0a.7LHJSS', '-', '2021-05-24', 'default.png', 'Pimpinan', '-');
+(11, 'Haikal Wahyudi', 'admin@gmail.com', 'Perempuan', '$2y$10$eY2AOyMIshqL8wyexOFlO.wqu109mjn/cncJUowaSpzgNPC/1zarO', '0', '2021-05-24', '1622748655_3031746b59ded0191bfd.png', 'Admin', '-'),
+(12, 'Ucriets', 'apoteker@gmail.com', 'Laki-Laki', '$2y$10$BITBqBkSFP0UZV.rwBbgFeZ9L/w234ZJobGW9.qwBvRxkMTx3qv2K', '083123454321', '2021-05-24', '1621864509_0703b515f07447d08277.jpg', 'Apoteker', 'Masbagikhh'),
+(13, 'Udang', 'pimpinan@gmail.com', '-', '$2y$10$0qn/GIWEULtPD4CNrQufHe5B0D4/OEyv18Sn/t..J5q796m2uszyu', '-', '2021-05-24', 'default.png', 'Pimpinan', '-'),
+(15, 'PT Marga Nusantar Jaya', 'admssin@gmail.com', '-', '$2y$10$N6UxszTHAaxkUTewP1ZuDOo5x8AbibLUkETwB7x0G/PANR2WANrbG', '-', '2021-06-06', 'default.png', 'Admin', '-');
 
 -- --------------------------------------------------------
 
@@ -175,7 +211,7 @@ INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `jk`, `password`, `no
 CREATE TABLE `tb_penjualan` (
   `id_pen` int(11) NOT NULL,
   `no_transaksi` varchar(15) NOT NULL,
-  `kd_obat` varchar(150) NOT NULL,
+  `kd_obat` varchar(20) NOT NULL,
   `id_invoice` int(11) NOT NULL,
   `tgl_jual` date NOT NULL,
   `jumlah` int(11) NOT NULL,
@@ -192,7 +228,19 @@ INSERT INTO `tb_penjualan` (`id_pen`, `no_transaksi`, `kd_obat`, `id_invoice`, `
 (119, '020620210001', 'KDOB0014', 99, '2021-06-02', 1, 65000, '80.000', '4.000'),
 (120, '020620210001', 'KDOB0008', 99, '2021-06-02', 1, 11000, '80.000', '4.000'),
 (121, '020620210002', 'KDOB0013', 100, '2021-06-02', 1, 70500, '80.000', '9.500'),
-(122, '030620210003', 'KDOB0014', 103, '2021-06-03', 1, 65000, '70.000', '5.000');
+(122, '030620210003', 'KDOB0014', 103, '2021-06-03', 1, 65000, '70.000', '5.000'),
+(123, '060620210004', 'KDOB0012', 104, '2021-06-06', 2, 50000, '50.000', '0'),
+(124, '060620210005', 'KDOB0012', 106, '2021-06-06', 2, 50000, '55.000', '5.000'),
+(125, '080620210006', 'KDOB0012', 122, '2021-06-08', 1, 25000, '28.000', '3.000'),
+(126, '080620210007', 'KDOB0013', 125, '2021-06-08', 2, 141000, '150.000', '9.000'),
+(127, '080620210008', 'KDOB0013', 126, '2021-06-08', 2, 141000, '145.000', '4.000'),
+(128, '080620210009', 'KDOB0012', 127, '2021-06-08', 2, 50000, '60.000', '10.000'),
+(129, '080620210010', 'KDOB0013', 128, '2021-06-09', 2, 141000, '150.000', '9.000'),
+(130, '090620210011', 'KDOB0012', 129, '2021-06-09', 1, 25000, '30.000', '5.000'),
+(131, '090620210012', 'KDOB0012', 130, '2021-06-09', 1, 25000, '50.000', '25.000'),
+(132, '090620210013', 'KDOB0013', 132, '2021-06-10', 2, 141000, '170.000', '4.000'),
+(133, '090620210013', 'KDOB0012', 132, '2021-06-10', 1, 25000, '170.000', '4.000'),
+(134, '090620210014', 'KDOB0002', 135, '2021-06-10', 5, 45000, '50.000', '5.000');
 
 -- --------------------------------------------------------
 
@@ -202,8 +250,8 @@ INSERT INTO `tb_penjualan` (`id_pen`, `no_transaksi`, `kd_obat`, `id_invoice`, `
 
 CREATE TABLE `tb_profile` (
   `id` int(11) NOT NULL,
-  `nm_apotek` varchar(150) NOT NULL,
-  `pimpinan` varchar(150) NOT NULL,
+  `nm_apotek` varchar(80) NOT NULL,
+  `pimpinan` varchar(50) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -212,7 +260,7 @@ CREATE TABLE `tb_profile` (
 --
 
 INSERT INTO `tb_profile` (`id`, `nm_apotek`, `pimpinan`, `alamat`) VALUES
-(1, 'APOTEK KARYA HUSADA', 'H. Mustafa, S.Kep.Ners', 'Jln. Masbagik - Labuhan Lombok');
+(1, 'APOTEK KARYA HUSADA', 'H. Mustafa, S.Kep.Ners', 'Jln. Lotim Masbagik - Labuhan Lombok');
 
 -- --------------------------------------------------------
 
@@ -222,7 +270,7 @@ INSERT INTO `tb_profile` (`id`, `nm_apotek`, `pimpinan`, `alamat`) VALUES
 
 CREATE TABLE `tb_satuan_obat` (
   `id_s` int(11) NOT NULL,
-  `satuan` varchar(50) NOT NULL
+  `satuan` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -249,8 +297,8 @@ INSERT INTO `tb_satuan_obat` (`id_s`, `satuan`) VALUES
 --
 
 CREATE TABLE `tb_supplier` (
-  `kd_sup` varchar(150) NOT NULL,
-  `nama` varchar(150) NOT NULL,
+  `kd_sup` varchar(30) NOT NULL,
+  `nama` varchar(50) NOT NULL,
   `no_hp` varchar(15) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -352,31 +400,31 @@ ALTER TABLE `tb_supplier`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori_obat`
 --
 ALTER TABLE `tb_kategori_obat`
-  MODIFY `id_k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_pembelian`
 --
 ALTER TABLE `tb_pembelian`
-  MODIFY `id_pem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tb_penjualan`
 --
 ALTER TABLE `tb_penjualan`
-  MODIFY `id_pen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id_pen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT for table `tb_profile`
@@ -388,7 +436,7 @@ ALTER TABLE `tb_profile`
 -- AUTO_INCREMENT for table `tb_satuan_obat`
 --
 ALTER TABLE `tb_satuan_obat`
-  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_s` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

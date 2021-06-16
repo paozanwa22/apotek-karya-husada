@@ -139,7 +139,106 @@
           if (total > bayar) kembalian = 0;
           $('#kembali').val(formatAngka(kembalian));
         });
+
+        // Chart
+        "use strict";
+        <?php
+        // Fungsi bulan dalam bahasa indonesia
+        function bulan($bln)
+        {
+          $bulan = $bln;
+          switch($bulan){
+            case 1 : $bulan="Januari";
+            Break;
+            case 2 : $bulan="Februari";
+            Break;
+            case 3 : $bulan="Maret";
+            Break;
+            case 4 : $bulan="April";
+            Break;
+            case 5 : $bulan="Mei";
+            Break;
+            case 6 : $bulan="Juni";
+            Break;
+            case 7 : $bulan="Juli";
+            Break;
+            case 8 : $bulan="Agustus";
+            Break;
+            case 9 : $bulan="September";
+            Break;
+            case 10 : $bulan="Oktober";
+            Break;
+            case 11 : $bulan="November";
+            Break;
+            case 12 : $bulan="Desember";
+            Break;
+          }
+          return $bulan;
+        }
+        $db = \Config\Database::connect();
+        $bln = date('m');
+        $thn = date('Y');
+        $ss = $db->query("SELECT MONTH(tgl_jual) AS bulan FROM tb_penjualan WHERE YEAR(tgl_jual)='$thn' GROUP BY MONTH(tgl_jual)");
+        $penghasilan = $db->query("SELECT SUM(total) AS pendapatan FROM tb_penjualan WHERE YEAR(tgl_jual)='$thn' GROUP BY MONTH(tgl_jual)");
+        $a = $ss->getResultArray();
+        $b = $penghasilan->getResultArray();
+        ?>
+        var ctx = document.getElementById("perbulan").getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: [<?php foreach ($a as $c){ ?> "<?= bulan($c['bulan']) ?>", <?php } ?>
+
+            ],
+            datasets: [{
+              label: 'Pendapatan',
+              data: [<?php foreach($b as $p){ echo '"' . $p['pendapatan'] . '",';} ?>],
+              borderWidth: 2,
+              backgroundColor: 'rgb(144, 255, 144,0.2)',
+              borderWidth: 3,
+              borderColor: 'rgb(71, 195, 99)',
+              pointBorderWidth: 0,
+              pointBorderColor: 'transparent',
+              pointRadius: 3,
+              pointBackgroundColor: 'transparent',
+              pointHoverBackgroundColor: 'rgba(63,82,227,1)',
+            }]
+          },
+          options: {
+            layout: {
+              padding: {
+                bottom: -1,
+                left: -1
+              }
+            },
+            legend: {
+              display: false
+            },
+            scales: {
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  beginAtZero: true,
+                  display: false
+                }
+              }],
+              xAxes: [{
+                gridLines: {
+                  drawBorder: false,
+                  display: false,
+                },
+                ticks: {
+                  display: false
+                }
+              }]
+            },
+          }
+        });
       </script>
+      <!-- End Chart -->
 </body>
 
 </html>

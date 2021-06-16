@@ -34,7 +34,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="card-title">
-								<b>Pendapatan Setiap Hari</b>
+								<b>Pendapatan Hari Ini</b>
 							</div>
 							<div class="row p-3">
 								<div class="col-md-3">
@@ -42,12 +42,33 @@
 								</div>
 								<div class="col-md-9">
 									<table>
+										<?php
+										$db = \Config\Database::connect();
+										// $tgl = date('Y-m-d', time() + 60 * 60 * 13);
+										// $data = $db->query("SELECT * FROM tb_penjualan WHERE tgl_jual = $tgl");
+										$data = $db->query("SELECT SUM(total) AS total_bayar FROM tb_penjualan WHERE tgl_jual=CURDATE()");
+										$ambil = $data->getResult();
+										// dd($ambil);
+										$pendapatan = 0;
+										foreach ($ambil as $d) {
+											// dd($d);
+											$pendapatan += $d->total_bayar;
+										}
+										$total_pendapatan = 0;
+										
+										$pendapatanPerBulan = $db->query("SELECT * FROM tb_penjualan WHERE MONTH(tgl_jual) = MONTH(NOW()) and YEAR(tgl_jual) = YEAR(NOW())");
+										$bulanan = $pendapatanPerBulan->getResultArray();
+										foreach ($bulanan as $p) {
+											$total_pendapatan += $p['total'];
+										}
+										// dd($total_pendapatan);
+										?>
 										<tr>
 											<td>Harian</td>
 										</tr>
 										<tr>
 											<td>
-												<h5>Rp340.000</h5>
+												<h5>Rp<?= number_format($pendapatan) ?></h5>
 											</td>
 										</tr>
 									</table>
@@ -67,11 +88,11 @@
 								<div class="col-md-9">
 									<table>
 										<tr>
-											<td>Pendapatan per bulan</td>
+											<td>Pendapatan Bulan Ini</td>
 										</tr>
 										<tr>
 											<td>
-												<h5>Rp10.340.000</h5>
+												<h5>Rp<?= number_format($total_pendapatan); ?></h5>
 											</td>
 										</tr>
 									</table>
@@ -84,4 +105,5 @@
 		</div>
 	</section>
 </div>
+
 <?= $this->EndSection(); ?>

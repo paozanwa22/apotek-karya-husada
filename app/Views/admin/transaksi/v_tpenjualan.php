@@ -166,7 +166,7 @@
                                             </div>
 
                                             <div class="buttons float-right">
-                                                <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Simpan</button>
+                                                <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Bayar</button>
                                                 <a href="#" class="btn btn-danger"><i class="fa fa-close"></i> Batal</a>
                                             </div>
                                         </form>

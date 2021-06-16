@@ -39,6 +39,7 @@ class Admin extends BaseController
 		$this->M_penjualan = new M_penjualan();
 		$this->M_invoice = new M_invoice();
 		$this->M_pembelian = new M_pembelian();
+		
 	}
 
 
@@ -472,7 +473,7 @@ class Admin extends BaseController
 				'no_transaksi'	=> $this->request->getVar('no_trs'),
 				'kd_obat'		=> $value['id'],
 				'id_invoice'	=> $id_invoice,
-				'tgl_jual'		=> date('Y-m-d'),
+				'tgl_jual'		=> date('Y-m-d', time() + 60 * 60 * 14),
 				'jumlah'		=> $value['qty'],
 				'total'			=> $value['subtotal'],
 				'total_bayar'	=> $this->request->getVar('bayar'),
@@ -522,6 +523,12 @@ class Admin extends BaseController
 		session()->setFlashdata('sukses', 'Berhasil menghapus data');
 		return redirect()->to('/admin/dpenjualan');
 	}
+	public function hapuspembelain($id)
+	{
+		$this->M_invoice->hapus($id);
+		session()->setFlashdata('sukses', 'Berhasil menghapus data');
+		return redirect()->to('/admin/dpembelian');
+	}
 	//=========================== END PENJUALAN ======================
 	//=========================== PEMBELIAN ======================
 	public function dpembelian($aksi = "2")
@@ -556,8 +563,15 @@ class Admin extends BaseController
 		]);
 
 		$id_invoice = $this->M_invoice->insertID();
-
+		$tambah_stok = 0;
 		foreach ($cart->contents() as $value) {
+			$ambilData = $this->M_obat->ambilData($value['id'])->getRowArray();
+			$tambah_stok = $ambilData['stok'] + $value['qty'];
+			// dd($tambah_stok);
+			$this->M_obat->ubah([
+				'stok'	=> $tambah_stok
+			], $value['id']);
+
 			$this->M_pembelian->simpan([
 				'no_transaksi'		=> $this->request->getVar('no_transaksi'),
 				'kd_sup'			=> $value['options']['kd_sup'],

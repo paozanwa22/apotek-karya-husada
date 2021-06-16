@@ -10,7 +10,7 @@ class M_penjualan extends Model
 
     public function ambilData($id)
     {
-        return $this->db->table($this->table)
+        return $this->db->table('tb_penjualan')
             ->join('tb_obat', 'tb_obat.kd_obat = tb_penjualan.kd_obat')
             ->getWhere(['id_invoice' => $id])->getResultArray();
     }
@@ -54,5 +54,26 @@ class M_penjualan extends Model
         return $this->db->table("invoice")
             ->join('tb_pengguna', 'tb_pengguna.id_pengguna = invoice.id_pengguna')
             ->getWhere(['id_invoice' => $id_invoice])->getRow();
+    }
+    // public function caridatatanggal($awal)
+    // {
+    //     // dd($awal);
+    //     $this->db->table($this->table);
+    //     $this->join('tb_obat', 'tb_obat.kd_obat = tb_penjualan.kd_obat');
+    //     $this->where('tgl_jual >=', $awal['awal']);
+    //     $this->where('tgl_jual <=', $awal['akhir']);
+    //     $query = $this->get();
+    //     dd($query->getResultArray());
+    // }
+    public function caridatatanggal($awal)
+    {
+        $cari = $this->db->table($this->table)
+            ->join('tb_obat', 'tb_obat.kd_obat = tb_penjualan.kd_obat')
+            // ->join('invoice', 'invoice.id_invoice = tb_penjualan.id_invoice')
+            ->where(['tgl_jual >=' => $awal['awal']])
+            ->where(['tgl_jual <=' => $awal['akhir']])
+            ->get()->getResultArray();
+        // dd($cari);
+        return $cari;
     }
 }
