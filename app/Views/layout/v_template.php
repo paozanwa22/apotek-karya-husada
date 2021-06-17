@@ -147,31 +147,43 @@
         function bulan($bln)
         {
           $bulan = $bln;
-          switch($bulan){
-            case 1 : $bulan="Januari";
-            Break;
-            case 2 : $bulan="Februari";
-            Break;
-            case 3 : $bulan="Maret";
-            Break;
-            case 4 : $bulan="April";
-            Break;
-            case 5 : $bulan="Mei";
-            Break;
-            case 6 : $bulan="Juni";
-            Break;
-            case 7 : $bulan="Juli";
-            Break;
-            case 8 : $bulan="Agustus";
-            Break;
-            case 9 : $bulan="September";
-            Break;
-            case 10 : $bulan="Oktober";
-            Break;
-            case 11 : $bulan="November";
-            Break;
-            case 12 : $bulan="Desember";
-            Break;
+          switch ($bulan) {
+            case 1:
+              $bulan = "Januari";
+              break;
+            case 2:
+              $bulan = "Februari";
+              break;
+            case 3:
+              $bulan = "Maret";
+              break;
+            case 4:
+              $bulan = "April";
+              break;
+            case 5:
+              $bulan = "Mei";
+              break;
+            case 6:
+              $bulan = "Juni";
+              break;
+            case 7:
+              $bulan = "Juli";
+              break;
+            case 8:
+              $bulan = "Agustus";
+              break;
+            case 9:
+              $bulan = "September";
+              break;
+            case 10:
+              $bulan = "Oktober";
+              break;
+            case 11:
+              $bulan = "November";
+              break;
+            case 12:
+              $bulan = "Desember";
+              break;
           }
           return $bulan;
         }
@@ -187,12 +199,14 @@
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: [<?php foreach ($a as $c){ ?> "<?= bulan($c['bulan']) ?>", <?php } ?>
+            labels: [<?php foreach ($a as $c) { ?> "<?= bulan($c['bulan']) ?>", <?php } ?>
 
             ],
             datasets: [{
               label: 'Pendapatan',
-              data: [<?php foreach($b as $p){ echo '"' . $p['pendapatan'] . '",';} ?>],
+              data: [<?php foreach ($b as $p) {
+                        echo '"' . $p['pendapatan'] . '",';
+                      } ?>],
               borderWidth: 2,
               backgroundColor: 'rgb(144, 255, 144,0.2)',
               borderWidth: 3,

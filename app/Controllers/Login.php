@@ -5,6 +5,8 @@ namespace App\Controllers;
 use CodeIgniter\controller;
 use App\Models\M_profile;
 use App\Models\M_login;
+use CodeIgniter\Config\Config;
+use CodeIgniter\Validation\Rules;
 
 class Login extends BaseController
 {
@@ -83,5 +85,52 @@ class Login extends BaseController
 
         session()->setFlashdata('sukses', 'Password berhasil direset');
         return redirect()->to('/admin/dpengguna');
+    }
+    public function lupa_password()
+    {
+        $tampil = new M_profile();
+        $data = [
+            'nmApotek'      => $tampil->tampil(),
+            'validation'    => \Config\Services::validation()
+        ];
+        return view('/login/v_lupa_password', $data);
+    }
+    public function lupaPasswordaksi()
+    {
+        if (!$this->validate([
+            'email'     => [
+                'rules'     => 'required|valid_email|is_not_unique[tb_pengguna.email]',
+                'errors'     => [
+                    'required'      => 'Email tidak bolah kosong',
+                    'valid_email'   => 'Email tidak Valid',
+                    'is_not_unique' => 'Email tidak terdaftar'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/login/lupa_password')->withInput();
+        }
+        $model  = new M_login();
+        $email = $this->request->getVar('email');
+        $password = time();
+
+        $data = $model->cekData($email);
+        // dd($data);
+        if ($data) {
+            $library = \Config\Services::email();
+
+            $library->setFrom('apotekkaryahusada73@gmail.com', 'Apotek Karya Husada');
+            $library->setTo($data['email']);
+            $library->setSubject('Reset Password');
+            $library->setMessage('Password anda berhasil di reset, anda bisa login menggunakan kan password ' . $password);
+            $library->send();
+        }
+        $id_pengguna = $data['id_pengguna'];
+        // dd($id_pengguna);
+        $model->reset([
+            'password'        => password_hash($password, PASSWORD_DEFAULT)
+        ], $id_pengguna);
+
+        session()->setFlashdata('pesan', 'Silahkan cek email untuk melihat password baru');
+        return redirect()->to('/login/lupa_password');
     }
 }
