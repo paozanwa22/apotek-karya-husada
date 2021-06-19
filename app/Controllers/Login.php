@@ -118,7 +118,7 @@ class Login extends BaseController
         if ($data) {
             $library = \Config\Services::email();
 
-            $library->setFrom('apotekkaryahusada73@gmail.com', 'Apotek Karya Husada');
+            $library->setFrom('apotekkaryahusada@haikalwahyudi.com', 'Apotek Karya Husada');
             $library->setTo($data['email']);
             $library->setSubject('Reset Password');
             $library->setMessage('Password anda berhasil di reset, anda bisa login menggunakan kan password ' . $password);

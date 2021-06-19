@@ -39,7 +39,6 @@ class Admin extends BaseController
 		$this->M_penjualan = new M_penjualan();
 		$this->M_invoice = new M_invoice();
 		$this->M_pembelian = new M_pembelian();
-		
 	}
 
 
@@ -473,7 +472,7 @@ class Admin extends BaseController
 				'no_transaksi'	=> $this->request->getVar('no_trs'),
 				'kd_obat'		=> $value['id'],
 				'id_invoice'	=> $id_invoice,
-				'tgl_jual'		=> date('Y-m-d', time() + 60 * 60 * 14),
+				'tgl_jual'		=> date('Y-m-d'),
 				'jumlah'		=> $value['qty'],
 				'total'			=> $value['subtotal'],
 				'total_bayar'	=> $this->request->getVar('bayar'),

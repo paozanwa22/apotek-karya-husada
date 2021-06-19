@@ -48,21 +48,21 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost = "smtp.gmail.com";
+	public $SMTPHost = "srv23.niagahoster.com";
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser = "apotekkaryahusada73@gmail.com";
+	public $SMTPUser = "apotekkaryahusada@haikalwahyudi.com";
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass = "apotek123456";
+	public $SMTPPass = "apotekkaryahusada";
 
 	/**
 	 * SMTP Port
