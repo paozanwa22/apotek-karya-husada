@@ -937,4 +937,15 @@ class Admin extends BaseController
 		return redirect()->to('/admin/tpembelian/');
 	}
 	//=========================== End CRUD Cart ======================
+	//=========================== Kadaluwarsa ========================
+	public function dkadaluwarsa()
+	{
+		$data = [
+			'title'		=> 'Data Kadaluwarsa',
+			'uri'		=> \Config\Services::request()
+		];
+
+		return view('admin/master/v_dkadaluwarsa', $data);
+	}
+	//=========================== End Kadaluwarsa ======================
 }
