@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2021 at 05:16 AM
+-- Generation Time: Jun 20, 2021 at 11:23 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -73,7 +73,9 @@ INSERT INTO `invoice` (`id_invoice`, `id_pengguna`, `tgl_beli`, `aksi`) VALUES
 (144, 11, '2021-06-17', 1),
 (145, 11, '2021-06-17', 1),
 (146, 11, '2021-06-17', 1),
-(147, 11, '2021-06-17', 1);
+(147, 11, '2021-06-17', 1),
+(148, 11, '2021-06-19', 1),
+(149, 11, '2021-06-19', 1);
 
 -- --------------------------------------------------------
 
@@ -130,13 +132,13 @@ INSERT INTO `tb_obat` (`kd_obat`, `nm_obat`, `kd_sup`, `id_s`, `id_k`, `harga_be
 ('KDOB0004', 'Nivea Deo Invisible 50', 'SUP0024', 7, 5, '13500', '18000', 63, '2023-02-03'),
 ('KDOB0005', 'Nivea Roll On ext white ac 50', 'SUP0024', 7, 5, '15500', '20500', 44, '2024-09-04'),
 ('KDOB0006', 'Nivea Deo wht h. shave ro 50 ml', 'SUP0023', 7, 5, '14000', '19000', 21, '2023-12-08'),
-('KDOB0007', 'Ibuprofen 400 mg', 'SUP0023', 4, 4, '25000', '29000', 38, '2024-09-25'),
+('KDOB0007', 'Ibuprofen 400 mg', 'SUP0023', 4, 4, '25000', '29000', 38, '2021-07-19'),
 ('KDOB0008', 'Amlodipine 10 mg', 'SUP0022', 4, 4, '8000', '11000', 39, '2023-09-22'),
-('KDOB0009', 'Theraskin Serum Vit C plus', 'SUP0007', 6, 7, '45000', '60000', 23, '2024-11-12'),
+('KDOB0009', 'Theraskin Serum Vit C plus', 'SUP0007', 6, 7, '45000', '60000', 23, '2021-06-12'),
 ('KDOB0010', 'Theraskin deo lotion 20ml', 'SUP0007', 6, 7, '12500', '16000', 31, '2023-10-03'),
 ('KDOB0011', 'Theraskin AHA 10 Cream 10gr', 'SUP0007', 14, 7, '17000', '25000', 15, '2023-12-24'),
-('KDOB0012', 'Tremenza Syrup', 'SUP0008', 6, 4, '21000', '25000', 28, '2023-06-11'),
-('KDOB0013', 'Valproic Acid Syrup', 'SUP0010', 6, 4, '50600', '70500', 21, '2024-11-12');
+('KDOB0012', 'Tremenza Syrup', 'SUP0008', 6, 4, '21000', '25000', 27, '2021-08-19'),
+('KDOB0013', 'Valproic Acid Syrup', 'SUP0010', 6, 4, '50600', '70500', 20, '2021-07-19');
 
 -- --------------------------------------------------------
 
@@ -210,7 +212,7 @@ CREATE TABLE `tb_pengguna` (
 
 INSERT INTO `tb_pengguna` (`id_pengguna`, `nama`, `email`, `jk`, `password`, `no_hp`, `tgl_buat`, `poto`, `level`, `alamat`) VALUES
 (11, 'Haikal Wahyudi', 'admin@gmail.com', 'Perempuan', '$2y$10$eY2AOyMIshqL8wyexOFlO.wqu109mjn/cncJUowaSpzgNPC/1zarO', '0', '2021-05-24', '1622748655_3031746b59ded0191bfd.png', 'Admin', '-'),
-(12, 'Ucriets', 'cocakun459@gmail.com', 'Laki-Laki', '$2y$10$HljNpMgcqeuwmYjHfkkUUuFqb3ININaMgQ9M4abCwFvwVJ2YFn2J6', '083123454321', '2021-05-24', '1621864509_0703b515f07447d08277.jpg', 'Admin', 'Masbagikhh'),
+(12, 'Ucriets', 'cocakun459@gmail.com', 'Laki-Laki', '$2y$10$GzLnQnB8hRrACoELe5Q/6OlwZSBOMig.Jpds85PTuIgsR9z2N1Xem', '083123454321', '2021-05-24', '1621864509_0703b515f07447d08277.jpg', 'Admin', 'Masbagikhh'),
 (13, 'Udang', 'pimpinan@gmail.com', '-', '$2y$10$0qn/GIWEULtPD4CNrQufHe5B0D4/OEyv18Sn/t..J5q796m2uszyu', '-', '2021-05-24', 'default.png', 'Pimpinan', '-'),
 (15, 'PT Marga Nusantar Jaya', 'admssin@gmail.com', '-', '$2y$10$N6UxszTHAaxkUTewP1ZuDOo5x8AbibLUkETwB7x0G/PANR2WANrbG', '-', '2021-06-06', 'default.png', 'Admin', '-');
 
@@ -249,7 +251,9 @@ INSERT INTO `tb_penjualan` (`id_pen`, `no_transaksi`, `kd_obat`, `id_invoice`, `
 (143, '170620210019', 'KDOB0008', 144, '2021-06-17', 1, 11000, '11.000', '0'),
 (144, '170620210020', 'KDOB0004', 145, '2021-06-18', 1, 18000, '20.000', '2.000'),
 (145, '170620210021', 'KDOB0004', 146, '2021-06-17', 1, 18000, '20.000', '2.000'),
-(146, '170620210022', 'KDOB0001', 147, '2021-06-17', 4, 28000, '30.000', '2.000');
+(146, '170620210022', 'KDOB0001', 147, '2021-06-17', 4, 28000, '30.000', '2.000'),
+(147, '190620210023', 'KDOB0013', 148, '2021-06-19', 1, 70500, '80.000', '9.500'),
+(148, '190620210024', 'KDOB0012', 149, '2021-06-19', 1, 25000, '26.000', '1.000');
 
 -- --------------------------------------------------------
 
@@ -409,7 +413,7 @@ ALTER TABLE `tb_supplier`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `id_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori_obat`
@@ -433,7 +437,7 @@ ALTER TABLE `tb_pengguna`
 -- AUTO_INCREMENT for table `tb_penjualan`
 --
 ALTER TABLE `tb_penjualan`
-  MODIFY `id_pen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id_pen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- AUTO_INCREMENT for table `tb_profile`

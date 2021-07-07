@@ -472,7 +472,7 @@ class Admin extends BaseController
 				'no_transaksi'	=> $this->request->getVar('no_trs'),
 				'kd_obat'		=> $value['id'],
 				'id_invoice'	=> $id_invoice,
-				'tgl_jual'		=> date('Y-m-d'),
+				'tgl_jual'		=> date('Y-m-d', time() + (60 * 60 * 13)),
 				'jumlah'		=> $value['qty'],
 				'total'			=> $value['subtotal'],
 				'total_bayar'	=> $this->request->getVar('bayar'),

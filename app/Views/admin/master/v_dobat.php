@@ -49,7 +49,12 @@
                                         $kadaluwarsa = $d['tgl_kadaluarsa'];
                                         $pengurangan = date('Y-m-d', strtotime('-1 MONTH', strtotime($kadaluwarsa)));
                                         // dd($pengurangan);
-                                        // date('Y-m-d', time() + (60 * 60 * 13)))
+                                        // echo date('Y-m-d', time() + (60 * 60 * 13)
+                                        // <?php if (date('Y-m-d', time() + (60 * 60 * 13)) >= $pengurangan && date('Y-m-d', time() + (60 * 60 * 13)) <= $pengurangan) {
+                                        //     echo 'bg-warning';
+                                        // } elseif (date('Y-m-d', time() + (60 * 60 * 13)) >= $d['tgl_kadaluarsa']) {
+                                        //     echo "bg-danger";
+                                        // } 
                                     ?>
 
                                         <tr class=" text-dark <?php if (date('Y-m-d', time() + (60 * 60 * 13)) >= $pengurangan && date('Y-m-d', time() + (60 * 60 * 13)) <= $pengurangan) {
@@ -67,6 +72,7 @@
                                             <td><?= $d['harga_jual']; ?></td>
                                             <td><?= $d['stok']; ?></td>
                                             <td><?= $d['tgl_kadaluarsa']; ?></td>
+                                            <!-- <td><?= $pengurangan ?></td> -->
                                             <td>
                                                 <div class="buttons">
                                                     <a href="<?= base_url('/admin/uobat/' . $d['kd_obat']) ?>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Ubah</a>
