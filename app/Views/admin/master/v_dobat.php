@@ -57,9 +57,9 @@
                                         // } 
                                     ?>
 
-                                        <tr class=" text-dark <?php if (date('Y-m-d', time() + (60 * 60 * 13)) >= $pengurangan && date('Y-m-d', time() + (60 * 60 * 13)) <= $pengurangan) {
+                                        <tr class=" text-dark <?php if (date('Y-m-d', time() + (60 * 60 * 13)) >= $pengurangan && date('Y-m-d', time() + (60 * 60 * 13)) <= $d['tgl_kadaluarsa']) {
                                                                     echo 'bg-warning';
-                                                                } elseif (date('Y-m-d', time() + (60 * 60 * 13)) >= $d['tgl_kadaluarsa']) {
+                                                                } else if (date('Y-m-d', time() + (60 * 60 * 13)) >= $d['tgl_kadaluarsa']) {
                                                                     echo "bg-danger";
                                                                 } ?>">
                                             <td><?= $no++ ?></td>
