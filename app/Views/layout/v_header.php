@@ -4,13 +4,43 @@
       <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
     </ul>
   </div>
+
+  <!-- Notifikasi untuk menghitung jumlah obat kadaluwarsa -->
+  <?php
+  $db = \Config\Database::connect();
+
+  $query = $db->query("SELECT kd_obat, tgl_kadaluarsa FROM tb_obat");
+
+  $data = $query->getResultArray();
+  foreach ($data as $f) {
+    $kadaluwarsa = $f['tgl_kadaluarsa'];
+    $pengurangan = date('Y-m-d', strtotime('-1 MONTH', strtotime($kadaluwarsa)));
+    // dd($pengurangan);
+    // $query_cari = $db->query("SELECT * FROM tb_obat WHERE CURDATE() > $pengurangan and CURDATE() < $f[tgl_kadaluarsa]");
+    // dd($query_cari->getResultArray());
+  }
+  $jmlhmkdl = 0;
+  $tglkdl = 0;
+  foreach ($data as $d) {
+    $kadaluwarsa = $d['tgl_kadaluarsa'];
+    $pengurangan = date('Y-m-d', strtotime('-1 MONTH', strtotime($kadaluwarsa)));
+
+    if (date('Y-m-d', time() + (60 * 60 * 13)) >= $pengurangan && date('Y-m-d', time() + (60 * 60 * 13)) <= $d['tgl_kadaluarsa']) {
+      $jmlhmkdl++;
+    } else if (date('Y-m-d', time() + (60 * 60 * 13)) >= $d['tgl_kadaluarsa']) {
+      $tglkdl++;
+    }
+  }
+  $total = 0;
+  $total = $jmlhmkdl + $tglkdl;
+  echo $total;
+
+  ?>
   <ul class="navbar-nav navbar-right">
-    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg"><i class="far fa-bell"></i></a>
+    <li class="dropdown dropdown-list-toggle">
+      <a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell online"></i></a>
       <div class="dropdown-menu dropdown-list dropdown-menu-right">
-        <div class="dropdown-header">Notifikasi
-          <div class="float-right">
-            <a href="#">Mark All As Read</a>
-          </div>
+        <div class="dropdown-header">Informasi
         </div>
         <div class="dropdown-list-icons">
           <a href="#" class="dropdown-item dropdown-item-unread">
@@ -18,11 +48,24 @@
               <i class="fas fa-code"></i>
             </div>
             <div class="dropdown-item-desc">
-              Template update is available now!
-              <div class="time text-primary">2 Min Ago</div>
+              <b><?= $tglkdl; ?> Obat Sudah Kadaluwarsa</b>
+              <div class="time text-primary">Klik untuk melihat</div>
             </div>
           </a>
         </div>
+
+        <div class="dropdown-list-icons">
+          <a href="#" class="dropdown-item dropdown-item-unread">
+            <div class="dropdown-item-icon bg-primary text-white">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="dropdown-item-desc">
+              <b><?= $jmlhmkdl; ?> Obat Akan Masuk Kadaluwarsa</b>
+              <div class="time text-primary">Klik untuk melihat</div>
+            </div>
+          </a>
+        </div>
+
       </div>
     </li>
 
