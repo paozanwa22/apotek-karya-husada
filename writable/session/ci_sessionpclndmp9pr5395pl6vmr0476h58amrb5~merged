@@ -1,9 +1,9 @@
 <<<<<<< HEAD
+__ci_last_regenerate|i:1625717962;_ci_previous_url|s:33:"http://localhost:8080/admin/dobat";id_pengguna|s:2:"11";nama|s:14:"Haikal Wahyudi";level|s:5:"Admin";poto|s:35:"1622748655_3031746b59ded0191bfd.png";log_in|b:1;sukses|s:20:"Data Berhasil Diubah";__ci_vars|a:1:{s:6:"sukses";s:3:"old";}
+=======
 <<<<<<< HEAD:writable/session/ci_session32l517iag3c71vd1dnuvui1r0d3ab4j0
 __ci_last_regenerate|i:1625718331;_ci_previous_url|s:33:"http://localhost:8080/admin/dobat";id_pengguna|s:2:"11";nama|s:14:"Haikal Wahyudi";level|s:5:"Admin";poto|s:35:"1622748655_3031746b59ded0191bfd.png";log_in|b:1;sukses|s:20:"Data Berhasil Diubah";__ci_vars|a:1:{s:6:"sukses";s:3:"old";}
 =======
 __ci_last_regenerate|i:1625717962;_ci_previous_url|s:33:"http://localhost:8080/admin/dobat";id_pengguna|s:2:"11";nama|s:14:"Haikal Wahyudi";level|s:5:"Admin";poto|s:35:"1622748655_3031746b59ded0191bfd.png";log_in|b:1;sukses|s:20:"Data Berhasil Diubah";__ci_vars|a:1:{s:6:"sukses";s:3:"old";}
 >>>>>>> 20e3ea75ebdc01caa4780a6a5194a1ccce4fdcc5:writable/session/ci_sessionpclndmp9pr5395pl6vmr0476h58amrb5
-=======
-__ci_last_regenerate|i:1625718331;_ci_previous_url|s:33:"http://localhost:8080/admin/dobat";id_pengguna|s:2:"11";nama|s:14:"Haikal Wahyudi";level|s:5:"Admin";poto|s:35:"1622748655_3031746b59ded0191bfd.png";log_in|b:1;sukses|s:20:"Data Berhasil Diubah";__ci_vars|a:1:{s:6:"sukses";s:3:"old";}
 >>>>>>> 20e3ea75ebdc01caa4780a6a5194a1ccce4fdcc5

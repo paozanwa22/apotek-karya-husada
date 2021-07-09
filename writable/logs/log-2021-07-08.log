@@ -10,6 +10,7 @@ CRITICAL - 2021-07-08 02:11:36 --> Unable to connect to the database.
 #8 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+<<<<<<< HEAD
 CRITICAL - 2021-07-08 17:59:01 --> Undefined variable: d
 #0 C:\xampp\htdocs\apotek-karya-husada\app\Views\v_info_kadaluwarsa.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 45, Array)
 #1 C:\xampp\htdocs\apotek-karya-husada\system\View\View.php(246): include('C:\\xampp\\htdocs...')
@@ -92,3 +93,5 @@ CRITICAL - 2021-07-08 20:08:44 --> Undefined index: stok
 #11 C:\xampp\htdocs\apotek-karya-husada\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #12 C:\xampp\htdocs\apotek-karya-husada\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
 #13 {main}
+=======
+>>>>>>> 20e3ea75ebdc01caa4780a6a5194a1ccce4fdcc5
