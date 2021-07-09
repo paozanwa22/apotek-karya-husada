@@ -942,10 +942,31 @@ class Admin extends BaseController
 	{
 		$data = [
 			'title'		=> 'Data Kadaluwarsa',
-			'uri'		=> \Config\Services::request()
+			'uri'		=> \Config\Services::request(),
+			'dobat'		=> $this->M_obat->ambilData()
 		];
 
-		return view('admin/master/v_dkadaluwarsa', $data);
+		return view('v_kadaluwarsa', $data);
+	}
+	public function dakankadaluwarsa()
+	{
+		$data = [
+			'title'		=> 'Data Obat Akan Kadaluwarsa',
+			'uri'		=> \Config\Services::request(),
+			'dobat'		=> $this->M_obat->ambilData()
+		];
+
+		return view('v_akankadaluwarsa', $data);
+	}
+	public function obthabis()
+	{
+		$data = [
+			'title'		=> 'Data Obat habis',
+			'uri'		=> \Config\Services::request(),
+			'dobat'		=> $this->M_obat->ambilData()
+		];
+
+		return view('v_obthabis', $data);
 	}
 	//=========================== End Kadaluwarsa ======================
 }

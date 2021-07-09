@@ -16,6 +16,12 @@ $(document).ready(function(){
         responsive: true,
         select: true
       });
+    $('.tbl').dataTable({
+        paging: true,
+        searching: true,
+        responsive: true,
+        select: true
+      });
   
       $('#transaksi').dataTable({
         paging: false,

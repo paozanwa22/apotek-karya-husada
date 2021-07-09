@@ -33,7 +33,7 @@
 
                 <!-- Alert -->
                 <?php if (session()->getFlashdata('gagal')) { ?>
-                  <div class="alert alert-has-icon text-dark" style="background-color:#ffb0b0;">
+                  <div class="alert alert-has-icon text-dark" id="notif" style="background-color:#ffb0b0;">
                     <div class="alert-icon"><i class="fa fa-exclamation-triangle"></i></div>
                     <div class="alert-body">
                       <?= session()->getFlashdata('gagal'); ?>
@@ -88,7 +88,7 @@
   <!-- Close Alert -->
   <script>
     setTimeout(function() {
-      $('.alert').fadeTo(500, 0).slideUp(500, function() {
+      $('#notif').fadeTo(500, 0).slideUp(500, function() {
         $(this).remove();
       })
     }, 9000);
