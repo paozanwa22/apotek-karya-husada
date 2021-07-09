@@ -73,7 +73,7 @@
                             <h4 class="text-dark">Obat Hapir Habis</h4>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped table-bordered" id="myTable" width="100%">
+                            <table class="table table-striped table-bordered tbl" width="100%">
                                 <thead>
                                     <tr>
                                         <th>Nama Obat</th>

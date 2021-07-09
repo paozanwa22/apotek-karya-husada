@@ -24,6 +24,23 @@
                         </div>
 
                         <div class="card-body">
+                            <table align="right" class="mb-4">
+                                <tr>
+                                    <td colspan="4">
+                                        Keterangan :
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="<?= base_url('/gambar/merah.jpg'); ?>" alt="ket" width="15px"></td>
+                                    <td> : </td>
+                                    <td>Obat sudah kadaluwarsa</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="<?= base_url('/gambar/oren.jpg'); ?>" alt="ket" width="15px"></td>
+                                    <td> : </td>
+                                    <td>Obat yang akan kadaluwarsa</td>
+                                </tr>
+                            </table>
                             <table class="table table-striped responsive nowrap table-hover" width="100%" id="myTable">
                                 <thead>
                                     <tr>
