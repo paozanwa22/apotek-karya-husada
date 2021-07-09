@@ -27,7 +27,7 @@
                             <table align="right" class="mb-4">
                                 <tr>
                                     <td colspan="4">
-                                        Keterangan :
+                                        <b>Keterangan :</b>
                                     </td>
                                 </tr>
                                 <tr>
