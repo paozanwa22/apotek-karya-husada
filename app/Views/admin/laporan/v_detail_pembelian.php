@@ -67,6 +67,7 @@
                                             $subtotal = 0;
                                             $total = 0;
                                             foreach ($dpembelian as $data) {
+                                                // dd($data);
                                                 $subtotal = $data['harga'] * $data['banyak'];
                                                 $total += $subtotal;
                                             ?>

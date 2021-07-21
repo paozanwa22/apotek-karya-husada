@@ -486,7 +486,7 @@ class Admin extends BaseController
 		// return redirect()->to('/admin/tpenjualan');
 		return redirect()->to('/cetak/struk_penjualan/' . $id_invoice);
 	}
-	public function detailpembelain($id)
+	public function detailpembelian($id)
 	{
 		$data = [
 			'title'			=> 'Detail Pembelian',
@@ -519,12 +519,14 @@ class Admin extends BaseController
 	public function hapuspenjualan($id)
 	{
 		$this->M_invoice->hapus($id);
+		$this->M_penjualan->hapus($id);
 		session()->setFlashdata('sukses', 'Berhasil menghapus data');
 		return redirect()->to('/admin/dpenjualan');
 	}
 	public function hapuspembelain($id)
 	{
 		$this->M_invoice->hapus($id);
+		$this->M_pembelian->hapus($id);
 		session()->setFlashdata('sukses', 'Berhasil menghapus data');
 		return redirect()->to('/admin/dpembelian');
 	}

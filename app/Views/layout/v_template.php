@@ -199,11 +199,13 @@
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
+
             labels: [<?php foreach ($a as $c) { ?> "<?= bulan($c['bulan']) ?>", <?php } ?>
 
             ],
             datasets: [{
               label: 'Pendapatan',
+
               data: [<?php foreach ($b as $p) {
                         echo '"' . $p['pendapatan'] . '",';
                       } ?>],

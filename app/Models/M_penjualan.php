@@ -28,7 +28,7 @@ class M_penjualan extends Model
             ->orderBy('no_transaksi', 'DESC')
             ->limit(1)->get()->getRowArray();
 
-        if ($kode['no_transaksi'] == null) {
+        if ($kode == null) {
             $no = 1;
         } else {
             $no = intval($kode['no_transaksi']) + 1;
@@ -75,5 +75,9 @@ class M_penjualan extends Model
             ->get()->getResultArray();
         // dd($cari);
         return $cari;
+    }
+    public function hapus($id)
+    {
+        return $this->db->table($this->table)->delete(['id_invoice' => $id]);
     }
 }

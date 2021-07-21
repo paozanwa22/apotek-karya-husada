@@ -32,18 +32,24 @@
                             <div class="form-group row">
                                 <label class="col-form-label col-md-2 text-right"><strong>Nama Pemasok</strong></label>
                                 <div class="col-md-4">
-
                                     <select name="nm_pemasok" required class="form-control custom-select form-control-sm" onchange="document.location.href=this.options[this.selectedIndex].value;">
                                         <option value="">- Pilih -</option>
                                         <?php
-                                        foreach ($dsup as $d) { ?>
-                                            <option value="<?= base_url('/admin/tpembelian/' . $d['kd_sup']); ?>" <?php if ($d['nama'] == $idsup['nama']) {
+                                        foreach ($dsup as $d) {
+                                        ?>
+                                            <option value="<?= base_url('/admin/tpembelian/' . $d['kd_sup']); ?>" <?php if ($idsup == null) {
+                                                                                                                        echo "";
+                                                                                                                    } else if ($d['nama'] == $idsup['nama']) {
                                                                                                                         echo "selected";
                                                                                                                     } ?>><?= $d['nama'];  ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
-                                <input type="hidden" name="kd_sup" value="<?= $idsup['kd_sup']; ?>">
+                                <input type="hidden" name="kd_sup" value="<?php if ($idsup != null) {
+                                                                                echo $idsup['kd_sup'];
+                                                                            } else if ($idsup = null) {
+                                                                                echo "";
+                                                                            } ?>">
                                 <label class="col-form-label col-md-2 text-right"><strong>Nama Obat</strong></label>
                                 <div class="col-md-4">
                                     <div class="input-group">

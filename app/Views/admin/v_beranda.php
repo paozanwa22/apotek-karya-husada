@@ -55,7 +55,7 @@
 											$pendapatan += $d->total_bayar;
 										}
 										$total_pendapatan = 0;
-										
+
 										$pendapatanPerBulan = $db->query("SELECT * FROM tb_penjualan WHERE MONTH(tgl_jual) = MONTH(NOW()) and YEAR(tgl_jual) = YEAR(NOW())");
 										$bulanan = $pendapatanPerBulan->getResultArray();
 										foreach ($bulanan as $p) {
