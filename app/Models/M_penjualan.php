@@ -70,12 +70,16 @@ class M_penjualan extends Model
         $cari = $this->db->table($this->table)
             ->join('tb_obat', 'tb_obat.kd_obat = tb_penjualan.kd_obat')
             // ->join('invoice', 'invoice.id_invoice = tb_penjualan.id_invoice')
-            ->where(['tgl_jual >=' => $awal['awal']])
-            ->where(['tgl_jual <=' => $awal['akhir']])
+            ->where('tgl_jual >=', $awal['awal'])
+            ->where('tgl_jual <=', $awal['akhir'])
             ->get()->getResultArray();
         // dd($cari);
         return $cari;
     }
+    // public function filter($awal)
+    // {
+    //     return $this->query("SELECT * FROM tb_penjualan WHERE tgl_jual BETWEEN $awal[awal] AND $awal[akhir]")->getResultArray();
+    // }
     public function hapus($id)
     {
         return $this->db->table($this->table)->delete(['id_invoice' => $id]);

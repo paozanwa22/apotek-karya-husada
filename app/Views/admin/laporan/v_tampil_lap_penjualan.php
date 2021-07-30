@@ -54,6 +54,7 @@
                             <?php
                             $no = 1;
                             $total = 0;
+                            // dd($caridata);
                             foreach ($caridata as $d) {
                                 $total1 = $d['total'];
                                 $total +=  $total1;
