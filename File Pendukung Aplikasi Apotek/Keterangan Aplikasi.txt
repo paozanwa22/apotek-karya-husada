@@ -1,0 +1,22 @@
+Keterangan
+
+Aplikasi Apotek
+==============================
+Nama database : apotek
+Aplikasi dibuat dengan CI4 dan dijalankan menggunakan php spark server
+==============================
+
+Akun
+==============================
+Akun Login Admin
+Username : admin@gmail.com
+password : 1234
+
+Akun Login Apoteker
+Username : apoteker@gmail.com
+Password : 1234
+
+Akun Login Pimpinan
+Username : pimpinan@gmail.com
+Password : 1234
+==============================

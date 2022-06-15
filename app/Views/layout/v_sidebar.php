@@ -11,7 +11,7 @@
       ?>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-      <a href="index.html">APT</a>
+      <a href="index.html">AMF</a>
     </div>
     <ul class="sidebar-menu">
 

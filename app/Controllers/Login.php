@@ -19,6 +19,7 @@ class Login extends BaseController
             'validation'    => \Config\Services::validation()
         ];
         return view('login/v_login', $data);
+        // return view('admin/v_beranda', $data);
     }
     public function cekLogin()
     {

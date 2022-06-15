@@ -92,7 +92,7 @@
 
     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
         <img alt="image" src="<?= base_url('/gambar/' . $data->poto) ?>" class="rounded-circle mr-1">
-        <div class="d-sm-none d-lg-inline-block"><?= session()->get('level'); ?>, <?= $data->nama; ?></div>
+        <div class="d-sm-none d-lg-inline-block"><?= session()->get('level'); ?>, yani martini</div>
       </a>
       <div class="dropdown-menu dropdown-menu-right">
         <?php if (session()->get('level') == "Admin") { ?>
